@@ -7,10 +7,13 @@ import org.testng.annotations.Test;
 public class MainTest extends BaseTest {
 
     @Test
-    public void testClickStartFromHomepage() {
-        String actualURL =
-                openBaseURL().getURL();
+    public void testBaseURLLoadedSuccessfully() {
+        final String expectedUrl = getBaseUrl();
 
-        Assert.assertEquals(actualURL, getBaseUrl());
+        String actualUrl =
+                openBaseURL()
+                        .getURL();
+
+        Assert.assertEquals(actualUrl, expectedUrl);
     }
 }
