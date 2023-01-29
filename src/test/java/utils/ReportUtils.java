@@ -47,7 +47,7 @@ public class ReportUtils {
     public static String getReportHeader(ITestContext context) {
         String header = "\tTest Run\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t" + "\n";
         String currentDate = "\tDate: " + getCurrentDateTime() + "\t\t\t\t\t\t\t\t\t\t\t\t\t\t" + "\n";
-        String projectName = "\tProject: AutomationQA_05" + "\n";
+        String projectName = "\tProject: AutomationTestStore" + "\n";
         String baseURL = "\tBASE_URL: " + BASE_URL + "\t\t\t\t\t\t\t\t\t\t\t" + "\n";
 
         return H_LINE + header + currentDate + projectName + baseURL + H_LINE;
