@@ -14,7 +14,7 @@ import java.lang.reflect.Method;
 
 public abstract class BaseTest {
 
-    private static final String BASE_URL = "https://www.99-bottles-of-beer.net/";
+    private static final String BASE_URL = "https://automationteststore.com/";
 
     private WebDriver driver;
 
