@@ -7,14 +7,14 @@ import org.testng.Reporter;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeSuite;
+import pages.home.HomePage;
 import utils.ReportUtils;
-import pages.start.StartPage;
 
 import java.lang.reflect.Method;
 
 public abstract class BaseTest {
 
-    private static final String BASE_URL = "https://www.99-bottles-of-beer.net/";
+    private static final String BASE_URL = "https://automationteststore.com/";
 
     private WebDriver driver;
 
@@ -50,10 +50,10 @@ public abstract class BaseTest {
         return BASE_URL;
     }
 
-    public StartPage openBaseURL() {
+    public HomePage openBaseURL() {
         getDriver().get(BASE_URL);
 
-        return new StartPage(getDriver());
+        return new HomePage(getDriver());
     }
 
     public String getExternalPageTitle() {
