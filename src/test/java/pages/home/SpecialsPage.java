@@ -1,4 +1,10 @@
 package pages.home;
 
-public class SpecialsPage {
+import org.openqa.selenium.WebDriver;
+import pages.base_abstract.MainPage;
+
+public class SpecialsPage extends MainPage {
+    public SpecialsPage(WebDriver driver) {
+        super(driver);
+    }
 }
