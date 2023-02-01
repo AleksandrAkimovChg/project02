@@ -1,4 +1,4 @@
 package pages.hair_care;
 
-public class HairCareSubmenuPage {
+public abstract class HairCareSubmenuPage {
 }

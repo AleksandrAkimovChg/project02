@@ -1,4 +1,4 @@
 package pages.books;
 
-public class BooksSubmenuPage {
+public abstract class BooksSubmenuPage {
 }
