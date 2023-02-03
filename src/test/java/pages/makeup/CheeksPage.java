@@ -1,4 +1,9 @@
 package pages.makeup;
 
-public class CheeksPage {
+import org.openqa.selenium.WebDriver;
+
+public class CheeksPage extends MakeupPage {
+    public CheeksPage(WebDriver driver) {
+        super(driver);
+    }
 }

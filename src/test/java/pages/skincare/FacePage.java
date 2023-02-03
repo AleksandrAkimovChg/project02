@@ -1,4 +1,9 @@
 package pages.skincare;
 
-public class FacePage {
+import org.openqa.selenium.WebDriver;
+
+public class FacePage extends SkincarePage {
+    public FacePage(WebDriver driver) {
+        super(driver);
+    }
 }

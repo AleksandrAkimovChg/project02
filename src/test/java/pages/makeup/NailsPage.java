@@ -1,4 +1,9 @@
 package pages.makeup;
 
-public class NailsPage {
+import org.openqa.selenium.WebDriver;
+
+public class NailsPage extends MakeupPage {
+    public NailsPage(WebDriver driver) {
+        super(driver);
+    }
 }

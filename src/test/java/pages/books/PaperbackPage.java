@@ -1,4 +1,9 @@
 package pages.books;
 
-public class PaperbackPage {
+import org.openqa.selenium.WebDriver;
+
+public class PaperbackPage extends BooksPage {
+    public PaperbackPage(WebDriver driver) {
+        super(driver);
+    }
 }

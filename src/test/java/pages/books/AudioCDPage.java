@@ -1,4 +1,9 @@
 package pages.books;
 
-public class AudioCDPage {
+import org.openqa.selenium.WebDriver;
+
+public class AudioCDPage extends BooksPage {
+    public AudioCDPage(WebDriver driver) {
+        super(driver);
+    }
 }

@@ -1,4 +1,9 @@
 package pages.men;
 
-public class BodyAndShowerPage {
+import org.openqa.selenium.WebDriver;
+
+public class BodyAndShowerPage extends MenPage {
+    public BodyAndShowerPage(WebDriver driver) {
+        super(driver);
+    }
 }

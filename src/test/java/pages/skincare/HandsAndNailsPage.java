@@ -1,4 +1,9 @@
 package pages.skincare;
 
-public class HandsAndNailsPage {
+import org.openqa.selenium.WebDriver;
+
+public class HandsAndNailsPage extends SkincarePage{
+    public HandsAndNailsPage(WebDriver driver) {
+        super(driver);
+    }
 }
