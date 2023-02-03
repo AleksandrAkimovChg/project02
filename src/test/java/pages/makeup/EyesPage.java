@@ -1,4 +1,9 @@
 package pages.makeup;
 
-public class EyesPage {
+import org.openqa.selenium.WebDriver;
+
+public class EyesPage extends MakeupPage {
+    public EyesPage(WebDriver driver) {
+        super(driver);
+    }
 }

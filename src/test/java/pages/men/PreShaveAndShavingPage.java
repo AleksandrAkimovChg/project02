@@ -1,4 +1,9 @@
 package pages.men;
 
-public class PreShaveAndShavingPage {
+import org.openqa.selenium.WebDriver;
+
+public class PreShaveAndShavingPage extends MenPage {
+    public PreShaveAndShavingPage(WebDriver driver) {
+        super(driver);
+    }
 }

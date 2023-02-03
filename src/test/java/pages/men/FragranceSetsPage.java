@@ -1,4 +1,9 @@
 package pages.men;
 
-public class FragranceSetsPage {
+import org.openqa.selenium.WebDriver;
+
+public class FragranceSetsPage extends MenPage{
+    public FragranceSetsPage(WebDriver driver) {
+        super(driver);
+    }
 }

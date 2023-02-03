@@ -1,4 +1,9 @@
 package pages.apparel_and_accessories;
 
-public class ShoesPage {
+import org.openqa.selenium.WebDriver;
+
+public class ShoesPage extends ApparelAndAccessoriesPage {
+    public ShoesPage(WebDriver driver) {
+        super(driver);
+    }
 }
