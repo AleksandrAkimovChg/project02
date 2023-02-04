@@ -1,4 +1,4 @@
-package pages.home;
+package pages.home.account;
 
 import org.openqa.selenium.WebDriver;
 import pages.base_abstract.MainPage;
