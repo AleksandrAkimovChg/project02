@@ -1,4 +1,4 @@
-package tests.home;
+package tests.home.account;
 
 import base.BaseTest;
 
