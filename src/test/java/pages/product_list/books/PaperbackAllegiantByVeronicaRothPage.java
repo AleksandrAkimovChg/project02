@@ -1,4 +1,4 @@
-package pages.product_range.books;
+package pages.product_list.books;
 
 import org.openqa.selenium.WebDriver;
 import pages.base_abstract.FormPage;
