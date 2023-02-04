@@ -7,3 +7,4 @@ local.properties
 debug.log
 .vscode
 .settings
+/schema.puml
