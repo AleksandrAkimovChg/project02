@@ -41,12 +41,10 @@ public abstract class BasePage {
         getWait10().until(ExpectedConditions.visibilityOf(element));
     }
 
-
     protected WebElement wait10ElementToBeClickable(WebElement element) {
 
         return getWait10().until(ExpectedConditions.elementToBeClickable(element));
     }
-
 
     protected void click10(WebElement element) {
         wait10ElementToBeVisible(element);
