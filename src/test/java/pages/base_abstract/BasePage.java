@@ -41,8 +41,26 @@ public abstract class BasePage {
         getWait10().until(ExpectedConditions.visibilityOf(element));
     }
 
+
+    protected WebElement wait10ElementToBeClickable(WebElement element) {
+
+        return getWait10().until(ExpectedConditions.elementToBeClickable(element));
+    }
+
+
+    protected void click10(WebElement element) {
+        wait10ElementToBeVisible(element);
+        wait10ElementToBeClickable(element).click();
+    }
+
     public void click(WebElement element) {
         element.click();
+    }
+
+
+    protected void clickByJavaScript(WebElement element) {
+        JavascriptExecutor executor = (JavascriptExecutor) driver;
+        executor.executeScript("arguments[0].click();", element);
     }
 
     public void clear(WebElement element) {

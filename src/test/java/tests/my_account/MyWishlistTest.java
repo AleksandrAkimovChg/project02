@@ -3,7 +3,6 @@ package tests.my_account;
 import base.BaseTest;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import pages.my_account.MyWishlistPage;
 
 import java.util.ArrayList;
 import java.util.Arrays;
