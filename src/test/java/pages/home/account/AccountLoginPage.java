@@ -8,6 +8,10 @@ import pages.my_account.MyAccountPage;
 
 public class AccountLoginPage extends FormPage {
 
+
+    @FindBy(xpath = "//ul[@id='main_menu_top']//a[@class='sub menu_login']")
+    private WebElement loginAccountSubmenu;
+
     @FindBy(id ="loginFrm_loginname")
     private WebElement userLogin;
 
@@ -19,6 +23,13 @@ public class AccountLoginPage extends FormPage {
 
     public AccountLoginPage(WebDriver driver) {
         super(driver);
+    }
+
+    public AccountLoginPage clickLoginAccountSubmenu() {
+        scrollByVisibleElement(loginAccountSubmenu);
+        clickByJavaScript(loginAccountSubmenu);
+
+        return new AccountLoginPage(getDriver());
     }
 
 

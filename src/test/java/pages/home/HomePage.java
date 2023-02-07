@@ -11,23 +11,12 @@ public class HomePage extends MainPage {
     @FindBy(xpath = "//ul[@id='main_menu_top']//a[@class='top menu_account']")
     private WebElement accountTopMenu;
 
-    @FindBy(xpath = "//ul[@id='main_menu_top']//a[@class='sub menu_login']")
-    private WebElement loginAccountSubmenu;
-
     public HomePage(WebDriver driver) {
         super(driver);
     }
 
-    public HomePage clickAccountMenu() {
+    public AccountLoginPage clickAccountMenu() {
         click(accountTopMenu);
-
-        return new HomePage(getDriver());
-    }
-
-    public AccountLoginPage clickLoginAccountSubmenu() {
-        clickAccountMenu();
-        scrollByVisibleElement(loginAccountSubmenu);
-        clickByJavaScript(loginAccountSubmenu);
 
         return new AccountLoginPage(getDriver());
     }
