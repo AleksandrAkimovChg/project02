@@ -9,36 +9,37 @@ import pages.my_account.order_history.OrderHistoryPage;
 
 public class MyAccountPage extends MainPage {
 
-    private static final String MY_ACCOUNT_PAGE_LINKS_PATH = "//div[@class='myaccountbox']/ul/li/a";
+    private static final String MY_ACCOUNT_PAGE_LINKS_PATH =
+            "//div[@class='myaccountbox']/ul/li/a[@href='https://automationteststore.com/index.php?rt=account/";
 
-    @FindBy(xpath = MY_ACCOUNT_PAGE_LINKS_PATH + "[@href='https://automationteststore.com/index.php?rt=account/account']")
+    @FindBy(xpath = MY_ACCOUNT_PAGE_LINKS_PATH + "account']")
     private WebElement accountDashboard;
 
-    @FindBy(xpath = MY_ACCOUNT_PAGE_LINKS_PATH + "[@href='https://automationteststore.com/index.php?rt=account/wishlist']")
+    @FindBy(xpath = MY_ACCOUNT_PAGE_LINKS_PATH + "wishlist']")
     private WebElement myWishlistLink;
 
-    @FindBy(xpath = MY_ACCOUNT_PAGE_LINKS_PATH + "[@href='https://automationteststore.com/index.php?rt=account/edit']")
+    @FindBy(xpath = MY_ACCOUNT_PAGE_LINKS_PATH + "edit']")
     private WebElement editAccountDetailsLink;
 
-    @FindBy(xpath = MY_ACCOUNT_PAGE_LINKS_PATH + "[@href='https://automationteststore.com/index.php?rt=account/password']")
+    @FindBy(xpath = MY_ACCOUNT_PAGE_LINKS_PATH + "password']")
     private WebElement changePasswordLink;
 
-    @FindBy(xpath = MY_ACCOUNT_PAGE_LINKS_PATH + "[@href='https://automationteststore.com/index.php?rt=account/address']")
+    @FindBy(xpath = MY_ACCOUNT_PAGE_LINKS_PATH + "address']")
     private WebElement manageAddressBookLink;
 
-    @FindBy(xpath = MY_ACCOUNT_PAGE_LINKS_PATH + "[@href='https://automationteststore.com/index.php?rt=account/history']")
+    @FindBy(xpath = MY_ACCOUNT_PAGE_LINKS_PATH + "history']")
     private WebElement orderHistoryLink;
 
-    @FindBy(xpath = MY_ACCOUNT_PAGE_LINKS_PATH + "[@href='https://automationteststore.com/index.php?rt=account/transactions']")
+    @FindBy(xpath = MY_ACCOUNT_PAGE_LINKS_PATH + "transactions']")
     private WebElement transactionHistoryLink;
 
-    @FindBy(xpath = MY_ACCOUNT_PAGE_LINKS_PATH + "[@href='https://automationteststore.com/index.php?rt=account/download']")
+    @FindBy(xpath = MY_ACCOUNT_PAGE_LINKS_PATH + "download']")
     private WebElement downloadsLink;
 
-    @FindBy(xpath = MY_ACCOUNT_PAGE_LINKS_PATH + "[@href='https://automationteststore.com/index.php?rt=account/notification']")
+    @FindBy(xpath = MY_ACCOUNT_PAGE_LINKS_PATH + "notification']")
     private WebElement notificationsLink;
 
-    @FindBy(xpath = MY_ACCOUNT_PAGE_LINKS_PATH + "[@href='https://automationteststore.com/index.php?rt=account/logout']")
+    @FindBy(xpath = MY_ACCOUNT_PAGE_LINKS_PATH + "logout']")
     private WebElement logoffLink;
 
     public MyAccountPage(WebDriver driver) {

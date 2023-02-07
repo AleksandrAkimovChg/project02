@@ -22,7 +22,7 @@ public class MyWishlistTest extends BaseTest {
                         .clickClearInputRegularUserPassword("Testoff29012003")
                         .clickLoginButton()
                         .clickMyWishlistLink()
-                        .getTextListThTags();
+                        .getTableHeaders();
 
         Assert.assertEquals(actualHeaderNames, expectedHeaderNames);
     }

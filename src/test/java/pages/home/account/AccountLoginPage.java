@@ -3,10 +3,10 @@ package pages.home.account;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import pages.base_abstract.MainPage;
+import pages.base_abstract.FormPage;
 import pages.my_account.MyAccountPage;
 
-public class AccountLoginPage extends MainPage {
+public class AccountLoginPage extends FormPage {
 
     @FindBy(id ="loginFrm_loginname")
     private WebElement userLogin;

@@ -1,10 +1,9 @@
 package pages.my_account;
 
 import org.openqa.selenium.WebDriver;
-import pages.ITable;
-import pages.base_abstract.MainPage;
+import pages.base_abstract.TablePage;
 
-public class MyWishlistPage extends MainPage implements ITable {
+public class MyWishlistPage extends TablePage{
     public MyWishlistPage(WebDriver driver) {
         super(driver);
     }
