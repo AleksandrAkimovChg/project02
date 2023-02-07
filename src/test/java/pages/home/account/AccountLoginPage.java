@@ -8,7 +8,6 @@ import pages.my_account.MyAccountPage;
 
 public class AccountLoginPage extends FormPage {
 
-
     @FindBy(xpath = "//ul[@id='main_menu_top']//a[@class='sub menu_login']")
     private WebElement loginAccountSubmenu;
 
@@ -31,7 +30,6 @@ public class AccountLoginPage extends FormPage {
 
         return new AccountLoginPage(getDriver());
     }
-
 
     public AccountLoginPage clickClearInputRegularUserLogin() {
         click(userLogin);
