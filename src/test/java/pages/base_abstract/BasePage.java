@@ -5,14 +5,19 @@ import org.openqa.selenium.NoAlertPresentException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Reporter;
 
+import java.time.Duration;
 import java.util.ArrayList;
 import java.util.List;
 
 public abstract class BasePage {
 
     private WebDriver driver;
+
+    private WebDriverWait webDriverWait10;
 
     public BasePage(WebDriver driver) {
         this.driver = driver;
@@ -24,8 +29,36 @@ public abstract class BasePage {
         return driver;
     }
 
+    protected WebDriverWait getWait10() {
+        if (webDriverWait10 == null) {
+            webDriverWait10 = new WebDriverWait(driver, Duration.ofSeconds(10));
+        }
+
+        return webDriverWait10;
+    }
+
+    protected void wait10ElementToBeVisible(WebElement element) {
+        getWait10().until(ExpectedConditions.visibilityOf(element));
+    }
+
+    protected WebElement wait10ElementToBeClickable(WebElement element) {
+
+        return getWait10().until(ExpectedConditions.elementToBeClickable(element));
+    }
+
+    protected void click10(WebElement element) {
+        wait10ElementToBeVisible(element);
+        wait10ElementToBeClickable(element).click();
+    }
+
     public void click(WebElement element) {
         element.click();
+    }
+
+
+    protected void clickByJavaScript(WebElement element) {
+        JavascriptExecutor executor = (JavascriptExecutor) driver;
+        executor.executeScript("arguments[0].click();", element);
     }
 
     public void clear(WebElement element) {
