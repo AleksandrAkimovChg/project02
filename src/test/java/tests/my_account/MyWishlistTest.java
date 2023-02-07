@@ -18,7 +18,6 @@ public class MyWishlistTest extends BaseTest {
 
         List<String> actualHeaderNames =
                 openBaseURL()
-                        .clickAccountMenu()
                         .clickLoginAccountSubmenu()
                         .clickClearInputRegularUserLogin("testtestoff940")
                         .clickClearInputRegularUserPassword("Testoff29012003")

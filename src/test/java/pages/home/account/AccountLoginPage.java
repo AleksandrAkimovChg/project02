@@ -8,7 +8,7 @@ import pages.my_account.MyAccountPage;
 
 public class AccountLoginPage extends MainPage {
 
-    @FindBy(xpath="//input[@name='loginname']")
+    @FindBy(id ="loginFrm_loginname")
     private WebElement userLogin;
 
     @FindBy(xpath = "//input[@name='password']")

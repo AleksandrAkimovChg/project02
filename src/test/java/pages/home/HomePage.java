@@ -25,6 +25,9 @@ public class HomePage extends MainPage {
     }
 
     public AccountLoginPage clickLoginAccountSubmenu() {
+        click(accountTopMenu);
+        scrollByVisibleElement(loginAccountSubmenu);
+//        wait10ElementToBeVisible(loginAccountSubmenu);
         click(loginAccountSubmenu);
 
         return new AccountLoginPage(getDriver());
