@@ -8,6 +8,9 @@ import pages.home.account.AccountLoginPage;
 
 public class HomePage extends MainPage {
 
+    @FindBy(xpath = "//ul[@id='customer_menu_top']")
+    private WebElement loginCustomerTopMenu;
+
     @FindBy(xpath = "//ul[@id='main_menu_top']//a[@class='top menu_account']")
     private WebElement accountTopMenu;
 
@@ -19,5 +22,16 @@ public class HomePage extends MainPage {
         click(accountTopMenu);
 
         return new AccountLoginPage(getDriver());
+    }
+
+    public AccountLoginPage clickLoginCustomerMenu() {
+        click(loginCustomerTopMenu);
+
+        return new AccountLoginPage(getDriver());
+    }
+
+    public String getLoginCustomerText() {
+
+        return getText(loginCustomerTopMenu);
     }
 }
