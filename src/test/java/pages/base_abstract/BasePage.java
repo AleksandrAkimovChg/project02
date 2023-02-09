@@ -12,7 +12,6 @@ import org.testng.Reporter;
 
 import java.time.Duration;
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 
 public abstract class BasePage {
@@ -56,7 +55,6 @@ public abstract class BasePage {
     public void click(WebElement element) {
         element.click();
     }
-
 
     protected void clickByJavaScript(WebElement element) {
         JavascriptExecutor executor = (JavascriptExecutor) driver;
@@ -217,11 +215,11 @@ public abstract class BasePage {
     }
 
     public boolean isAlertPresent() {
-        try{
+        try {
             getDriver().switchTo().alert();
 
             return true;
-        } catch (NoAlertPresentException e){
+        } catch (NoAlertPresentException e) {
 
             return false;
         }

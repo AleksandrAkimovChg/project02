@@ -1,4 +1,4 @@
-package tests.product_range.bvlgari;
+package tests.product_list.bvlgari;
 
 import base.BaseTest;
 

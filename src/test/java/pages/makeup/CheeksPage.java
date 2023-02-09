@@ -28,14 +28,4 @@ public class CheeksPage extends ProductCategoriesPage {
     public boolean isPriceTagChanged() {
         return isElementDisplayed(addedToCartLink);
     }
-
-
-
-
-
-
-
-
 }
-
-

@@ -1,4 +1,4 @@
-package tests.product_range.lancome;
+package tests.product_list.lancome;
 
 import base.BaseTest;
 

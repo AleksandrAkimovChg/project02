@@ -1,4 +1,4 @@
-package tests.product_range.books;
+package tests.product_list.books;
 
 import base.BaseTest;
 

@@ -1,4 +1,4 @@
-package tests.product_range.dove;
+package tests.product_list.dove;
 
 import base.BaseTest;
 
