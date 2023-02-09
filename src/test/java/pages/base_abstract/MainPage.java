@@ -8,6 +8,9 @@ public abstract class MainPage extends BasePage {
 //    локаторы logo top footer navbar categiry
     final static String MAIN_CONTAINER = "//div[@id='maincontainer']";
 
+//    breadcrumbs
+
+
     public MainPage(WebDriver driver) {
         super(driver);
     }
