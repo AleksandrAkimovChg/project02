@@ -1,4 +1,4 @@
-package tests.product_range.pantene;
+package tests.product_list.pantene;
 
 import base.BaseTest;
 

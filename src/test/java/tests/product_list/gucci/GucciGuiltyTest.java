@@ -1,4 +1,4 @@
-package tests.product_range.gucci;
+package tests.product_list.gucci;
 
 import base.BaseTest;
 

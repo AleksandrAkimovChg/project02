@@ -1,9 +1,9 @@
 package pages.product_list.books;
 
 import org.openqa.selenium.WebDriver;
-import pages.base_abstract.FormPage;
+import pages.product_list.ProductDescriptionPage;
 
-public class PaperbackAllegiantByVeronicaRothPage extends FormPage {
+public class PaperbackAllegiantByVeronicaRothPage extends ProductDescriptionPage {
     public PaperbackAllegiantByVeronicaRothPage(WebDriver driver) {
         super(driver);
     }

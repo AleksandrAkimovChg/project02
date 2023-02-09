@@ -1,4 +1,4 @@
-package tests.product_range.benefit;
+package tests.product_list.benefit;
 
 import base.BaseTest;
 
