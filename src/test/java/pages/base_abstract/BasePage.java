@@ -4,6 +4,7 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.NoAlertPresentException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -11,6 +12,7 @@ import org.testng.Reporter;
 
 import java.time.Duration;
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 public abstract class BasePage {
@@ -223,5 +225,19 @@ public abstract class BasePage {
 
             return false;
         }
+    }
+
+    public void mouseHover(WebElement element) {
+        Actions actions = new Actions(getDriver());
+        actions.moveToElement(element).build().perform();
+    }
+
+    public void mouseHoverAndClick(WebElement element) {
+        Actions actions = new Actions(getDriver());
+        actions.moveToElement(element).click().build().perform();
+    }
+
+    protected boolean isElementDisplayed(WebElement element) {
+        return element.isDisplayed();
     }
 }
