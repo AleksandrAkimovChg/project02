@@ -1,4 +1,4 @@
-package tests.product_range.sephora;
+package tests.product_list.sephora;
 
 import base.BaseTest;
 

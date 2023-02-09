@@ -1,4 +1,4 @@
-package tests.product_range.mac;
+package tests.product_list.mac;
 
 import base.BaseTest;
 

@@ -1,4 +1,4 @@
-package tests.product_range.giorgio_armani;
+package tests.product_list.giorgio_armani;
 
 import base.BaseTest;
 

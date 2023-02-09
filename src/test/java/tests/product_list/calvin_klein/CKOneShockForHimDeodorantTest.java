@@ -1,4 +1,4 @@
-package tests.product_range.calvin_klein;
+package tests.product_list.calvin_klein;
 
 import base.BaseTest;
 

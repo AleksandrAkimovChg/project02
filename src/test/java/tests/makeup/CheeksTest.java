@@ -18,7 +18,4 @@ public class CheeksTest extends BaseTest {
                 .isPriceTagChanged()
         );
     }
-
-
-
 }
