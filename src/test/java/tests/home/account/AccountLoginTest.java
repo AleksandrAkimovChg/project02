@@ -25,4 +25,22 @@ public class AccountLoginTest extends BaseTest {
         Assert.assertNotEquals(oldLoginMenuText, actualLoginMenuText);
         Assert.assertEquals(actualLoginMenuText, expectedLoginMenuText);
     }
+
+    @Test
+    public void testLoginWithValidUsernameAndInvalidPassword() {
+        final String expectedMessage = "×\n" +
+                "Error: Incorrect login or password provided.";
+        final String invalidPassword = "wrong_password";
+
+        String actualMessage =
+                openBaseURL()
+                        .clickAccountMenu()
+                        .clickLoginAccountSubmenu()
+                        .clickClearInputRegularUserLogin("testtestoff940")
+                        .clickClearInputRegularUserPassword(invalidPassword)
+                        .clickLoginButtonFailedLogin()
+                        .getErrorAlertText();
+
+        Assert.assertEquals(actualMessage, expectedMessage);
+    }
 }

@@ -1,8 +1,10 @@
 package pages.home.account;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import pages.base_abstract.FormPage;
 import pages.my_account.MyAccountPage;
 
@@ -19,6 +21,9 @@ public class AccountLoginPage extends FormPage {
 
     @FindBy(xpath = "//button[@title='Login']")
     private WebElement loginButton;
+
+    @FindBy(xpath = "//div[@class = 'alert alert-error alert-danger']")
+    private WebElement errorAlert;
 
     public AccountLoginPage(WebDriver driver) {
         super(driver);
@@ -69,5 +74,16 @@ public class AccountLoginPage extends FormPage {
         click(loginButton);
 
         return new MyAccountPage(getDriver());
+    }
+
+    public AccountLoginPage clickLoginButtonFailedLogin() {
+        click(loginButton);
+
+        return this;
+    }
+
+    public String getErrorAlertText() {
+
+        return errorAlert.getText();
     }
 }
