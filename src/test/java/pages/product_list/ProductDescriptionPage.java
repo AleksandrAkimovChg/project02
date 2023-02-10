@@ -2,6 +2,7 @@ package pages.product_list;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.devtools.v104.network.model.TrustTokenOperationDone;
 import org.openqa.selenium.support.FindBy;
 import pages.base_abstract.FormPage;
 
@@ -266,4 +267,31 @@ public abstract class ProductDescriptionPage<DescriptionPageType> extends FormPa
 
         return createDescriptionPage();
     }
+
+//    TODO
+//    Error:  Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.1:testCompile (default-testCompile) on project AutomationTestStore: Compilation failure: Compilation failure:
+//Error:  /home/runner/work/project02/project02/src/test/java/pages/product_list/benefit/BenefitGirlMeetsPearlPage.java:[6,8] pages.product_list.benefit.BenefitGirlMeetsPearlPage is not abstract and does not override abstract method createDescriptionPage() in pages.product_list.ProductDescriptionPage
+//Error:  /home/runner/work/project02/project02/src/test/java/pages/product_list/calvin_klein/CKOneShockForHimDeodorantPage.java:[6,8] pages.product_list.calvin_klein.CKOneShockForHimDeodorantPage is not abstract and does not override abstract method createDescriptionPage() in pages.product_list.ProductDescriptionPage
+//Error:  /home/runner/work/project02/project02/src/test/java/pages/product_list/bvlgari/BvlgariPourHommeEauDeToilettePage.java:[6,8] pages.product_list.bvlgari.BvlgariPourHommeEauDeToilettePage is not abstract and does not override abstract method createDescriptionPage() in pages.product_list.ProductDescriptionPage
+//Error:  /home/runner/work/project02/project02/src/test/java/pages/product_list/benefit/BenefitBellaBambaPage.java:[6,8] pages.product_list.benefit.BenefitBellaBambaPage is not abstract and does not override abstract method createDescriptionPage() in pages.product_list.ProductDescriptionPage
+//Error:  /home/runner/work/project02/project02/src/test/java/pages/product_list/giorgio_armani/GiorgioArmaniCodePourFemmePage.java:[6,8] pages.product_list.giorgio_armani.GiorgioArmaniCodePourFemmePage is not abstract and does not override abstract method createDescriptionPage() in pages.product_list.ProductDescriptionPage
+//Error:  /home/runner/work/project02/project02/src/test/java/pages/product_list/books/PaperbackAllegiantByVeronicaRothPage.java:[6,8] pages.product_list.books.PaperbackAllegiantByVeronicaRothPage is not abstract and does not override abstract method createDescriptionPage() in pages.product_list.ProductDescriptionPage
+//Error:  /home/runner/work/project02/project02/src/test/java/pages/product_list/pantene/PanteneCurlsToStraightShampooPage.java:[6,8] pages.product_list.pantene.PanteneCurlsToStraightShampooPage is not abstract and does not override abstract method createDescriptionPage() in pages.product_list.ProductDescriptionPage
+//Error:  /home/runner/work/project02/project02/src/test/java/pages/product_list/lancome/LancomeTropiquesMineraleLooseBronzerPage.java:[6,8] pages.product_list.lancome.LancomeTropiquesMineraleLooseBronzerPage is not abstract and does not override abstract method createDescriptionPage() in pages.product_list.ProductDescriptionPage
+//Error:  /home/runner/work/project02/project02/src/test/java/pages/product_list/books/AudioCDNewFrenchWithEasePage.java:[6,8] pages.product_list.books.AudioCDNewFrenchWithEasePage is not abstract and does not override abstract method createDescriptionPage() in pages.product_list.ProductDescriptionPage
+//Error:  /home/runner/work/project02/project02/src/test/java/pages/product_list/calvin_klein/CKSecretObsessionPerfumePage.java:[6,8] pages.product_list.calvin_klein.CKSecretObsessionPerfumePage is not abstract and does not override abstract method createDescriptionPage() in pages.product_list.ProductDescriptionPage
+//Error:  /home/runner/work/project02/project02/src/test/java/pages/product_list/gucci/GucciGuiltyPage.java:[6,8] pages.product_list.gucci.GucciGuiltyPage is not abstract and does not override abstract method createDescriptionPage() in pages.product_list.ProductDescriptionPage
+//Error:  /home/runner/work/project02/project02/src/test/java/pages/product_list/sephora/SephoraSeaweedConditionerPage.java:[6,8] pages.product_list.sephora.SephoraSeaweedConditionerPage is not abstract and does not override abstract method createDescriptionPage() in pages.product_list.ProductDescriptionPage
+//Error:  /home/runner/work/project02/project02/src/test/java/pages/product_list/dove/DoveMenCareCleanComfortDeodorantPage.java:[6,8] pages.product_list.dove.DoveMenCareCleanComfortDeodorantPage is not abstract and does not override abstract method createDescriptionPage() in pages.product_list.ProductDescriptionPage
+//Error:  /home/runner/work/project02/project02/src/test/java/pages/product_list/pantene/PanteneHighlightingExpressionsPage.java:[6,8] pages.product_list.pantene.PanteneHighlightingExpressionsPage is not abstract and does not override abstract method createDescriptionPage() in pages.product_list.ProductDescriptionPage
+//Error:  /home/runner/work/project02/project02/src/test/java/pages/product_list/mac/MacSkinsheenBronzerStickPage.java:[6,8] pages.product_list.mac.MacSkinsheenBronzerStickPage is not abstract and does not override abstract method createDescriptionPage() in pages.product_list.ProductDescriptionPage
+//Error:  -> [Help 1]
+//Error:
+//Error:  To see the full stack trace of the errors, re-run Maven with the -e switch.
+//Error:  Re-run Maven using the -X switch to enable full debug logging.
+//Error:
+//Error:  For more information about the errors and possible solutions, please read the following articles:
+//Error:  [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+//Error: Process completed with exit code 1.
+
 }
