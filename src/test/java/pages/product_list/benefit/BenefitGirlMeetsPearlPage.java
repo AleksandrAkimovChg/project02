@@ -7,4 +7,9 @@ public class BenefitGirlMeetsPearlPage extends ProductDescriptionPage {
     public BenefitGirlMeetsPearlPage(WebDriver driver) {
         super(driver);
     }
+
+    protected BenefitGirlMeetsPearlPage createDescriptionPage() {
+
+        return new BenefitGirlMeetsPearlPage(getDriver());
+    }
 }
