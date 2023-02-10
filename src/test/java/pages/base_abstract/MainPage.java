@@ -8,8 +8,12 @@ import pages.makeup.CheeksPage;
 
 public abstract class MainPage extends BasePage {
 
-//    TODO
+//   TODO
 //    локаторы logo top footer navbar categiry
+    final static String MAIN_CONTAINER = "//div[@id='maincontainer']";
+
+//    breadcrumbs
+
 
     private static final String CATEGORYMENU_ID
             = "//section[@id='categorymenu']//a[@href='https://automationteststore.com/index.php?rt=product/category&path=";
