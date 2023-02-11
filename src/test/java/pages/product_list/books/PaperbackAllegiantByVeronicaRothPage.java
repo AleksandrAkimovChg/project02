@@ -9,7 +9,7 @@ public class PaperbackAllegiantByVeronicaRothPage extends ProductDescriptionPage
         super(driver);
     }
 
-    protected PaperbackAllegiantByVeronicaRothPage createDescriptionPage() {
+    protected PaperbackAllegiantByVeronicaRothPage createProductDescriptionPage() {
 
         return new PaperbackAllegiantByVeronicaRothPage(getDriver());
     }

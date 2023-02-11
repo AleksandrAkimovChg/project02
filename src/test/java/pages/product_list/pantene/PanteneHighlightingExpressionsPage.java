@@ -10,7 +10,7 @@ public class PanteneHighlightingExpressionsPage extends ProductDescriptionPage {
         super(driver);
     }
 
-    protected PanteneHighlightingExpressionsPage createDescriptionPage() {
+    protected PanteneHighlightingExpressionsPage createProductDescriptionPage() {
 
         return new PanteneHighlightingExpressionsPage(getDriver());
     }

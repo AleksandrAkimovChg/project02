@@ -2,7 +2,6 @@ package pages.product_list.gucci;
 
 import org.openqa.selenium.WebDriver;
 import pages.product_list.ProductDescriptionPage;
-import pages.product_list.calvin_klein.CKOneShockForHimDeodorantPage;
 
 public class GucciGuiltyPage extends ProductDescriptionPage {
 
@@ -10,7 +9,7 @@ public class GucciGuiltyPage extends ProductDescriptionPage {
         super(driver);
     }
 
-    protected GucciGuiltyPage createDescriptionPage() {
+    protected GucciGuiltyPage createProductDescriptionPage() {
 
         return new GucciGuiltyPage(getDriver());
     }

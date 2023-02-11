@@ -2,7 +2,6 @@ package pages.product_list.pantene;
 
 import org.openqa.selenium.WebDriver;
 import pages.product_list.ProductDescriptionPage;
-import pages.product_list.calvin_klein.CKOneShockForHimDeodorantPage;
 
 public class PanteneCurlsToStraightShampooPage extends ProductDescriptionPage {
 
@@ -10,7 +9,7 @@ public class PanteneCurlsToStraightShampooPage extends ProductDescriptionPage {
         super(driver);
     }
 
-    protected PanteneCurlsToStraightShampooPage createDescriptionPage() {
+    protected PanteneCurlsToStraightShampooPage createProductDescriptionPage() {
 
         return new PanteneCurlsToStraightShampooPage(getDriver());
     }
