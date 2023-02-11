@@ -11,7 +11,7 @@ public class ApparelAndAccessoriesPage extends ProductCategoriesPage {
         super(driver);
     }
 
-    public NewLadies_Sandals_ID116_Page clickNewLadiesHighWedgeHeelToeThongDiamanteFlipFlopSandals() {
+    public NewLadies_Sandals_ID116_Page clickNewLadiesSandals() {
         clickGridProduct_1();
 
         return new NewLadies_Sandals_ID116_Page(getDriver());

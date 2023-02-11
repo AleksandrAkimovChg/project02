@@ -8,40 +8,41 @@ import pages.apparel_and_accessories.ApparelAndAccessoriesPage;
 public abstract class ProductCategoriesPage extends MainPage {
 
     final static String MAIN_CONTAINER = "//div[@id='maincontainer']";
-    final static String THUMBNAILS_GRID = MAIN_CONTAINER + "//div[@class='thumbnails grid row list-inline']";
-    final static String FIXED_WRAPPER = MAIN_CONTAINER + "//div[@class='fixed_wrapper']";
-    final static String THUMBNAIL_1 = "//div[@class='thumbnail'][1]";
-    final static String THUMBNAIL_2 = "//div[@class='thumbnail'][2]";
-    final static String THUMBNAIL_3 = "//div[@class='thumbnail'][3]";
-    final static String THUMBNAIL_4 = "//div[@class='thumbnail'][4]";
-    final static String THUMBNAIL_5 = "//div[@class='thumbnail'][5]";
-    final static String THUMBNAIL_6 = "//div[@class='thumbnail'][6]";
-    final static String THUMBNAIL_7 = "//div[@class='thumbnail'][7]";
-    final static String THUMBNAIL_8 = "//div[@class='thumbnail'][8]";
+    final static String THUMBNAILS_GRID = "//div[@class='thumbnails grid row list-inline']";
+    final static String THUMBNAILS_LIST = "//div[@class='thumbnails list row]";
+    final static String FIXED_WRAPPER = "//div[@class='fixed_wrapper']";
+    final static String THUMBNAIL = "//div[@class='thumbnail']";
     final static String HREF_IMG_SCR = "/a[@href]/img[@src]";
 
-    @FindBy(xpath = THUMBNAILS_GRID + THUMBNAIL_1 + HREF_IMG_SCR)
+
+    @FindBy(xpath = "//button[@id='list']")
+    private WebElement button_list;
+
+    @FindBy(xpath = "//button[@id='grid']")
+    private WebElement button_grid;
+
+    @FindBy(xpath = MAIN_CONTAINER + THUMBNAILS_GRID + THUMBNAIL + "[1]" + HREF_IMG_SCR)
     private WebElement grid_product_1;
 
-    @FindBy(xpath = THUMBNAILS_GRID + THUMBNAIL_2 + HREF_IMG_SCR)
+    @FindBy(xpath = MAIN_CONTAINER + THUMBNAILS_GRID + THUMBNAIL + "[2]" + HREF_IMG_SCR)
     private WebElement grid_product_2;
 
-    @FindBy(xpath = THUMBNAILS_GRID + THUMBNAIL_3 + HREF_IMG_SCR)
+    @FindBy(xpath = MAIN_CONTAINER + THUMBNAILS_GRID + THUMBNAIL + "[3]" +  HREF_IMG_SCR)
     private WebElement grid_product_3;
 
-    @FindBy(xpath = THUMBNAILS_GRID + THUMBNAIL_4 + HREF_IMG_SCR)
+    @FindBy(xpath = MAIN_CONTAINER + THUMBNAILS_GRID + THUMBNAIL + "[4]" + HREF_IMG_SCR)
     private WebElement grid_product_4;
 
-    @FindBy(xpath = THUMBNAILS_GRID + THUMBNAIL_5 + HREF_IMG_SCR)
+    @FindBy(xpath = MAIN_CONTAINER + THUMBNAILS_GRID + THUMBNAIL + "[5]" + HREF_IMG_SCR)
     private WebElement grid_product_5;
 
-    @FindBy(xpath = THUMBNAILS_GRID + THUMBNAIL_6 + HREF_IMG_SCR)
+    @FindBy(xpath = MAIN_CONTAINER + THUMBNAILS_GRID + THUMBNAIL + "[6]" + HREF_IMG_SCR)
     private WebElement grid_product_6;
 
-    @FindBy(xpath = THUMBNAILS_GRID + THUMBNAIL_7 + HREF_IMG_SCR)
+    @FindBy(xpath = MAIN_CONTAINER + THUMBNAILS_GRID + THUMBNAIL + "[7]" + HREF_IMG_SCR)
     private WebElement grid_product_7;
 
-    @FindBy(xpath = THUMBNAILS_GRID + THUMBNAIL_8 + HREF_IMG_SCR)
+    @FindBy(xpath = MAIN_CONTAINER + THUMBNAILS_GRID + THUMBNAIL + "[8]" + HREF_IMG_SCR)
     private WebElement grid_product_8;
 
     public ProductCategoriesPage(WebDriver driver) {

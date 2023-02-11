@@ -6,11 +6,13 @@ import org.testng.annotations.Test;
 import pages.apparel_and_accessories.ApparelAndAccessoriesPage;
 import pages.product_list.NewLadies_Sandals_ID116_Page;
 
-public class NewLadiesHighWedgeHeelToeThongDiamanteFlipFlopSandalsTest extends BaseTest {
+import static testData.ProjectConstants.*;
+
+public class NewLadies_Sandals_ID116_Test extends BaseTest {
 
     @Test
-    public void testNavigatesToNewLadiesHighWedgeHeelToeThongDiamanteFlipFlopSandalsPage() {
-        final String expectedURL = "https://automationteststore.com/index.php?rt=product/product&path=68&product_id=116";
+    public void testNavigatesToNewLadiesSandals_ID116_Page() {
+        final String expectedURL = URL_PRODUCT_ID_116;
 
         NewLadies_Sandals_ID116_Page
                 newLadiesHighWedgeHeelToeThongDiamanteFlipFlopSandalsPage =
@@ -27,7 +29,7 @@ public class NewLadiesHighWedgeHeelToeThongDiamanteFlipFlopSandalsTest extends B
                         .getURL();
 
         apparelAndAccessoriesPage
-                .clickNewLadiesHighWedgeHeelToeThongDiamanteFlipFlopSandals();
+                .clickNewLadiesSandals();
 
         String actualURL =
                 newLadiesHighWedgeHeelToeThongDiamanteFlipFlopSandalsPage
