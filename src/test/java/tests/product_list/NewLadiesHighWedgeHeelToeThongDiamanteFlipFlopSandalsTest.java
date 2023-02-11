@@ -4,7 +4,7 @@ import base.BaseTest;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.apparel_and_accessories.ApparelAndAccessoriesPage;
-import pages.product_list.NewLadiesHighWedgeHeelToeThongDiamanteFlipFlopSandalsPage;
+import pages.product_list.NewLadies_Sandals_ID116_Page;
 
 public class NewLadiesHighWedgeHeelToeThongDiamanteFlipFlopSandalsTest extends BaseTest {
 
@@ -12,9 +12,9 @@ public class NewLadiesHighWedgeHeelToeThongDiamanteFlipFlopSandalsTest extends B
     public void testNavigatesToNewLadiesHighWedgeHeelToeThongDiamanteFlipFlopSandalsPage() {
         final String expectedURL = "https://automationteststore.com/index.php?rt=product/product&path=68&product_id=116";
 
-        NewLadiesHighWedgeHeelToeThongDiamanteFlipFlopSandalsPage
+        NewLadies_Sandals_ID116_Page
                 newLadiesHighWedgeHeelToeThongDiamanteFlipFlopSandalsPage =
-                new NewLadiesHighWedgeHeelToeThongDiamanteFlipFlopSandalsPage(getDriver());
+                new NewLadies_Sandals_ID116_Page(getDriver());
 
         ApparelAndAccessoriesPage apparelAndAccessoriesPage =
                 new ApparelAndAccessoriesPage(getDriver());

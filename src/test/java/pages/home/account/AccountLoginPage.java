@@ -40,28 +40,10 @@ public class AccountLoginPage extends FormPage {
         return new AccountLoginPage(getDriver());
     }
 
-    public AccountLoginPage clickClearInputRegularUserLogin() {
-        click(userLogin);
-        userLogin.clear();
-        String login = "testtestoff940";
-        input(login, userLogin);
-
-        return this;
-    }
-
     public AccountLoginPage clickClearInputRegularUserLogin(String login) {
         click(userLogin);
         userLogin.clear();
         input(login, userLogin);
-
-        return this;
-    }
-
-    public AccountLoginPage clickClearInputRegularUserPassword() {
-        click(userPassword);
-        userPassword.clear();
-        String password = "Testoff29012003";
-        input(password, userPassword);
 
         return this;
     }
