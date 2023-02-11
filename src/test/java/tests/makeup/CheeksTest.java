@@ -13,7 +13,7 @@ public class CheeksTest extends BaseTest {
 
         openBaseURL()
                 .mouseHoverOnCategoryMenu()
-                .mouseHoverOnSubMenu()
+                .mouseHoverOnSubmenu()
                 .clickAddToCart()
                 .isPriceTagChanged()
         );
