@@ -59,9 +59,9 @@ public class AccountLoginTest extends BaseTest {
                       .clickClearInputRegularUserLogin("testtestoff940")
                       .clickClearInputRegularUserPassword(invalidPassword)
                       .clickLoginButtonFailedLogin()
-                      .isErrorAlertPresent()
+                      .isErrorMessagePresent()
               );
 
-      Assert.assertFalse(loginPage.clickCloseButtonForErrorAlert().isErrorAlertPresent());
+      Assert.assertFalse(loginPage.clickCloseButtonForErrorMessage().isErrorMessagePresent());
     }
 }

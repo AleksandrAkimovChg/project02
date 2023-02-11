@@ -24,10 +24,10 @@ public class AccountLoginPage extends FormPage {
     private WebElement loginButton;
 
     @FindBy(xpath = "//div[@class = 'alert alert-error alert-danger']")
-    private WebElement errorAlert;
+    private WebElement errorMessage;
 
     @FindBy(xpath = "//button[@class = 'close']")
-    private WebElement closeButtonForErrorAlert;
+    private WebElement closeButtonForErrorMessage;
 
     public AccountLoginPage(WebDriver driver) {
         super(driver);
@@ -88,16 +88,16 @@ public class AccountLoginPage extends FormPage {
 
     public String getErrorAlertText() {
 
-        return errorAlert.getText();
+        return errorMessage.getText();
     }
 
-    public AccountLoginPage clickCloseButtonForErrorAlert() {
-        click(closeButtonForErrorAlert);
+    public AccountLoginPage clickCloseButtonForErrorMessage() {
+        click(closeButtonForErrorMessage);
 
         return this;
     }
 
-    public boolean isErrorAlertPresent() {
+    public boolean isErrorMessagePresent() {
 
         List<WebElement> elements = getDriver().findElements(
                 By.xpath("//div[@class = 'alert alert-error alert-danger']"));
