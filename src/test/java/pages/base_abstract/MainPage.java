@@ -10,40 +10,41 @@ import pages.makeup.CheeksPage;
 public abstract class MainPage extends BasePage {
 
 //   TODO
-//    локаторы logo top footer navbar categiry
+//    локаторы logo top footer navbar category
     final static String MAIN_CONTAINER = "//div[@id='maincontainer']";
 
 //    breadcrumbs
 
 
-    private static final String CATEGORYMENU_ID
-            = "//section[@id='categorymenu']//a[@href='https://automationteststore.com/index.php?rt=product/category&path=";
+    private static final String CATEGORYMENU = "//section[@id='categorymenu']";
+    private static final String CONTAINS = "//a[contains(text(),";
 
-    @FindBy(xpath = CATEGORYMENU_ID + "//a[@href='https://automationteststore.com/']")
-    private WebElement homeCategorymenu;
 
-    @FindBy(xpath = CATEGORYMENU_ID + "68']")
-    private WebElement apparelAccessoriesCategorymenu;
+    @FindBy(xpath = CATEGORYMENU + CONTAINS + "'Home')]")
+    private WebElement homeMenu;
 
-    @FindBy(xpath = CATEGORYMENU_ID + "36']")
-    private WebElement makeupCategorymenu;
+    @FindBy(xpath = CATEGORYMENU + CONTAINS + "'Apparel & accessories')]")
+    private WebElement apparelAccessoriesMenu;
 
-    @FindBy(xpath = CATEGORYMENU_ID + "43']")
-    private WebElement skincareCategorymenu;
+    @FindBy(xpath = CATEGORYMENU + CONTAINS + "'Makeup')]")
+    private WebElement makeupMenu;
 
-    @FindBy(xpath = CATEGORYMENU_ID + "49']")
-    private WebElement fragranceCategorymenu;
+    @FindBy(xpath = CATEGORYMENU + CONTAINS + "'Skincare')]")
+    private WebElement skincareMenu;
 
-    @FindBy(xpath = CATEGORYMENU_ID + "58']")
-    private WebElement menCategorymenu;
+    @FindBy(xpath = CATEGORYMENU + CONTAINS + "'Fragrance')]")
+    private WebElement fragranceMenu;
 
-    @FindBy(xpath = CATEGORYMENU_ID + "52']")
-    private WebElement haircareCategorymenu;
+    @FindBy(xpath = CATEGORYMENU + CONTAINS + "'Men')]")
+    private WebElement menMenu;
 
-    @FindBy(xpath = CATEGORYMENU_ID + "65']")
-    private WebElement booksCategorymenu;
+    @FindBy(xpath = CATEGORYMENU + CONTAINS + "'Hair Care')]")
+    private WebElement haircareMenu;
 
-    @FindBy(xpath = CATEGORYMENU_ID + "36_40']")
+    @FindBy(xpath = CATEGORYMENU + CONTAINS + "'Books')]")
+    private WebElement booksMenu;
+
+    @FindBy(xpath = CATEGORYMENU + CONTAINS + "'Cheeks')]")
     private WebElement cheeksSubmenu;
 
     public MainPage(WebDriver driver) {
@@ -51,12 +52,12 @@ public abstract class MainPage extends BasePage {
     }
 
     public HomePage mouseHoverOnCategoryMenu() {
-        mouseHover(makeupCategorymenu);
+        mouseHover(makeupMenu);
         return new HomePage(getDriver());
     }
 
     public ApparelAndAccessoriesPage clickApparelAndAccessoriesCategoryMenu() {
-       click(apparelAccessoriesCategorymenu);
+       click(apparelAccessoriesMenu);
 
         return new ApparelAndAccessoriesPage(getDriver());
     }

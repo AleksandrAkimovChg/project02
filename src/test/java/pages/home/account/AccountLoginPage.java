@@ -4,16 +4,17 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 import pages.base_abstract.FormPage;
 import pages.my_account.MyAccountPage;
+
+import java.util.List;
 
 public class AccountLoginPage extends FormPage {
 
     @FindBy(xpath = "//ul[@id='main_menu_top']//a[@class='sub menu_login']")
     private WebElement loginAccountSubmenu;
 
-    @FindBy(id ="loginFrm_loginname")
+    @FindBy(id = "loginFrm_loginname")
     private WebElement userLogin;
 
     @FindBy(xpath = "//input[@name='password']")
@@ -23,7 +24,10 @@ public class AccountLoginPage extends FormPage {
     private WebElement loginButton;
 
     @FindBy(xpath = "//div[@class = 'alert alert-error alert-danger']")
-    private WebElement errorAlert;
+    private WebElement errorMessage;
+
+    @FindBy(xpath = "//button[@class = 'close']")
+    private WebElement closeButtonForErrorMessage;
 
     public AccountLoginPage(WebDriver driver) {
         super(driver);
@@ -84,6 +88,20 @@ public class AccountLoginPage extends FormPage {
 
     public String getErrorAlertText() {
 
-        return errorAlert.getText();
+        return errorMessage.getText();
+    }
+
+    public AccountLoginPage clickCloseButtonForErrorMessage() {
+        click(closeButtonForErrorMessage);
+
+        return this;
+    }
+
+    public boolean isErrorMessagePresent() {
+
+        List<WebElement> elements = getDriver().findElements(
+                By.xpath("//div[@class = 'alert alert-error alert-danger']"));
+
+        return elements.size() > 0;
     }
 }
