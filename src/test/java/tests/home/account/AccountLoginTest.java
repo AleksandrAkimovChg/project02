@@ -4,6 +4,7 @@ import base.BaseTest;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.home.HomePage;
+import pages.home.account.AccountLoginPage;
 
 public class AccountLoginTest extends BaseTest {
 
@@ -42,5 +43,25 @@ public class AccountLoginTest extends BaseTest {
                         .getErrorAlertText();
 
         Assert.assertEquals(actualMessage, expectedMessage);
+    }
+
+    @Test
+    public void testErrorAlertIsDismissed_WhenClickCloseButton() {
+
+        final String invalidPassword = "wrong_password";
+
+        AccountLoginPage loginPage = new AccountLoginPage(getDriver());
+
+      Assert.assertTrue(
+              openBaseURL()
+                      .clickAccountMenu()
+                      .clickLoginAccountSubmenu()
+                      .clickClearInputRegularUserLogin("testtestoff940")
+                      .clickClearInputRegularUserPassword(invalidPassword)
+                      .clickLoginButtonFailedLogin()
+                      .isErrorAlertPresent()
+              );
+
+      Assert.assertFalse(loginPage.clickCloseButtonForErrorAlert().isErrorAlertPresent());
     }
 }
