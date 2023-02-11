@@ -9,7 +9,7 @@ public class MacSkinsheenBronzerStickPage extends ProductDescriptionPage {
         super(driver);
     }
 
-    protected MacSkinsheenBronzerStickPage createDescriptionPage() {
+    protected MacSkinsheenBronzerStickPage createProductDescriptionPage() {
 
         return new MacSkinsheenBronzerStickPage(getDriver());
     }

@@ -9,7 +9,7 @@ public class GucciGuiltyPage extends ProductDescriptionPage {
         super(driver);
     }
 
-    protected GucciGuiltyPage createDescriptionPage() {
+    protected GucciGuiltyPage createProductDescriptionPage() {
 
         return new GucciGuiltyPage(getDriver());
     }

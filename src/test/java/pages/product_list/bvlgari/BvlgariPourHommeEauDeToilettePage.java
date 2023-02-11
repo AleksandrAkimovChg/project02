@@ -9,7 +9,7 @@ public class BvlgariPourHommeEauDeToilettePage extends ProductDescriptionPage {
         super(driver);
     }
 
-    protected BvlgariPourHommeEauDeToilettePage createDescriptionPage() {
+    protected BvlgariPourHommeEauDeToilettePage createProductDescriptionPage() {
 
         return new BvlgariPourHommeEauDeToilettePage(getDriver());
     }

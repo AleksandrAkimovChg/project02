@@ -9,7 +9,7 @@ public class PanteneCurlsToStraightShampooPage extends ProductDescriptionPage {
         super(driver);
     }
 
-    protected PanteneCurlsToStraightShampooPage createDescriptionPage() {
+    protected PanteneCurlsToStraightShampooPage createProductDescriptionPage() {
 
         return new PanteneCurlsToStraightShampooPage(getDriver());
     }

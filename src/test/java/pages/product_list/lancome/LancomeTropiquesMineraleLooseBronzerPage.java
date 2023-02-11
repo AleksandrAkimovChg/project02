@@ -9,7 +9,7 @@ public class LancomeTropiquesMineraleLooseBronzerPage extends ProductDescription
         super(driver);
     }
 
-    protected LancomeTropiquesMineraleLooseBronzerPage createDescriptionPage() {
+    protected LancomeTropiquesMineraleLooseBronzerPage createProductDescriptionPage() {
 
         return new LancomeTropiquesMineraleLooseBronzerPage(getDriver());
     }

@@ -48,11 +48,35 @@ public abstract class ProductCategoriesPage extends MainPage {
         super(driver);
     }
 
+    public void clickGridProduct_1() {
+        click(grid_product_1);
+    }
 
+    public void clickGridProduct_2() {
+        click(grid_product_2);
+    }
 
-    public ApparelAndAccessoriesPage clickApparelAndAccessoriesCategoryMenu() {
-        click(apparelAccessoriesCategorymenu);
+    public void clickGridProduct_3() {
+        click(grid_product_3);
+    }
 
-        return new ApparelAndAccessoriesPage(getDriver());
+    public void clickGridProduct_4() {
+        click(grid_product_5);
+    }
+
+    public void clickGridProduct_5() {
+        click(grid_product_5);
+    }
+
+    public void clickGridProduct_6() {
+        click(grid_product_6);
+    }
+
+    public void clickGridProduct_7() {
+        click(grid_product_7);
+    }
+
+    public void clickGridProduct_8() {
+        click(grid_product_8);
     }
 }

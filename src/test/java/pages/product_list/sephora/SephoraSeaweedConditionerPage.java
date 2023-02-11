@@ -9,7 +9,7 @@ public class SephoraSeaweedConditionerPage extends ProductDescriptionPage {
         super(driver);
     }
 
-    protected SephoraSeaweedConditionerPage createDescriptionPage() {
+    protected SephoraSeaweedConditionerPage createProductDescriptionPage() {
 
         return new SephoraSeaweedConditionerPage(getDriver());
     }

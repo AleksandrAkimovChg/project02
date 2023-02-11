@@ -9,7 +9,7 @@ public class GiorgioArmaniCodePourFemmePage extends ProductDescriptionPage {
         super(driver);
     }
 
-    protected GiorgioArmaniCodePourFemmePage createDescriptionPage() {
+    protected GiorgioArmaniCodePourFemmePage createProductDescriptionPage() {
 
         return new GiorgioArmaniCodePourFemmePage(getDriver());
     }

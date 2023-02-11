@@ -8,11 +8,8 @@ public class NewLadiesHighWedgeHeelToeThongDiamanteFlipFlopSandalsPage extends P
         super(driver);
     }
 
-    protected NewLadiesHighWedgeHeelToeThongDiamanteFlipFlopSandalsPage createDescriptionPage() {
+    protected NewLadiesHighWedgeHeelToeThongDiamanteFlipFlopSandalsPage createProductDescriptionPage() {
 
         return new NewLadiesHighWedgeHeelToeThongDiamanteFlipFlopSandalsPage(getDriver());
     }
-
-
-
 }

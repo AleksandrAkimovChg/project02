@@ -9,7 +9,7 @@ public class AudioCDNewFrenchWithEasePage extends ProductDescriptionPage {
         super(driver);
     }
 
-    protected AudioCDNewFrenchWithEasePage createDescriptionPage() {
+    protected AudioCDNewFrenchWithEasePage createProductDescriptionPage() {
 
         return new AudioCDNewFrenchWithEasePage(getDriver());
     }

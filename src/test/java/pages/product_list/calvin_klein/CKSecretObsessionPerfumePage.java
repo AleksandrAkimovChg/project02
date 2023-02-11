@@ -9,7 +9,7 @@ public class CKSecretObsessionPerfumePage extends ProductDescriptionPage {
         super(driver);
     }
 
-    protected CKSecretObsessionPerfumePage createDescriptionPage() {
+    protected CKSecretObsessionPerfumePage createProductDescriptionPage() {
 
         return new CKSecretObsessionPerfumePage(getDriver());
     }

@@ -9,7 +9,7 @@ public class CKOneShockForHimDeodorantPage extends ProductDescriptionPage {
         super(driver);
     }
 
-    protected CKOneShockForHimDeodorantPage createDescriptionPage() {
+    protected CKOneShockForHimDeodorantPage createProductDescriptionPage() {
 
         return new CKOneShockForHimDeodorantPage(getDriver());
     }

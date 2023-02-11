@@ -9,7 +9,7 @@ public class DoveMenCareCleanComfortDeodorantPage extends ProductDescriptionPage
         super(driver);
     }
 
-    protected DoveMenCareCleanComfortDeodorantPage createDescriptionPage() {
+    protected DoveMenCareCleanComfortDeodorantPage createProductDescriptionPage() {
 
         return new DoveMenCareCleanComfortDeodorantPage(getDriver());
     }
