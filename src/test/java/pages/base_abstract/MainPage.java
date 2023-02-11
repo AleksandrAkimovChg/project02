@@ -3,6 +3,7 @@ package pages.base_abstract;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import pages.apparel_and_accessories.ApparelAndAccessoriesPage;
 import pages.home.HomePage;
 import pages.makeup.CheeksPage;
 
@@ -52,6 +53,12 @@ public abstract class MainPage extends BasePage {
     public HomePage mouseHoverOnCategoryMenu() {
         mouseHover(makeupCategorymenu);
         return new HomePage(getDriver());
+    }
+
+    public ApparelAndAccessoriesPage clickApparelAndAccessoriesCategoryMenu() {
+       click(apparelAccessoriesCategorymenu);
+
+        return new ApparelAndAccessoriesPage(getDriver());
     }
 
     public CheeksPage mouseHoverOnSubMenu() {
