@@ -1,14 +1,14 @@
 package pages.fragrance;
 
 import org.openqa.selenium.WebDriver;
-import pages.base_abstract.ProductCategoriesPage;
+import pages.base_abstract.ProductsPage;
 
-public class FragrancePage extends ProductCategoriesPage<FragrancePage> {
+public class FragrancePage extends ProductsPage<FragrancePage> {
     public FragrancePage(WebDriver driver) {
         super(driver);
     }
 
-    protected FragrancePage createProductCategoriesPage() {
+    protected FragrancePage createProductsPage() {
 
         return new FragrancePage(getDriver());
     }

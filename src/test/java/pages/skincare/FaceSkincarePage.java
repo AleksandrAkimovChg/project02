@@ -1,15 +1,15 @@
 package pages.skincare;
 
 import org.openqa.selenium.WebDriver;
-import pages.base_abstract.ProductCategoriesPage;
+import pages.base_abstract.ProductsPage;
 
-public class FaceSkincarePage extends ProductCategoriesPage<FaceSkincarePage> {
+public class FaceSkincarePage extends ProductsPage<FaceSkincarePage> {
 
     public FaceSkincarePage(WebDriver driver) {
         super(driver);
     }
 
-    protected FaceSkincarePage createProductCategoriesPage() {
+    protected FaceSkincarePage createProductsPage() {
 
         return new FaceSkincarePage(getDriver());
     }

@@ -15,7 +15,7 @@ import pages.men.SkincarePage;
 
 import java.util.List;
 
-public abstract class MainPage<ProductCategoriesPageType> extends BasePage {
+public abstract class MainPage extends BasePage {
 
 //   TODO
 //    локаторы logo top footer navbar category
@@ -61,14 +61,6 @@ public abstract class MainPage<ProductCategoriesPageType> extends BasePage {
 
     public MainPage(WebDriver driver) {
         super(driver);
-    }
-
-    protected abstract ProductCategoriesPageType createProductCategoriesPage();
-
-    public ProductCategoriesPageType clickNavPillsCategoryMenu(int index) {
-        navPillsCategoryMenu.get(index).click();
-
-        return createProductCategoriesPage();
     }
 
     public ApparelAndAccessoriesPage clickApparelAndAccessoriesCategoryMenu() {
@@ -120,5 +112,10 @@ public abstract class MainPage<ProductCategoriesPageType> extends BasePage {
     public CheeksPage mouseHoverOnSubMenu() {
         mouseHoverAndClick(cheeksSubmenu);
         return new CheeksPage(getDriver());
+    }
+
+    public List<WebElement> getNavPillsCategoryMenu() {
+
+        return navPillsCategoryMenu;
     }
 }
