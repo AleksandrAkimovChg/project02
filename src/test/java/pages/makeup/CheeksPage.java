@@ -4,8 +4,9 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import pages.base_abstract.ProductCategoriesPage;
+import pages.hair_care.ShampooPage;
 
-public class CheeksPage extends ProductCategoriesPage {
+public class CheeksPage extends ProductCategoriesPage<CheeksPage> {
 
     private static final String PRICETAG = "//div[@class='pricetag jumbotron']";
 
@@ -18,6 +19,11 @@ public class CheeksPage extends ProductCategoriesPage {
 
     public CheeksPage(WebDriver driver) {
         super(driver);
+    }
+
+    protected CheeksPage createProductCategoriesPage() {
+
+        return new CheeksPage(getDriver());
     }
 
     public CheeksPage clickAddToCart() {

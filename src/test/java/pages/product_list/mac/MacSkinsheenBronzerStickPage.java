@@ -3,7 +3,7 @@ package pages.product_list.mac;
 import org.openqa.selenium.WebDriver;
 import pages.product_list.ProductDescriptionPage;
 
-public class MacSkinsheenBronzerStickPage extends ProductDescriptionPage {
+public class MacSkinsheenBronzerStickPage extends ProductDescriptionPage<MacSkinsheenBronzerStickPage> {
 
     public MacSkinsheenBronzerStickPage(WebDriver driver) {
         super(driver);

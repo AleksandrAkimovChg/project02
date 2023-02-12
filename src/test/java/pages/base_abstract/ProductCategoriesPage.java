@@ -3,9 +3,8 @@ package pages.base_abstract;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import pages.apparel_and_accessories.ApparelAndAccessoriesPage;
 
-public abstract class ProductCategoriesPage extends MainPage {
+public abstract class ProductCategoriesPage<ProductCategoriesPageType> extends MainPage<ProductCategoriesPageType> {
 
     final static String MAIN_CONTAINER = "//div[@id='maincontainer']";
     final static String THUMBNAILS_GRID = "//div[@class='thumbnails grid row list-inline']";
@@ -79,5 +78,17 @@ public abstract class ProductCategoriesPage extends MainPage {
 
     public void clickGridProduct_8() {
         click(grid_product_8);
+    }
+
+    public ProductCategoriesPageType clickButtonList() {
+        click(button_list);
+
+        return createProductCategoriesPage();
+    }
+
+    public ProductCategoriesPageType clickButtonGrid() {
+        click(button_grid);
+
+        return createProductCategoriesPage();
     }
 }

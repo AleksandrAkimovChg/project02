@@ -13,7 +13,9 @@ import pages.makeup.MakeupPage;
 import pages.men.MenPage;
 import pages.men.SkincarePage;
 
-public abstract class MainPage extends BasePage {
+import java.util.List;
+
+public abstract class MainPage<ProductCategoriesPageType> extends BasePage {
 
 //   TODO
 //    локаторы logo top footer navbar category
@@ -22,6 +24,8 @@ public abstract class MainPage extends BasePage {
 //    breadcrumbs
 
     private static final String CATEGORYMENU = "//section[@id='categorymenu']";
+    private static final String NAV_PILLS_CATEGORYMENU = CATEGORYMENU + "/nav/ul/li";
+
     private static final String CONTAINS = "//a[contains(text(),";
 
 
@@ -52,8 +56,19 @@ public abstract class MainPage extends BasePage {
     @FindBy(xpath = CATEGORYMENU + CONTAINS + "'Books')]")
     private WebElement booksMenu;
 
+    @FindBy(xpath = CATEGORYMENU + CONTAINS + "'Books')]")
+    private List<WebElement> navPillsCategoryMenu;
+
     public MainPage(WebDriver driver) {
         super(driver);
+    }
+
+    protected abstract ProductCategoriesPageType createProductCategoriesPage();
+
+    public ProductCategoriesPageType clickNavPillsCategoryMenu(int index) {
+        navPillsCategoryMenu.get(index).click();
+
+        return createProductCategoriesPage();
     }
 
     public ApparelAndAccessoriesPage clickApparelAndAccessoriesCategoryMenu() {

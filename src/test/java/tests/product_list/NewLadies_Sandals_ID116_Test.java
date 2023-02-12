@@ -15,24 +15,20 @@ public class NewLadies_Sandals_ID116_Test extends BaseTest {
         final String expectedURL = URL_PRODUCT_ID_116;
 
         NewLadies_Sandals_ID116_Page
-                newLadiesHighWedgeHeelToeThongDiamanteFlipFlopSandalsPage =
+                newLadies_Sandals_ID116_Page =
                 new NewLadies_Sandals_ID116_Page(getDriver());
 
         ApparelAndAccessoriesPage apparelAndAccessoriesPage =
                 new ApparelAndAccessoriesPage(getDriver());
 
-        openBaseURL()
-                .clickApparelAndAccessoriesCategoryMenu();
-
-        String oldURL =
-                apparelAndAccessoriesPage
-                        .getURL();
+        String oldURL = openBaseURL()
+                .clickApparelAndAccessoriesCategoryMenu().getURL();;
 
         apparelAndAccessoriesPage
                 .clickNewLadiesSandals();
 
         String actualURL =
-                newLadiesHighWedgeHeelToeThongDiamanteFlipFlopSandalsPage
+                newLadies_Sandals_ID116_Page
                         .getURL();
 
         Assert.assertNotEquals(oldURL, actualURL);
