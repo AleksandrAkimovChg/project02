@@ -15,7 +15,7 @@ import pages.men.SkincarePage;
 
 public abstract class MainPage extends BasePage {
 
-//   TODO
+    //   TODO
 //    локаторы logo top footer navbar category
     final static String MAIN_CONTAINER = "//div[@id='maincontainer']";
 
@@ -43,7 +43,7 @@ public abstract class MainPage extends BasePage {
     @FindBy(xpath = CATEGORYMENU + CONTAINS + "'Fragrance')]")
     private WebElement fragranceMenu;
 
-    @FindBy(xpath = CATEGORYMENU + CONTAINS + "'Men')]")
+    @FindBy(css = "#categorymenu > nav > ul > li:nth-child(6) > a")
     private WebElement menMenu;
 
     @FindBy(xpath = CATEGORYMENU + CONTAINS + "'Hair Care')]")
@@ -65,13 +65,13 @@ public abstract class MainPage extends BasePage {
     public MakeupPage clickMakeupCategoryMenu() {
         click(makeupMenu);
 
-        return new MakeupPage (getDriver());
+        return new MakeupPage(getDriver());
     }
 
     public SkincarePage clickSkincareCategoryMenu() {
         click(skincareMenu);
 
-        return new SkincarePage (getDriver());
+        return new SkincarePage(getDriver());
     }
 
     public FragrancePage clickFragranceCategoryMenu() {
@@ -85,6 +85,7 @@ public abstract class MainPage extends BasePage {
 
         return new MenPage(getDriver());
     }
+
     public HairCarePage clickHairCareCategoryMenu() {
         click(haircareMenu);
 

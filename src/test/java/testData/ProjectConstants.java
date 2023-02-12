@@ -18,6 +18,9 @@ public class ProjectConstants {
     static final String TAG_FASHION = "&keyword=fashion";
     static final String TAG_SHOE = "&keyword=shoe";
 
+    public final static String MEN_PAGE_URL = BASE_URL + "?rt=product/category&path=58";
+    public final static String MEN_PAGE_TITLE = "Men";
+
     @Description("New Ladies High Wedge Heel Toe Thong Diamante Flip Flop Sandals")
     public static final String URL_PRODUCT_ID_116 = URL_PRODUCT_ID + "116";
 }
