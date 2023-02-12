@@ -6,6 +6,9 @@ import org.testng.annotations.Test;
 import pages.home.HomePage;
 import pages.home.account.AccountLoginPage;
 
+import static testData.ProjectConstants.*;
+
+
 public class AccountLoginTest extends BaseTest {
 
     @Test
@@ -17,8 +20,8 @@ public class AccountLoginTest extends BaseTest {
         String oldLoginMenuText = openBaseURL().getLoginCustomerText();
 
         homePage.clickLoginCustomerMenu()
-                .clickClearInputRegularUserLogin("testtestoff940")
-                .clickClearInputRegularUserPassword("Testoff29012003")
+                .clickClearInputRegularUserLogin(LOGIN_NAME)
+                .clickClearInputRegularUserPassword(PASSWORD)
                 .clickLoginButton();
 
         String actualLoginMenuText = homePage.getLoginCustomerText();
@@ -37,7 +40,7 @@ public class AccountLoginTest extends BaseTest {
                 openBaseURL()
                         .clickAccountMenu()
                         .clickLoginAccountSubmenu()
-                        .clickClearInputRegularUserLogin("testtestoff940")
+                        .clickClearInputRegularUserLogin(LOGIN_NAME)
                         .clickClearInputRegularUserPassword(invalidPassword)
                         .clickLoginButtonFailedLogin()
                         .getErrorAlertText();
@@ -48,16 +51,14 @@ public class AccountLoginTest extends BaseTest {
     @Test
     public void testErrorAlertIsDismissed_WhenClickCloseButton() {
 
-        final String invalidPassword = "wrong_password";
-
         AccountLoginPage loginPage = new AccountLoginPage(getDriver());
 
       Assert.assertTrue(
               openBaseURL()
                       .clickAccountMenu()
                       .clickLoginAccountSubmenu()
-                      .clickClearInputRegularUserLogin("testtestoff940")
-                      .clickClearInputRegularUserPassword(invalidPassword)
+                      .clickClearInputRegularUserLogin(LOGIN_NAME)
+                      .clickClearInputRegularUserPassword(WRONG_PASSWORD)
                       .clickLoginButtonFailedLogin()
                       .isErrorMessagePresent()
               );
