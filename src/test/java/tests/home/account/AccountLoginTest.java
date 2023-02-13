@@ -4,6 +4,10 @@ import base.BaseTest;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.home.HomePage;
+import pages.home.account.AccountLoginPage;
+
+import static testData.ProjectConstants.*;
+
 
 public class AccountLoginTest extends BaseTest {
 
@@ -16,8 +20,8 @@ public class AccountLoginTest extends BaseTest {
         String oldLoginMenuText = openBaseURL().getLoginCustomerText();
 
         homePage.clickLoginCustomerMenu()
-                .clickClearInputRegularUserLogin("testtestoff940")
-                .clickClearInputRegularUserPassword("Testoff29012003")
+                .clickClearInputRegularUserLogin(LOGIN_NAME)
+                .clickClearInputRegularUserPassword(PASSWORD)
                 .clickLoginButton();
 
         String actualLoginMenuText = homePage.getLoginCustomerText();
@@ -36,11 +40,29 @@ public class AccountLoginTest extends BaseTest {
                 openBaseURL()
                         .clickAccountMenu()
                         .clickLoginAccountSubmenu()
-                        .clickClearInputRegularUserLogin("testtestoff940")
+                        .clickClearInputRegularUserLogin(LOGIN_NAME)
                         .clickClearInputRegularUserPassword(invalidPassword)
                         .clickLoginButtonFailedLogin()
                         .getErrorAlertText();
 
         Assert.assertEquals(actualMessage, expectedMessage);
+    }
+
+    @Test
+    public void testErrorAlertIsDismissed_WhenClickCloseButton() {
+
+        AccountLoginPage loginPage = new AccountLoginPage(getDriver());
+
+      Assert.assertTrue(
+              openBaseURL()
+                      .clickAccountMenu()
+                      .clickLoginAccountSubmenu()
+                      .clickClearInputRegularUserLogin(LOGIN_NAME)
+                      .clickClearInputRegularUserPassword(WRONG_PASSWORD)
+                      .clickLoginButtonFailedLogin()
+                      .isErrorMessagePresent()
+              );
+
+      Assert.assertFalse(loginPage.clickCloseButtonForErrorMessage().isErrorMessagePresent());
     }
 }

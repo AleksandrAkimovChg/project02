@@ -3,10 +3,10 @@ package pages.home;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import pages.base_abstract.MainPage;
+import pages.base_abstract.ProductCategoriesPage;
 import pages.home.account.AccountLoginPage;
 
-public class HomePage extends MainPage {
+public class HomePage extends ProductCategoriesPage {
 
     @FindBy(xpath = "//ul[@id='customer_menu_top']")
     private WebElement loginCustomerTopMenu;

@@ -5,6 +5,8 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.my_account.MyAccountPage;
 
+import static testData.ProjectConstants.*;
+
 public class MyAccountTest extends BaseTest {
 
     @Test
@@ -19,8 +21,8 @@ public class MyAccountTest extends BaseTest {
                 openBaseURL()
                         .clickAccountMenu()
                         .clickLoginAccountSubmenu()
-                        .clickClearInputRegularUserLogin("testtestoff940")
-                        .clickClearInputRegularUserPassword("Testoff29012003")
+                        .clickClearInputRegularUserLogin(LOGIN_NAME)
+                        .clickClearInputRegularUserPassword(PASSWORD)
                         .clickLoginButton()
                         .getURL();
 

@@ -5,7 +5,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import pages.base_abstract.FormPage;
 
-public abstract class ProductDescriptionPage<DescriptionPageType> extends FormPage {
+public abstract class ProductDescriptionPage<ProductDescriptionPageType> extends FormPage{
 
     /**
      * описана модель страницы -- локаторами.
@@ -160,110 +160,110 @@ public abstract class ProductDescriptionPage<DescriptionPageType> extends FormPa
         super(driver);
     }
 
-    protected abstract DescriptionPageType createDescriptionPage();
+    protected abstract ProductDescriptionPageType createProductDescriptionPage();
 
-    public DescriptionPageType clickRow1() {
+    public ProductDescriptionPageType clickRow1() {
         click(column_left_row_1_link_href);
 
-        return createDescriptionPage();
+        return createProductDescriptionPage();
     }
 
-    public DescriptionPageType clickRow2() {
+    public ProductDescriptionPageType clickRow2() {
         click(column_left_row_2_link_href);
 
-        return createDescriptionPage();
+        return createProductDescriptionPage();
     }
 
-    public DescriptionPageType clickRow3() {
+    public ProductDescriptionPageType clickRow3() {
         click(column_left_row_3_link_href);
 
-        return createDescriptionPage();
+        return createProductDescriptionPage();
     }
 
-    public DescriptionPageType clickRow4() {
+    public ProductDescriptionPageType clickRow4() {
         click(column_left_row_4_link_href);
 
-        return createDescriptionPage();
+        return createProductDescriptionPage();
     }
 
-    public DescriptionPageType clickDescription() {
+    public ProductDescriptionPageType clickDescription() {
         click(href_description);
 
-        return createDescriptionPage();
+        return createProductDescriptionPage();
     }
 
-    public DescriptionPageType clickReviews() {
+    public ProductDescriptionPageType clickReviews() {
         click(href_review);
 
-        return createDescriptionPage();
+        return createProductDescriptionPage();
     }
 
-    public DescriptionPageType clickRating1() {
+    public ProductDescriptionPageType clickRating1() {
         click(rating1);
 
-        return createDescriptionPage();
+        return createProductDescriptionPage();
     }
 
-    public DescriptionPageType clickRating2() {
+    public ProductDescriptionPageType clickRating2() {
         click(rating2);
 
-        return createDescriptionPage();
+        return createProductDescriptionPage();
     }
 
-    public DescriptionPageType clickRating3() {
+    public ProductDescriptionPageType clickRating3() {
         click(rating3);
 
-        return createDescriptionPage();
+        return createProductDescriptionPage();
     }
 
-    public DescriptionPageType clickRating4() {
+    public ProductDescriptionPageType clickRating4() {
         click(rating4);
 
-        return createDescriptionPage();
+        return createProductDescriptionPage();
     }
 
-    public DescriptionPageType clickRating5() {
+    public ProductDescriptionPageType clickRating5() {
         click(rating5);
 
-        return createDescriptionPage();
+        return createProductDescriptionPage();
     }
 
-    public DescriptionPageType inputName(String text) {
+    public ProductDescriptionPageType inputName(String text) {
         click(reviewInputName);
         input(text, reviewInputName);
 
-        return createDescriptionPage();
+        return createProductDescriptionPage();
     }
 
-    public DescriptionPageType inputReview(String text) {
+    public ProductDescriptionPageType inputReview(String text) {
         click(reviewInputReview);
         input(text, reviewInputReview);
 
-        return createDescriptionPage();
+        return createProductDescriptionPage();
     }
 
-    public DescriptionPageType inputCaptcha(String text) {
+    public ProductDescriptionPageType inputCaptcha(String text) {
         click(reviewCaptcha);
         input(text, reviewCaptcha);
 
-        return createDescriptionPage();
+        return createProductDescriptionPage();
     }
 
-    public DescriptionPageType submit() {
+    public ProductDescriptionPageType submit() {
         click(reviewSubmit);
 
-        return createDescriptionPage();
+        return createProductDescriptionPage();
     }
 
-    public DescriptionPageType clickTags() {
+    public ProductDescriptionPageType clickTags() {
         click(href_tags);
 
-        return createDescriptionPage();
+        return createProductDescriptionPage();
     }
 
-    public DescriptionPageType clickRelatedProducts() {
+    public ProductDescriptionPageType clickRelatedProducts() {
         click(href_relatedproducts);
 
-        return createDescriptionPage();
+        return createProductDescriptionPage();
     }
 }

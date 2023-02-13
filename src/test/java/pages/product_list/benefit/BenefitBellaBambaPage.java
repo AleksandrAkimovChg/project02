@@ -9,7 +9,7 @@ public class BenefitBellaBambaPage extends ProductDescriptionPage {
         super(driver);
     }
 
-    protected BenefitBellaBambaPage createDescriptionPage() {
+    protected BenefitBellaBambaPage createProductDescriptionPage() {
 
         return new BenefitBellaBambaPage(getDriver());
     }
