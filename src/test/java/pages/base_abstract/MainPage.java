@@ -17,7 +17,7 @@ import java.util.List;
 
 public abstract class MainPage extends BasePage {
 
-    //   TODO
+//   TODO
 //    локаторы logo top footer navbar category
     final static String MAIN_CONTAINER = "//div[@id='maincontainer']";
 
@@ -58,6 +58,18 @@ public abstract class MainPage extends BasePage {
 
     @FindBy(xpath = NAV_PILLS_CATEGORYMENU)
     private List<WebElement> navPillsCategoryMenu;
+
+    @FindBy(xpath = "//a/img[@src='resources/image/18/7a/8.png']")
+    private WebElement logoImage;
+
+    @FindBy(xpath = "//a/img[@title='Automation Test Store']")
+    private WebElement logoTitle;
+
+    @FindBy(xpath = "//a/img[@alt='Automation Test Store']")
+    private WebElement logoText;
+
+    @FindBy(xpath = "//div/a[@href='https://automationteststore.com/']")
+    private WebElement logoHref;
 
     public MainPage(WebDriver driver) {
         super(driver);
@@ -115,8 +127,43 @@ public abstract class MainPage extends BasePage {
         return new CheeksPage(getDriver());
     }
 
+    public WebElement getImage() {
+
+        return logoImage;
+    }
+
     public List<WebElement> getNavPillsCategoryMenu() {
 
         return navPillsCategoryMenu;
+    }
+
+    public boolean isLogoDisplayed() {
+
+        return isImageDisplayed(logoImage);
+    }
+
+    public boolean isLogoClickable() {
+        if (logoImage.isEnabled() && logoImage.isDisplayed()) {
+            return true;
+        }
+        return false;
+    }
+
+    public HomePage clickLogo() {
+        click(logoImage);
+        return new HomePage(getDriver());
+    }
+
+    public String getLogoHref() {
+
+        return getAttribute(logoHref, "href");
+    }
+
+    public String getLogoTitle() {
+        return logoImage.getAttribute("title");
+    }
+
+    public String getLogoText() {
+        return logoImage.getAttribute("alt");
     }
 }
