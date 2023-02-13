@@ -14,8 +14,8 @@ import pages.men.MenPage;
 import pages.men.SkincarePage;
 
 public abstract class MainPage extends BasePage {
-
-    //   TODO
+   
+//   TODO
 //    локаторы logo top footer navbar category
     final static String MAIN_CONTAINER = "//div[@id='maincontainer']";
 
@@ -23,7 +23,6 @@ public abstract class MainPage extends BasePage {
 
     private static final String CATEGORYMENU = "//section[@id='categorymenu']";
     private static final String CONTAINS = "//a[contains(text(),";
-
 
     @FindBy(xpath = CATEGORYMENU + CONTAINS + "'Home')]")
     private WebElement homeMenu;
@@ -51,6 +50,18 @@ public abstract class MainPage extends BasePage {
 
     @FindBy(xpath = CATEGORYMENU + CONTAINS + "'Books')]")
     private WebElement booksMenu;
+
+    @FindBy(xpath = "//a/img[@src='resources/image/18/7a/8.png']")
+    private WebElement logoImage;
+
+    @FindBy(xpath = "//a/img[@title='Automation Test Store']")
+    private WebElement logoTitle;
+
+    @FindBy(xpath = "//a/img[@alt='Automation Test Store']")
+    private WebElement logoText;
+
+    @FindBy(xpath = "//div/a[@href='https://automationteststore.com/']")
+    private WebElement logoHref;
 
     public MainPage(WebDriver driver) {
         super(driver);
@@ -106,5 +117,40 @@ public abstract class MainPage extends BasePage {
     public CheeksPage mouseHoverOnSubMenu() {
         mouseHoverAndClick(cheeksSubmenu);
         return new CheeksPage(getDriver());
+    }
+
+    public WebElement getImage() {
+
+        return logoImage;
+    }
+
+    public boolean isLogoDisplayed() {
+
+        return isImageDisplayed(logoImage);
+    }
+
+    public boolean isLogoClickable() {
+        if (logoImage.isEnabled() && logoImage.isDisplayed()) {
+            return true;
+        }
+        return false;
+    }
+
+    public HomePage clickLogo() {
+        click(logoImage);
+        return new HomePage(getDriver());
+    }
+
+    public String getLogoHref() {
+
+        return getAttribute(logoHref, "href");
+    }
+
+    public String getLogoTitle() {
+        return logoImage.getAttribute("title");
+    }
+
+    public String getLogoText() {
+        return logoImage.getAttribute("alt");
     }
 }
