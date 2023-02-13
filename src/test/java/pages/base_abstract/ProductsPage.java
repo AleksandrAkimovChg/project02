@@ -3,9 +3,8 @@ package pages.base_abstract;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import pages.apparel_and_accessories.ApparelAndAccessoriesPage;
 
-public abstract class ProductCategoriesPage extends MainPage {
+public abstract class ProductsPage<ProductsPageType> extends MainPage {
 
     final static String MAIN_CONTAINER = "//div[@id='maincontainer']";
     final static String THUMBNAILS_GRID = "//div[@class='thumbnails grid row list-inline']";
@@ -14,6 +13,8 @@ public abstract class ProductCategoriesPage extends MainPage {
     final static String THUMBNAIL = "//div[@class='thumbnail']";
     final static String HREF_IMG_SCR = "/a[@href]/img[@src]";
 
+    @FindBy(xpath = "//select[@name='sort' or id='sort']")
+    private WebElement sort_by;
 
     @FindBy(xpath = "//button[@id='list']")
     private WebElement button_list;
@@ -45,8 +46,16 @@ public abstract class ProductCategoriesPage extends MainPage {
     @FindBy(xpath = MAIN_CONTAINER + THUMBNAILS_GRID + THUMBNAIL + "[8]" + HREF_IMG_SCR)
     private WebElement grid_product_8;
 
-    public ProductCategoriesPage(WebDriver driver) {
+    public ProductsPage(WebDriver driver) {
         super(driver);
+    }
+
+    protected abstract ProductsPageType createProductsPage();
+
+    public ProductsPageType clickNavPillsCategoryMenu(int index) {
+        getNavPillsCategoryMenu().get(index).click();
+
+        return createProductsPage();
     }
 
     public void clickGridProduct_1() {
@@ -79,5 +88,17 @@ public abstract class ProductCategoriesPage extends MainPage {
 
     public void clickGridProduct_8() {
         click(grid_product_8);
+    }
+
+    public ProductsPageType clickButtonList() {
+        click(button_list);
+
+        return createProductsPage();
+    }
+
+    public ProductsPageType clickButtonGrid() {
+        click(button_grid);
+
+        return createProductsPage();
     }
 }

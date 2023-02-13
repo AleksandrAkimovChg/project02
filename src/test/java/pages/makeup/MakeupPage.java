@@ -1,11 +1,16 @@
 package pages.makeup;
 
 import org.openqa.selenium.WebDriver;
-import pages.base_abstract.MainPage;
-import pages.base_abstract.ProductCategoriesPage;
+import pages.base_abstract.ProductsPage;
 
-public class MakeupPage extends ProductCategoriesPage {
+public class MakeupPage extends ProductsPage<MakeupPage> {
+
     public MakeupPage(WebDriver driver) {
         super(driver);
+    }
+
+    protected MakeupPage createProductsPage() {
+
+        return new MakeupPage(getDriver());
     }
 }

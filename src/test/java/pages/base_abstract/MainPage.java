@@ -13,8 +13,10 @@ import pages.makeup.MakeupPage;
 import pages.men.MenPage;
 import pages.men.SkincarePage;
 
+import java.util.List;
+
 public abstract class MainPage extends BasePage {
-   
+
 //   TODO
 //    локаторы logo top footer navbar category
     final static String MAIN_CONTAINER = "//div[@id='maincontainer']";
@@ -22,34 +24,40 @@ public abstract class MainPage extends BasePage {
 //    breadcrumbs
 
     private static final String CATEGORYMENU = "//section[@id='categorymenu']";
-    private static final String CONTAINS = "//a[contains(text(),";
+    private static final String NAV_PILLS_CATEGORYMENU = CATEGORYMENU + "/nav/ul/li";
 
-    @FindBy(xpath = CATEGORYMENU + CONTAINS + "'Home')]")
+    private static final String HREF = "//a[@href='https://automationteststore.com/index.php?rt=product/category&path=";
+
+
+    @FindBy(css = "#categorymenu > nav > ul > li:nth-child(1) > a")
     private WebElement homeMenu;
 
-    @FindBy(xpath = CATEGORYMENU + CONTAINS + "'Apparel & accessories')]")
+    @FindBy(css = "#categorymenu > nav > ul > li:nth-child(2) > a")
     private WebElement apparelAccessoriesMenu;
 
-    @FindBy(xpath = CATEGORYMENU + CONTAINS + "'Makeup')]")
+    @FindBy(css = "#categorymenu > nav > ul > li:nth-child(3) > a")
     private WebElement makeupMenu;
 
-    @FindBy(xpath = CATEGORYMENU + CONTAINS + "'Cheeks')]")
+    @FindBy(xpath = CATEGORYMENU + HREF + "36_40']")
     private WebElement cheeksSubmenu;
 
-    @FindBy(xpath = CATEGORYMENU + CONTAINS + "'Skincare')]")
+    @FindBy(css = "#categorymenu > nav > ul > li:nth-child(4) > a")
     private WebElement skincareMenu;
 
-    @FindBy(xpath = CATEGORYMENU + CONTAINS + "'Fragrance')]")
+    @FindBy(css = "#categorymenu > nav > ul > li:nth-child(5) > a")
     private WebElement fragranceMenu;
 
     @FindBy(css = "#categorymenu > nav > ul > li:nth-child(6) > a")
     private WebElement menMenu;
 
-    @FindBy(xpath = CATEGORYMENU + CONTAINS + "'Hair Care')]")
+    @FindBy(css = "#categorymenu > nav > ul > li:nth-child(7) > a")
     private WebElement haircareMenu;
 
-    @FindBy(xpath = CATEGORYMENU + CONTAINS + "'Books')]")
+    @FindBy(css = "#categorymenu > nav > ul > li:nth-child(8) > a")
     private WebElement booksMenu;
+
+    @FindBy(xpath = NAV_PILLS_CATEGORYMENU)
+    private List<WebElement> navPillsCategoryMenu;
 
     @FindBy(xpath = "//a/img[@src='resources/image/18/7a/8.png']")
     private WebElement logoImage;
@@ -67,25 +75,25 @@ public abstract class MainPage extends BasePage {
         super(driver);
     }
 
-    public ApparelAndAccessoriesPage clickApparelAndAccessoriesCategoryMenu() {
+    public ApparelAndAccessoriesPage clickApparelAndAccessoriesMenu() {
         click(apparelAccessoriesMenu);
 
         return new ApparelAndAccessoriesPage(getDriver());
     }
 
-    public MakeupPage clickMakeupCategoryMenu() {
+    public MakeupPage clickMakeupMenu() {
         click(makeupMenu);
 
         return new MakeupPage(getDriver());
     }
 
-    public SkincarePage clickSkincareCategoryMenu() {
+    public SkincarePage clickSkincareMenu() {
         click(skincareMenu);
 
         return new SkincarePage(getDriver());
     }
 
-    public FragrancePage clickFragranceCategoryMenu() {
+    public FragrancePage clickFragranceMenu() {
         click(fragranceMenu);
 
         return new FragrancePage(getDriver());
@@ -97,13 +105,13 @@ public abstract class MainPage extends BasePage {
         return new MenPage(getDriver());
     }
 
-    public HairCarePage clickHairCareCategoryMenu() {
+    public HairCarePage clickHairCareMenu() {
         click(haircareMenu);
 
         return new HairCarePage(getDriver());
     }
 
-    public BooksPage clickBooksCategoryMenu() {
+    public BooksPage clickBooksMenu() {
         click(booksMenu);
 
         return new BooksPage(getDriver());
@@ -122,6 +130,11 @@ public abstract class MainPage extends BasePage {
     public WebElement getImage() {
 
         return logoImage;
+    }
+
+    public List<WebElement> getNavPillsCategoryMenu() {
+
+        return navPillsCategoryMenu;
     }
 
     public boolean isLogoDisplayed() {
