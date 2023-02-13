@@ -26,7 +26,7 @@ public abstract class MainPage extends BasePage {
     private static final String CATEGORYMENU = "//section[@id='categorymenu']";
     private static final String NAV_PILLS_CATEGORYMENU = CATEGORYMENU + "/nav/ul/li";
 
-    private static final String CONTAINS = "//a[contains(text(),";
+    private static final String HREF = "//a[@href='https://automationteststore.com/index.php?rt=product/category&path=";
 
 
     @FindBy(css = "#categorymenu > nav > ul > li:nth-child(1) > a")
@@ -38,7 +38,7 @@ public abstract class MainPage extends BasePage {
     @FindBy(css = "#categorymenu > nav > ul > li:nth-child(3) > a")
     private WebElement makeupMenu;
 
-    @FindBy(xpath = CATEGORYMENU + CONTAINS + "'Cheeks')]")
+    @FindBy(xpath = CATEGORYMENU + HREF + "36_40']")
     private WebElement cheeksSubmenu;
 
     @FindBy(css = "#categorymenu > nav > ul > li:nth-child(4) > a")
