@@ -22,7 +22,7 @@ public class NewLadies_Sandals_ID116_Test extends BaseTest {
                 new ApparelAndAccessoriesPage(getDriver());
 
         String oldURL = openBaseURL()
-                .clickApparelAndAccessoriesCategoryMenu().getURL();;
+                .clickApparelAndAccessoriesMenu().getURL();;
 
         apparelAndAccessoriesPage
                 .clickNewLadiesSandals();
