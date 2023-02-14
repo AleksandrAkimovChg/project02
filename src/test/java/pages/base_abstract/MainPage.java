@@ -11,7 +11,7 @@ import pages.home.HomePage;
 import pages.makeup.CheeksPage;
 import pages.makeup.MakeupPage;
 import pages.men.MenPage;
-import pages.men.SkincarePage;
+import pages.skincare.SkincarePage;
 
 import java.util.List;
 
