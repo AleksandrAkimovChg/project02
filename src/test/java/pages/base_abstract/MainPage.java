@@ -26,7 +26,7 @@ public abstract class MainPage extends BasePage {
     private static final String CATEGORYMENU = "//section[@id='categorymenu']";
     private static final String NAV_PILLS_CATEGORYMENU = CATEGORYMENU + "/nav/ul/li";
     private static final String  POPULARBRANDS_MENU = "//section[@id='popularbrands']";
-    private static final String  BRANDCAROUSAL_POPULARBRANDS_MENU = POPULARBRANDS_MENU + "//ul[@id='brandcarousal']/li//a[@href]";
+    private static final String  BRANDCAROUSAL_POPULARBRANDS_MENU = POPULARBRANDS_MENU + "//ul[@id='brandcarousal']/li//a";
 
     private static final String HREF = "//a[@href='https://automationteststore.com/index.php?rt=product/category&path=";
 
