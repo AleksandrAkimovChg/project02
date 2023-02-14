@@ -20,6 +20,8 @@ public class ProjectConstants {
 
     public final static String MEN_PAGE_URL = BASE_URL + "?rt=product/category&path=58";
     public final static String MEN_PAGE_TITLE = "Men";
+    public final static String SKINCARE_PAGE_URL = BASE_URL + "?rt=product/category&path=43";
+    public final static String SKINCARE_PAGE_TITLE = "Skincare";
 
     @Description("New Ladies High Wedge Heel Toe Thong Diamante Flip Flop Sandals")
     public static final String URL_PRODUCT_ID_116 = URL_PRODUCT_ID + "116";
