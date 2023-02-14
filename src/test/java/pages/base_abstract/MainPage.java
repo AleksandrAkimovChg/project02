@@ -26,8 +26,8 @@ public abstract class MainPage extends BasePage {
     private static final String CATEGORYMENU = "//section[@id='categorymenu']";
     private static final String NAV_PILLS_CATEGORYMENU = CATEGORYMENU + "/nav/ul/li";
     private static final String  POPULARBRANDS_MENU = "//section[@id='popularbrands']";
-    private static final String  BRANDCAROUSAL_POPULARBRANDS_MENU = POPULARBRANDS_MENU + "//ul[@id='brandcarousal']/li//a[@href]";
-
+    private static final String BRANDCAROUSAL_POPULARBRANDS_MENU_HREF = POPULARBRANDS_MENU + "//ul[@id='brandcarousal']/li//a[@href]";
+    private static final String  BRANDCAROUSAL_POPULARBRANDS_MENU_IMG = POPULARBRANDS_MENU + "//ul[@id='brandcarousal']/li//a/img[@alt]";
     private static final String HREF = "//a[@href='https://automationteststore.com/index.php?rt=product/category&path=";
 
 
@@ -76,8 +76,11 @@ public abstract class MainPage extends BasePage {
     @FindBy(xpath = POPULARBRANDS_MENU)
     private WebElement brandScrollingList;
 
-    @FindBy(xpath = BRANDCAROUSAL_POPULARBRANDS_MENU)
-    private List<WebElement> brandsScrollingListLinks;
+    @FindBy(xpath = BRANDCAROUSAL_POPULARBRANDS_MENU_HREF)
+    private List<WebElement> brandsscrollinglistHreflinks;
+
+    @FindBy(xpath = BRANDCAROUSAL_POPULARBRANDS_MENU_IMG)
+    private List<WebElement> brandsscrollinglistImglinks;
 
     public MainPage(WebDriver driver) {
         super(driver);
@@ -175,24 +178,29 @@ public abstract class MainPage extends BasePage {
         return logoImage.getAttribute("alt");
     }
 
-    public List<WebElement> getBrandsScrollingListLinks() {
+    public List<WebElement> getBrandsScrollingListHrefLinks() {
 
-        return brandsScrollingListLinks;
+        return brandsscrollinglistHreflinks;
+    }
+
+    public List<WebElement> getBrandsScrollingListImgLinks() {
+
+        return brandsscrollinglistImglinks;
     }
 
     public void clickBrandsScrollingListMenu(int index) {
-        getBrandsScrollingListLinks().get(index).click();
+        getBrandsScrollingListHrefLinks().get(index).click();
     }
 
     public String getAltText(int index) {
         scrollByVisibleElement(brandScrollingList);
 
-        return getAttributeByIndex(index, getBrandsScrollingListLinks(), "alt");
+        return getAttributeByIndex(index, getBrandsScrollingListImgLinks(), "alt");
     }
 
     public String getHref(int index) {
         scrollByVisibleElement(brandScrollingList);
 
-        return getAttributeByIndex(index, getBrandsScrollingListLinks(), "href");
+        return getAttributeByIndex(index, getBrandsScrollingListHrefLinks(), "href");
     }
 }

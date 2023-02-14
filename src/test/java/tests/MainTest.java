@@ -1,10 +1,14 @@
 package tests;
 
 import base.BaseTest;
+import org.apache.hc.core5.http.io.SessionOutputBuffer;
+import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.home.HomePage;
 import testData.TestData;
+
+import java.util.List;
 
 public class MainTest extends BaseTest {
 
@@ -36,6 +40,9 @@ public class MainTest extends BaseTest {
         String actualUrl = getDriver().getCurrentUrl();
         String actualTitle = getDriver().getTitle();
 
+        System.out.println(actualAltText);
+        System.out.println(actualUrlHref);
+
 
         Assert.assertNotEquals(actualUrl, oldUrl);
         Assert.assertEquals(actualUrl, url);
@@ -43,5 +50,7 @@ public class MainTest extends BaseTest {
         Assert.assertEquals(actualTitle, title);
         Assert.assertEquals(actualAltText, altText);
         Assert.assertEquals(actualUrlHref, href);
+
+
     }
 }
