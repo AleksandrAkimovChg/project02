@@ -193,13 +193,13 @@ public abstract class MainPage extends BasePage {
     }
 
     public String getAltText(int index) {
-        scrollByVisibleElement(brandScrollingList);
+//        scrollByVisibleElement(brandScrollingList);
 
         return getAttributeByIndex(index, getBrandsScrollingListImgLinks(), "alt");
     }
 
     public String getHref(int index) {
-        scrollByVisibleElement(brandScrollingList);
+//        scrollByVisibleElement(brandScrollingList);
 
         return getAttributeByIndex(index, getBrandsScrollingListHrefLinks(), "href");
     }

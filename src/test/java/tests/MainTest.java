@@ -40,17 +40,11 @@ public class MainTest extends BaseTest {
         String actualUrl = getDriver().getCurrentUrl();
         String actualTitle = getDriver().getTitle();
 
-        System.out.println(actualAltText);
-        System.out.println(actualUrlHref);
-
-
         Assert.assertNotEquals(actualUrl, oldUrl);
         Assert.assertEquals(actualUrl, url);
         Assert.assertNotEquals(actualTitle, oldTitle);
         Assert.assertEquals(actualTitle, title);
         Assert.assertEquals(actualAltText, altText);
         Assert.assertEquals(actualUrlHref, href);
-
-
     }
 }
