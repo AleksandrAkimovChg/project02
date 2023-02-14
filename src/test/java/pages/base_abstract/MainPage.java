@@ -25,6 +25,8 @@ public abstract class MainPage extends BasePage {
 
     private static final String CATEGORYMENU = "//section[@id='categorymenu']";
     private static final String NAV_PILLS_CATEGORYMENU = CATEGORYMENU + "/nav/ul/li";
+    private static final String  POPULARBRANDS_MENU = "//section[@id='popularbrands']";
+    private static final String  BRANDCAROUSAL_POPULARBRANDS_MENU = POPULARBRANDS_MENU + "//ul[@id='brandcarousal']/li//a[@href]";
 
     private static final String HREF = "//a[@href='https://automationteststore.com/index.php?rt=product/category&path=";
 
@@ -70,6 +72,12 @@ public abstract class MainPage extends BasePage {
 
     @FindBy(xpath = "//div/a[@href='https://automationteststore.com/']")
     private WebElement logoHref;
+
+    @FindBy(xpath = POPULARBRANDS_MENU)
+    private WebElement brandScrollingList;
+
+    @FindBy(xpath = BRANDCAROUSAL_POPULARBRANDS_MENU)
+    private List<WebElement> brandsScrollingListLinks;
 
     public MainPage(WebDriver driver) {
         super(driver);
@@ -165,5 +173,26 @@ public abstract class MainPage extends BasePage {
 
     public String getLogoText() {
         return logoImage.getAttribute("alt");
+    }
+
+    public List<WebElement> getBrandsScrollingListLinks() {
+
+        return brandsScrollingListLinks;
+    }
+
+    public void clickBrandsScrollingListMenu(int index) {
+        getBrandsScrollingListLinks().get(index).click();
+    }
+
+    public String getAltText(int index) {
+        scrollByVisibleElement(brandScrollingList);
+
+        return getAttributeByIndex(index, getBrandsScrollingListLinks(), "alt");
+    }
+
+    public String getHref(int index) {
+        scrollByVisibleElement(brandScrollingList);
+
+        return getAttributeByIndex(index, getBrandsScrollingListLinks(), "href");
     }
 }
