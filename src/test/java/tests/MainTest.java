@@ -3,6 +3,8 @@ package tests;
 import base.BaseTest;
 import org.testng.Assert;
 import org.testng.annotations.Test;
+import pages.home.HomePage;
+import testData.TestData;
 
 public class MainTest extends BaseTest {
 
@@ -15,5 +17,30 @@ public class MainTest extends BaseTest {
                         .getURL();
 
         Assert.assertEquals(actualUrl, expectedUrl);
+    }
+
+    @Test(dataProviderClass = TestData.class, dataProvider = "BrandsScrollingList")
+    public void testBrandsScrollingListLinksNavigateToCorrespondingPages(
+            int index, String altText, String href, String url, String title) {
+
+        HomePage homePage = openBaseURL();
+
+        String oldUrl = homePage.getURL();
+        String oldTitle = homePage.getTitle();
+
+        String actualAltText = homePage.getAltText(index);
+        String actualUrlHref = homePage.getHref(index);
+
+        homePage.clickBrandsScrollingListMenu(index);
+
+        String actualUrl = getDriver().getCurrentUrl();
+        String actualTitle = getDriver().getTitle();
+
+        Assert.assertNotEquals(actualUrl, oldUrl);
+        Assert.assertEquals(actualUrl, url);
+        Assert.assertNotEquals(actualTitle, oldTitle);
+        Assert.assertEquals(actualTitle, title);
+        Assert.assertEquals(actualAltText, altText);
+        Assert.assertEquals(actualUrlHref, href);
     }
 }
