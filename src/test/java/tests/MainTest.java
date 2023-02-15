@@ -1,14 +1,10 @@
 package tests;
 
 import base.BaseTest;
-import org.apache.hc.core5.http.io.SessionOutputBuffer;
-import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.home.HomePage;
 import testData.TestData;
-
-import java.util.List;
 
 public class MainTest extends BaseTest {
 

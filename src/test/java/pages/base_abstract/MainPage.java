@@ -17,7 +17,7 @@ import java.util.List;
 
 public abstract class MainPage extends BasePage {
 
-//   TODO
+    //   TODO
 //    локаторы logo top footer navbar category
     final static String MAIN_CONTAINER = "//div[@id='maincontainer']";
 
@@ -25,9 +25,9 @@ public abstract class MainPage extends BasePage {
 
     private static final String CATEGORYMENU = "//section[@id='categorymenu']";
     private static final String NAV_PILLS_CATEGORYMENU = CATEGORYMENU + "/nav/ul/li";
-    private static final String  POPULARBRANDS_MENU = "//section[@id='popularbrands']";
+    private static final String POPULARBRANDS_MENU = "//section[@id='popularbrands']";
     private static final String BRANDCAROUSAL_POPULARBRANDS_MENU_HREF = POPULARBRANDS_MENU + "//ul[@id='brandcarousal']/li//a[@href]";
-    private static final String  BRANDCAROUSAL_POPULARBRANDS_MENU_IMG = POPULARBRANDS_MENU + "//ul[@id='brandcarousal']/li//a/img[@alt]";
+    private static final String BRANDCAROUSAL_POPULARBRANDS_MENU_IMG = POPULARBRANDS_MENU + "//ul[@id='brandcarousal']/li//a/img[@alt]";
     private static final String HREF = "//a[@href='https://automationteststore.com/index.php?rt=product/category&path=";
 
 
@@ -193,13 +193,11 @@ public abstract class MainPage extends BasePage {
     }
 
     public String getAltText(int index) {
-//        scrollByVisibleElement(brandScrollingList);
 
         return getAttributeByIndex(index, getBrandsScrollingListImgLinks(), "alt");
     }
 
     public String getHref(int index) {
-//        scrollByVisibleElement(brandScrollingList);
 
         return getAttributeByIndex(index, getBrandsScrollingListHrefLinks(), "href");
     }
