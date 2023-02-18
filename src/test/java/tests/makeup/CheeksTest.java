@@ -12,8 +12,8 @@ public class CheeksTest extends BaseTest {
         Assert.assertTrue(
 
         openBaseURL()
-                .mouseHoverOnCategoryMenu()
-                .mouseHoverOnSubMenu()
+                .mouseHoverOnMakeupMenu()
+                .mouseHoverOnCheeksSubmenu()
                 .clickAddToCart()
                 .isPriceTagChanged()
         );
