@@ -3,7 +3,6 @@ package pages.base_abstract;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import pages.apparel_and_accessories.TShirtsPage;
 
 import java.util.List;
 
@@ -18,8 +17,6 @@ public abstract class ProductsPage<ProductsPageType> extends MainPage {
     final static String PRDOCUTNAME_PATH = MAIN_CONTAINER + FIXED_WRAPPER + PRDOCUTNAME;
     final static String THUMBNAIL = "//div[@class='thumbnail'][1]";
     final static String HREF_IMG_SCR = "/a[@href]/img[@src]";
-
-
 
     // sort
     @FindBy(xpath = SORT_BY)
@@ -49,7 +46,7 @@ public abstract class ProductsPage<ProductsPageType> extends MainPage {
     @FindBy(xpath = SORT_BY + "/option[7]")
     private WebElement sortByRatingLowest;
 
-    //
+    // buttons
     @FindBy(xpath = "//button[@id='list']")
     private WebElement button_list;
 
@@ -84,10 +81,7 @@ public abstract class ProductsPage<ProductsPageType> extends MainPage {
     @FindBy(xpath = "")
     private WebElement gridProductName8;
 
-
-
     // prdocutimage
-    // MAIN_CONTAINER + THUMBNAILS_GRID + THUMBNAIL + "[1]" + HREF_IMG_SCR
     @FindBy(xpath = MAIN_CONTAINER + THUMBNAILS_GRID + THUMBNAIL + "[1]" + HREF_IMG_SCR)
     private WebElement gridProductImage1;
 
@@ -154,35 +148,35 @@ public abstract class ProductsPage<ProductsPageType> extends MainPage {
         return createProductsPage();
     }
 
-    public void clickGridProduct_1() {
+    public void clickGridProduct1() {
         click(gridProductImage1);
     }
 
-    public void clickGridProduct_2() {
+    public void clickGridProduct2() {
         click(gridProductImage2);
     }
 
-    public void clickGridProduct_3() {
+    public void clickGridProduct3() {
         click(gridProductImage3);
     }
 
-    public void clickGridProduct_4() {
+    public void clickGridProduct4() {
         click(gridProductImage5);
     }
 
-    public void clickGridProduct_5() {
+    public void clickGridProduct5() {
         click(gridProductImage5);
     }
 
-    public void clickGridProduct_6() {
+    public void clickGridProduct6() {
         click(gridProductImage6);
     }
 
-    public void clickGridProduct_7() {
+    public void clickGridProduct7() {
         click(gridProductImage7);
     }
 
-    public void clickGridProduct_8() {
+    public void clickGridProduct8() {
         click(gridProductImage8);
     }
 

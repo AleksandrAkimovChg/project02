@@ -15,7 +15,7 @@ public class ApparelAndAccessoriesPage extends ProductsPage<ApparelAndAccessorie
     }
 
     public NewLadies_Sandals_ID116_Page clickNewLadiesSandals() {
-        clickGridProduct_1();
+        clickGridProduct1();
 
         return new NewLadies_Sandals_ID116_Page(getDriver());
     }
