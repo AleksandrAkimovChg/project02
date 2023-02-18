@@ -4,6 +4,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import pages.apparel_and_accessories.ApparelAndAccessoriesPage;
+import pages.apparel_and_accessories.TShirtsPage;
 import pages.books.BooksPage;
 import pages.fragrance.FragrancePage;
 import pages.hair_care.HairCarePage;
@@ -85,6 +86,9 @@ public abstract class MainPage extends BasePage {
 
     @FindBy(xpath = DROPDOWN_HOME_MENU)
     private List<WebElement> dropdownHomeMenuList;
+
+    @FindBy(xpath = "//a[contains(text(),'T-shirts')]")
+    private WebElement apparelAndAccessoriesTShirtsSubMenu;
 
     public MainPage(WebDriver driver) {
         super(driver);
@@ -228,5 +232,17 @@ public abstract class MainPage extends BasePage {
     public int countCategoriesDropdownHomeMenuList() {
 
         return getListSize(dropdownHomeMenuList);
+    }
+
+    public HomePage mouseHoverOnApparelAndAccessories() {
+        mouseHover(apparelAccessoriesMenu);
+
+        return new HomePage(getDriver());
+    }
+
+    public TShirtsPage mouseHoverSubMenu() {
+        mouseHoverAndClick(apparelAndAccessoriesTShirtsSubMenu);
+
+        return new TShirtsPage(getDriver());
     }
 }

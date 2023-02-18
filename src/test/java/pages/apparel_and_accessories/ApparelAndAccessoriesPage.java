@@ -5,8 +5,6 @@ import pages.base_abstract.ProductsPage;
 import pages.product_list.NewLadies_Sandals_ID116_Page;
 
 public class ApparelAndAccessoriesPage extends ProductsPage<ApparelAndAccessoriesPage> {
-
-
     public ApparelAndAccessoriesPage(WebDriver driver) {
         super(driver);
     }
