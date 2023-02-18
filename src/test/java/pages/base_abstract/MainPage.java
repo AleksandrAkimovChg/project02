@@ -87,7 +87,7 @@ public abstract class MainPage extends BasePage {
     @FindBy(xpath = DROPDOWN_HOME_MENU)
     private List<WebElement> dropdownHomeMenuList;
 
-    @FindBy(xpath = "//section[@id= 'categorymenu']/nav/ul/li[2]/div/ul[1]/li[2]/a") //css = "#categorymenu > nav > ul > li:nth-child(2) > div > ul/li[2]/a")
+    @FindBy(xpath = "//a[contains(text(),'T-shirts')]")
     private WebElement apparelAndAccessoriesTShirtsSubMenu;
 
     public MainPage(WebDriver driver) {

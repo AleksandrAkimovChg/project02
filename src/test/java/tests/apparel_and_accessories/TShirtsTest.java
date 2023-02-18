@@ -9,7 +9,6 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 public class TShirtsTest extends BaseTest {
-
     @Test
     public void testProductListSortByAZ () {
 

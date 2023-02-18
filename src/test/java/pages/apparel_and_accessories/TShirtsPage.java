@@ -33,10 +33,10 @@ public class TShirtsPage extends ProductsPage<TShirtsPage> {
         return getListText(productTitle);
     }
 
-    public pages.apparel_and_accessories.TShirtsPage clickSortBy(){
+    public TShirtsPage clickSortBy(){
         click(sortBy);
 
-        return new pages.apparel_and_accessories.TShirtsPage(getDriver());
+        return new TShirtsPage(getDriver());
     }
 
     public TShirtsPage clickSortByAZ(){
@@ -45,7 +45,7 @@ public class TShirtsPage extends ProductsPage<TShirtsPage> {
         return new TShirtsPage(getDriver());
     }
 
-    public pages.apparel_and_accessories.TShirtsPage clickSortByZA() {
+    public TShirtsPage clickSortByZA() {
         click(sortByZA);
 
         return new TShirtsPage(getDriver());
