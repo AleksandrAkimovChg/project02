@@ -29,6 +29,7 @@ public abstract class MainPage extends BasePage {
     private static final String BRANDCAROUSAL_POPULARBRANDS_MENU_HREF = POPULARBRANDS_MENU + "//ul[@id='brandcarousal']/li//a[@href]";
     private static final String BRANDCAROUSAL_POPULARBRANDS_MENU_IMG = POPULARBRANDS_MENU + "//ul[@id='brandcarousal']/li//a/img[@alt]";
     private static final String HREF = "//a[@href='https://automationteststore.com/index.php?rt=product/category&path=";
+    private static final String DROPDOWN_HOME_MENU = NAV_PILLS_CATEGORYMENU + "/div/ul[@id='main_menu']/li";
 
 
     @FindBy(css = "#categorymenu > nav > ul > li:nth-child(1) > a")
@@ -82,6 +83,9 @@ public abstract class MainPage extends BasePage {
     @FindBy(xpath = BRANDCAROUSAL_POPULARBRANDS_MENU_IMG)
     private List<WebElement> brandsscrollinglistImglinks;
 
+    @FindBy(xpath = DROPDOWN_HOME_MENU)
+    private List<WebElement> dropdownHomeMenuList;
+
     public MainPage(WebDriver driver) {
         super(driver);
     }
@@ -134,13 +138,21 @@ public abstract class MainPage extends BasePage {
         return new BooksPage(getDriver());
     }
 
-    public HomePage mouseHoverOnCategoryMenu() {
-        mouseHover(makeupMenu);
+    public HomePage mouseHoverOnHomeMenu() {
+        mouseHover(homeMenu);
+
         return new HomePage(getDriver());
     }
 
-    public CheeksPage mouseHoverOnSubMenu() {
+    public HomePage mouseHoverOnMakeupMenu() {
+        mouseHover(makeupMenu);
+
+        return new HomePage(getDriver());
+    }
+
+    public CheeksPage mouseHoverOnCheeksSubmenu() {
         mouseHoverAndClick(cheeksSubmenu);
+
         return new CheeksPage(getDriver());
     }
 
@@ -206,5 +218,15 @@ public abstract class MainPage extends BasePage {
     public String getHref(int index) {
 
         return getAttributeByIndex(index, getBrandsScrollingListHrefLinks(), "href");
+    }
+
+    public List<String> getDropdownHomeMenuList() {
+
+        return getListText(dropdownHomeMenuList);
+    }
+
+    public int countCategoriesDropdownHomeMenuList() {
+
+        return getListSize(dropdownHomeMenuList);
     }
 }
