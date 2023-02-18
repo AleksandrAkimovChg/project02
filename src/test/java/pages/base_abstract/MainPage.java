@@ -4,6 +4,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import pages.apparel_and_accessories.ApparelAndAccessoriesPage;
+import pages.apparel_and_accessories.TShirtsPage;
 import pages.books.BooksPage;
 import pages.fragrance.FragrancePage;
 import pages.hair_care.HairCarePage;
@@ -30,6 +31,9 @@ public abstract class MainPage extends BasePage {
 
     @FindBy(xpath = CATEGORYMENU + CONTAINS + "'Apparel & accessories')]")
     private WebElement apparelAccessoriesMenu;
+
+    @FindBy(xpath = CATEGORYMENU + CONTAINS + "'T-shirts')]")
+    private WebElement apparelAccessoriesTShirtsSubMenu;
 
     @FindBy(xpath = CATEGORYMENU + CONTAINS + "'Makeup')]")
     private WebElement makeupMenu;
@@ -105,5 +109,15 @@ public abstract class MainPage extends BasePage {
     public CheeksPage mouseHoverOnSubMenu() {
         mouseHoverAndClick(cheeksSubmenu);
         return new CheeksPage(getDriver());
+    }
+
+    public HomePage mouseHoverOnApparelAccessories() {
+        mouseHover(apparelAccessoriesMenu);
+        return new HomePage(getDriver());
+    }
+
+    public TShirtsPage mouseHoverSubMenu() {
+        mouseHoverAndClick(apparelAccessoriesTShirtsSubMenu);
+        return new TShirtsPage(getDriver());
     }
 }

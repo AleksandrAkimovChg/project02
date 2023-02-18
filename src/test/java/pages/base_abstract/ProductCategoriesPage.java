@@ -2,8 +2,8 @@ package pages.base_abstract;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
-import pages.apparel_and_accessories.ApparelAndAccessoriesPage;
 
 public abstract class ProductCategoriesPage extends MainPage {
 
@@ -44,6 +44,11 @@ public abstract class ProductCategoriesPage extends MainPage {
     @FindBy(xpath = THUMBNAILS_GRID + THUMBNAIL_8 + HREF_IMG_SCR)
     private WebElement grid_product_8;
 
+    @FindBy(id = "//select[@id='sort']")
+    private WebElement sortBy;
+
+    @FindBy(id = "//select[@id='sort']/option[2]")
+    private WebElement sortByAZ;
     public ProductCategoriesPage(WebDriver driver) {
         super(driver);
     }

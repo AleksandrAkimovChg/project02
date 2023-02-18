@@ -8,9 +8,8 @@ import java.util.List;
 
 public abstract class TablePage extends FormPage {
 
-    @FindBy(xpath = "//table[@class='table table-striped table-bordered']/tbody/tr/th")
+    @FindBy(xpath = "//div[@id='maincontainer']//div[@class='thumbnails grid row list-inline']//div[@class='fixed']/a")   //"//table[@class='table table-striped table-bordered']/tbody/tr/th")
     private List<WebElement> tableHeaders;
-
 
     public TablePage(WebDriver driver) {
         super(driver);
