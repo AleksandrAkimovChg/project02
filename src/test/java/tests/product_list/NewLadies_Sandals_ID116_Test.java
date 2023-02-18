@@ -12,14 +12,14 @@ public class NewLadies_Sandals_ID116_Test extends BaseTest {
 
     @Test
     public void testNavigatesToNewLadiesSandals_ID116_Page() {
-        final String expectedURL = URL_PRODUCT_ID_116;
+        final String expectedURL = EXPECTED_URL_PRODUCT_ID_116;
+
+        ApparelAndAccessoriesPage apparelAndAccessoriesPage =
+                new ApparelAndAccessoriesPage(getDriver());
 
         NewLadies_Sandals_ID116_Page
                 newLadies_Sandals_ID116_Page =
                 new NewLadies_Sandals_ID116_Page(getDriver());
-
-        ApparelAndAccessoriesPage apparelAndAccessoriesPage =
-                new ApparelAndAccessoriesPage(getDriver());
 
         String oldURL = openBaseURL()
                 .clickApparelAndAccessoriesMenu().getURL();;

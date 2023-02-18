@@ -18,12 +18,7 @@ import java.util.List;
 
 public abstract class MainPage extends BasePage {
 
-    //   TODO
-//    локаторы logo top footer navbar category
     final static String MAIN_CONTAINER = "//div[@id='maincontainer']";
-
-//    breadcrumbs
-
     private static final String CATEGORYMENU = "//section[@id='categorymenu']";
     private static final String NAV_PILLS_CATEGORYMENU = CATEGORYMENU + "/nav/ul/li";
     private static final String POPULARBRANDS_MENU = "//section[@id='popularbrands']";
@@ -32,12 +27,31 @@ public abstract class MainPage extends BasePage {
     private static final String HREF = "//a[@href='https://automationteststore.com/index.php?rt=product/category&path=";
     private static final String DROPDOWN_HOME_MENU = NAV_PILLS_CATEGORYMENU + "/div/ul[@id='main_menu']/li";
 
+    // logo
 
+    @FindBy(xpath = "//a/img[@src='resources/image/18/7a/8.png']")
+    private WebElement logoImage;
+
+    @FindBy(xpath = "//a/img[@title='Automation Test Store']")
+    private WebElement logoTitle;
+
+    @FindBy(xpath = "//a/img[@alt='Automation Test Store']")
+    private WebElement logoText;
+
+    @FindBy(xpath = "//div/a[@href='https://automationteststore.com/']")
+    private WebElement logoHref;
+
+    // category menu
     @FindBy(css = "#categorymenu > nav > ul > li:nth-child(1) > a")
     private WebElement homeMenu;
 
     @FindBy(css = "#categorymenu > nav > ul > li:nth-child(2) > a")
     private WebElement apparelAccessoriesMenu;
+
+    @FindBy(xpath = NAV_PILLS_CATEGORYMENU + "//a[contains(text(),'Shoes')]")
+    private WebElement apparelAndAccessoriesShoesSubMenu;
+    @FindBy(xpath = NAV_PILLS_CATEGORYMENU + "//a[contains(text(),'T-shirts')]")
+    private WebElement apparelAndAccessoriesTShirtsSubMenu;
 
     @FindBy(css = "#categorymenu > nav > ul > li:nth-child(3) > a")
     private WebElement makeupMenu;
@@ -63,18 +77,6 @@ public abstract class MainPage extends BasePage {
     @FindBy(xpath = NAV_PILLS_CATEGORYMENU)
     private List<WebElement> navPillsCategoryMenu;
 
-    @FindBy(xpath = "//a/img[@src='resources/image/18/7a/8.png']")
-    private WebElement logoImage;
-
-    @FindBy(xpath = "//a/img[@title='Automation Test Store']")
-    private WebElement logoTitle;
-
-    @FindBy(xpath = "//a/img[@alt='Automation Test Store']")
-    private WebElement logoText;
-
-    @FindBy(xpath = "//div/a[@href='https://automationteststore.com/']")
-    private WebElement logoHref;
-
     @FindBy(xpath = POPULARBRANDS_MENU)
     private WebElement brandScrollingList;
 
@@ -87,15 +89,56 @@ public abstract class MainPage extends BasePage {
     @FindBy(xpath = DROPDOWN_HOME_MENU)
     private List<WebElement> dropdownHomeMenuList;
 
-    @FindBy(xpath = "//a[contains(text(),'T-shirts')]")
-    private WebElement apparelAndAccessoriesTShirtsSubMenu;
-
     public MainPage(WebDriver driver) {
         super(driver);
     }
 
+
+    // logo
+    public WebElement getImage() {
+
+        return logoImage;
+    }
+
+    public boolean isLogoDisplayed() {
+
+        return isImageDisplayed(logoImage);
+    }
+
+    public boolean isLogoClickable() {
+        if (logoImage.isEnabled() && logoImage.isDisplayed()) {
+            return true;
+        }
+        return false;
+    }
+
+    public HomePage clickLogo() {
+        click(logoImage);
+        return new HomePage(getDriver());
+    }
+
+    public String getLogoTitle() {
+        return logoImage.getAttribute("title");
+    }
+
+    public String getLogoText() {
+        return logoImage.getAttribute("alt");
+    }
+
+    public String getLogoHref() {
+
+        return getAttribute(logoHref, "href");
+    }
+
+    // category menu
     public HomePage clickHomeMenu() {
         click(homeMenu);
+
+        return new HomePage(getDriver());
+    }
+
+    public HomePage mouseHoverOnHomeMenu() {
+        mouseHover(homeMenu);
 
         return new HomePage(getDriver());
     }
@@ -110,6 +153,18 @@ public abstract class MainPage extends BasePage {
         click(makeupMenu);
 
         return new MakeupPage(getDriver());
+    }
+
+    public HomePage mouseHoverOnMakeupMenu() {
+        mouseHover(makeupMenu);
+
+        return new HomePage(getDriver());
+    }
+
+    public CheeksPage mouseHoverOnCheeksSubmenu() {
+        mouseHoverAndClick(cheeksSubmenu);
+
+        return new CheeksPage(getDriver());
     }
 
     public SkincarePage clickSkincareMenu() {
@@ -142,62 +197,9 @@ public abstract class MainPage extends BasePage {
         return new BooksPage(getDriver());
     }
 
-    public HomePage mouseHoverOnHomeMenu() {
-        mouseHover(homeMenu);
-
-        return new HomePage(getDriver());
-    }
-
-    public HomePage mouseHoverOnMakeupMenu() {
-        mouseHover(makeupMenu);
-
-        return new HomePage(getDriver());
-    }
-
-    public CheeksPage mouseHoverOnCheeksSubmenu() {
-        mouseHoverAndClick(cheeksSubmenu);
-
-        return new CheeksPage(getDriver());
-    }
-
-    public WebElement getImage() {
-
-        return logoImage;
-    }
-
     public List<WebElement> getNavPillsCategoryMenu() {
 
         return navPillsCategoryMenu;
-    }
-
-    public boolean isLogoDisplayed() {
-
-        return isImageDisplayed(logoImage);
-    }
-
-    public boolean isLogoClickable() {
-        if (logoImage.isEnabled() && logoImage.isDisplayed()) {
-            return true;
-        }
-        return false;
-    }
-
-    public HomePage clickLogo() {
-        click(logoImage);
-        return new HomePage(getDriver());
-    }
-
-    public String getLogoHref() {
-
-        return getAttribute(logoHref, "href");
-    }
-
-    public String getLogoTitle() {
-        return logoImage.getAttribute("title");
-    }
-
-    public String getLogoText() {
-        return logoImage.getAttribute("alt");
     }
 
     public List<WebElement> getBrandsScrollingListHrefLinks() {
