@@ -30,8 +30,8 @@ public class LogoTest extends BaseTest {
                         .clickLoginAccountSubmenu()
                         .isLogoDisplayed();
 
-        Assert.assertTrue(homePage.isLogoDisplayed(), "Logo is displayed on the homepage");
-        Assert.assertTrue(logoDisplayedOnAccountLoginPage, "Logo is displayed on the AccountLoginPage");
+        Assert.assertTrue(homePage.isLogoDisplayed(), "Logo is not displayed on the homepage");
+        Assert.assertTrue(logoDisplayedOnAccountLoginPage, "Logo is not displayed on the AccountLoginPage");
     }
 
     @Test

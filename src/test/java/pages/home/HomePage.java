@@ -6,37 +6,49 @@ import org.openqa.selenium.support.FindBy;
 import pages.base_abstract.ProductsPage;
 import pages.home.account.AccountLoginPage;
 
+import java.util.List;
+
 public class HomePage extends ProductsPage<HomePage> {
 
-    @FindBy(xpath = "//ul[@id='customer_menu_top']")
-    private WebElement loginCustomerTopMenu;
+    private static final String POPULARBRANDS_MENU = "//section[@id='popularbrands']";
+    private static final String BRANDCAROUSAL_POPULARBRANDS_MENU_HREF = POPULARBRANDS_MENU + "//ul[@id='brandcarousal']/li//a[@href]";
+    private static final String BRANDCAROUSAL_POPULARBRANDS_MENU_IMG = POPULARBRANDS_MENU + "//ul[@id='brandcarousal']/li//a/img[@alt]";
 
-    @FindBy(xpath = "//ul[@id='main_menu_top']//a[@class='top menu_account']")
-    private WebElement accountTopMenu;
+    @FindBy(xpath = BRANDCAROUSAL_POPULARBRANDS_MENU_HREF)
+    private List<WebElement> brandsscrollinglistHreflinks;
+
+    @FindBy(xpath = BRANDCAROUSAL_POPULARBRANDS_MENU_IMG)
+    private List<WebElement> brandsscrollinglistImglinks;
+
+    @FindBy(xpath = POPULARBRANDS_MENU)
+    private WebElement brandScrollingList;
 
     public HomePage(WebDriver driver) {
         super(driver);
     }
 
-    public AccountLoginPage clickAccountMenu() {
-        click(accountTopMenu);
-
-        return new AccountLoginPage(getDriver());
-    }
-
-    public AccountLoginPage clickLoginCustomerMenu() {
-        click(loginCustomerTopMenu);
-
-        return new AccountLoginPage(getDriver());
-    }
-
-    public String getLoginCustomerText() {
-
-        return getText(loginCustomerTopMenu);
-    }
-
     protected HomePage createProductsPage() {
 
         return new HomePage(getDriver());
+    }
+
+    public List<WebElement> getBrandsScrollingListHrefLinks() {
+
+        return brandsscrollinglistHreflinks;
+    }
+
+    public List<WebElement> getBrandsScrollingListImgLinks() {
+
+        return brandsscrollinglistImglinks;
+    }
+
+    public String getAltText(int index) {
+
+        return getAttributeByIndex(index, getBrandsScrollingListImgLinks(), "alt");
+    }
+
+    public String getHref(int index) {
+
+        return getAttributeByIndex(index, getBrandsScrollingListHrefLinks(), "href");
     }
 }
