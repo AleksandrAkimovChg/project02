@@ -13,12 +13,15 @@ public abstract class ProductsPage<ProductsPageType> extends MainPage {
     final static String THUMBNAILS_GRID = "//div[@class='thumbnails grid row list-inline']";
     final static String THUMBNAILS_LIST = "//div[@class='thumbnails list row]";
     final static String FIXED_WRAPPER = "//div[@class='fixed_wrapper']";
-    final static String PRDOCUTNAME = "//a[@class ='prdocutname']";
-    final static String PRDOCUTNAME_PATH = MAIN_CONTAINER + FIXED_WRAPPER + PRDOCUTNAME;
+    final static String PRODUCT_NAME = "//a[@class ='prdocutname']";
+    final static String PRODUCT_NAME_PATH = MAIN_CONTAINER + FIXED_WRAPPER + PRODUCT_NAME;
     final static String THUMBNAIL = "//div[@class='thumbnail']";
     final static String HREF_IMG_SCR = "/a[@href]/img[@src]";
 
-    // sort
+    /**
+     * sort
+     */
+
     @FindBy(xpath = SORT_BY)
     private WebElement sortBy;
 
@@ -46,15 +49,19 @@ public abstract class ProductsPage<ProductsPageType> extends MainPage {
     @FindBy(xpath = SORT_BY + "/option[7]")
     private WebElement sortByRatingLowest;
 
-    // buttons
+    /**
+     * buttons
+     */
     @FindBy(xpath = "//button[@id='list']")
     private WebElement button_list;
 
     @FindBy(xpath = "//button[@id='grid']")
     private WebElement button_grid;
 
-    // prdocutname
-    @FindBy(xpath = PRDOCUTNAME_PATH)
+    /**
+     * product name
+     */
+    @FindBy(xpath = PRODUCT_NAME_PATH)
     private List<WebElement> productTitle;
 
     @FindBy(xpath = "")
@@ -81,7 +88,7 @@ public abstract class ProductsPage<ProductsPageType> extends MainPage {
     @FindBy(xpath = "")
     private WebElement gridProductName8;
 
-    // prdocutimage
+
     @FindBy(xpath = MAIN_CONTAINER + THUMBNAILS_GRID + "/div[1]" + THUMBNAIL + HREF_IMG_SCR)
     private WebElement gridProduct1Image;
 
@@ -112,6 +119,9 @@ public abstract class ProductsPage<ProductsPageType> extends MainPage {
 
     protected abstract ProductsPageType createProductsPage();
 
+    /**
+     * click
+     */
     public ProductsPageType clickMenu(int index, List<WebElement> menus) {
         menus.get(index).click();
 
@@ -192,6 +202,9 @@ public abstract class ProductsPage<ProductsPageType> extends MainPage {
         click(gridProduct8Image);
     }
 
+    /**
+     * List
+     */
     public List<String> getLinksText() {
 
         return getListText(productTitle);

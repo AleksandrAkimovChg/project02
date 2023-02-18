@@ -9,6 +9,7 @@ import pages.books.BooksPage;
 import pages.fragrance.FragrancePage;
 import pages.hair_care.HairCarePage;
 import pages.home.HomePage;
+import pages.home.account.AccountLoginPage;
 import pages.makeup.CheeksPage;
 import pages.makeup.MakeupPage;
 import pages.men.MenPage;
@@ -21,14 +22,12 @@ public abstract class MainPage extends BasePage {
     final static String MAIN_CONTAINER = "//div[@id='maincontainer']";
     private static final String CATEGORYMENU = "//section[@id='categorymenu']";
     private static final String NAV_PILLS_CATEGORYMENU = CATEGORYMENU + "/nav/ul/li";
-    private static final String POPULARBRANDS_MENU = "//section[@id='popularbrands']";
-    private static final String BRANDCAROUSAL_POPULARBRANDS_MENU_HREF = POPULARBRANDS_MENU + "//ul[@id='brandcarousal']/li//a[@href]";
-    private static final String BRANDCAROUSAL_POPULARBRANDS_MENU_IMG = POPULARBRANDS_MENU + "//ul[@id='brandcarousal']/li//a/img[@alt]";
     private static final String HREF = "//a[@href='https://automationteststore.com/index.php?rt=product/category&path=";
     private static final String DROPDOWN_HOME_MENU = NAV_PILLS_CATEGORYMENU + "/div/ul[@id='main_menu']/li";
 
-    // logo
-
+    /**
+     * logo
+     */
     @FindBy(xpath = "//a/img[@src='resources/image/18/7a/8.png']")
     private WebElement logoImage;
 
@@ -41,9 +40,28 @@ public abstract class MainPage extends BasePage {
     @FindBy(xpath = "//div/a[@href='https://automationteststore.com/']")
     private WebElement logoHref;
 
-    // category menu
+    /**
+     *  top menu
+     */
+
+    @FindBy(xpath = "//ul[@id='customer_menu_top']")
+    private WebElement loginCustomerTopMenu;
+
+    @FindBy(xpath = "//ul[@id='main_menu_top']//a[@class='top menu_account']")
+    private WebElement accountTopMenu;
+
+    /**
+     *  currency
+     */
+
+    /**
+     *  navigation menu
+     */
     @FindBy(css = "#categorymenu > nav > ul > li:nth-child(1) > a")
     private WebElement homeMenu;
+
+    @FindBy(xpath = DROPDOWN_HOME_MENU)
+    private List<WebElement> dropdownHomeMenuList;
 
     @FindBy(css = "#categorymenu > nav > ul > li:nth-child(2) > a")
     private WebElement apparelAccessoriesMenu;
@@ -74,27 +92,19 @@ public abstract class MainPage extends BasePage {
     @FindBy(css = "#categorymenu > nav > ul > li:nth-child(8) > a")
     private WebElement booksMenu;
 
-    @FindBy(xpath = NAV_PILLS_CATEGORYMENU)
-    private List<WebElement> navPillsCategoryMenu;
+    /**
+     *  footer
+     */
 
-    @FindBy(xpath = POPULARBRANDS_MENU)
-    private WebElement brandScrollingList;
-
-    @FindBy(xpath = BRANDCAROUSAL_POPULARBRANDS_MENU_HREF)
-    private List<WebElement> brandsscrollinglistHreflinks;
-
-    @FindBy(xpath = BRANDCAROUSAL_POPULARBRANDS_MENU_IMG)
-    private List<WebElement> brandsscrollinglistImglinks;
-
-    @FindBy(xpath = DROPDOWN_HOME_MENU)
-    private List<WebElement> dropdownHomeMenuList;
 
     public MainPage(WebDriver driver) {
         super(driver);
     }
 
 
-    // logo
+    /**
+     *  logo
+     */
     public WebElement getImage() {
 
         return logoImage;
@@ -130,7 +140,31 @@ public abstract class MainPage extends BasePage {
         return getAttribute(logoHref, "href");
     }
 
-    // category menu
+    /**
+     *
+     */
+
+    public AccountLoginPage clickAccountMenu() {
+        click(accountTopMenu);
+
+        return new AccountLoginPage(getDriver());
+    }
+
+    public AccountLoginPage clickLoginCustomerMenu() {
+        click(loginCustomerTopMenu);
+
+        return new AccountLoginPage(getDriver());
+    }
+
+    public String getLoginCustomerText() {
+
+        return getText(loginCustomerTopMenu);
+    }
+
+
+    /**
+     *  navigation menu
+     */
     public HomePage clickHomeMenu() {
         click(homeMenu);
 
@@ -147,6 +181,18 @@ public abstract class MainPage extends BasePage {
         click(apparelAccessoriesMenu);
 
         return new ApparelAndAccessoriesPage(getDriver());
+    }
+
+    public HomePage mouseHoverOnApparelAndAccessories() {
+        mouseHover(apparelAccessoriesMenu);
+
+        return new HomePage(getDriver());
+    }
+
+    public TShirtsPage mouseHoverSubMenu() {
+        mouseHoverAndClick(apparelAndAccessoriesTShirtsSubMenu);
+
+        return new TShirtsPage(getDriver());
     }
 
     public MakeupPage clickMakeupMenu() {
@@ -185,6 +231,8 @@ public abstract class MainPage extends BasePage {
         return new MenPage(getDriver());
     }
 
+
+
     public HairCarePage clickHairCareMenu() {
         click(haircareMenu);
 
@@ -197,34 +245,9 @@ public abstract class MainPage extends BasePage {
         return new BooksPage(getDriver());
     }
 
-    public List<WebElement> getNavPillsCategoryMenu() {
-
-        return navPillsCategoryMenu;
-    }
-
-    public List<WebElement> getBrandsScrollingListHrefLinks() {
-
-        return brandsscrollinglistHreflinks;
-    }
-
-    public List<WebElement> getBrandsScrollingListImgLinks() {
-
-        return brandsscrollinglistImglinks;
-    }
-
-    public void clickBrandsScrollingListMenu(int index) {
-        getBrandsScrollingListHrefLinks().get(index).click();
-    }
-
-    public String getAltText(int index) {
-
-        return getAttributeByIndex(index, getBrandsScrollingListImgLinks(), "alt");
-    }
-
-    public String getHref(int index) {
-
-        return getAttributeByIndex(index, getBrandsScrollingListHrefLinks(), "href");
-    }
+    /**
+     *  other
+     */
 
     public List<String> getDropdownHomeMenuList() {
 
@@ -234,17 +257,5 @@ public abstract class MainPage extends BasePage {
     public int countCategoriesDropdownHomeMenuList() {
 
         return getListSize(dropdownHomeMenuList);
-    }
-
-    public HomePage mouseHoverOnApparelAndAccessories() {
-        mouseHover(apparelAccessoriesMenu);
-
-        return new HomePage(getDriver());
-    }
-
-    public TShirtsPage mouseHoverSubMenu() {
-        mouseHoverAndClick(apparelAndAccessoriesTShirtsSubMenu);
-
-        return new TShirtsPage(getDriver());
     }
 }
