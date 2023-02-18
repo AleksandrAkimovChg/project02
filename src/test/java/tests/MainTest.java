@@ -1,10 +1,13 @@
 package tests;
 
 import base.BaseTest;
+import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.home.HomePage;
 import testData.TestData;
+
+import java.util.List;
 
 public class MainTest extends BaseTest {
 
@@ -25,16 +28,16 @@ public class MainTest extends BaseTest {
 
         HomePage homePage = openBaseURL();
 
+        List<WebElement> brandsScrollingMenu = homePage.getBrandsScrollingListHrefLinks();
+
         String oldUrl = homePage.getURL();
         String oldTitle = homePage.getTitle();
 
         String actualAltText = homePage.getAltText(index);
         String actualUrlHref = homePage.getHref(index);
 
-        homePage.clickBrandsScrollingListMenu(index);
-
-        String actualUrl = getDriver().getCurrentUrl();
-        String actualTitle = getDriver().getTitle();
+        String actualUrl = homePage.clickMenu(index, brandsScrollingMenu).getURL();
+        String actualTitle = homePage.clickHomeMenu().clickMenu(index, brandsScrollingMenu).getTitle();
 
         Assert.assertNotEquals(actualUrl, oldUrl);
         Assert.assertEquals(actualUrl, url);

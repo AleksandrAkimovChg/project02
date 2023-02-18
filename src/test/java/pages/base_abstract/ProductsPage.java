@@ -4,6 +4,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
+import java.util.List;
+
 public abstract class ProductsPage<ProductsPageType> extends MainPage {
 
     final static String MAIN_CONTAINER = "//div[@id='maincontainer']";
@@ -52,8 +54,8 @@ public abstract class ProductsPage<ProductsPageType> extends MainPage {
 
     protected abstract ProductsPageType createProductsPage();
 
-    public ProductsPageType clickNavPillsCategoryMenu(int index) {
-        getNavPillsCategoryMenu().get(index).click();
+    public ProductsPageType clickMenu(int index, List<WebElement> menus) {
+        menus.get(index).click();
 
         return createProductsPage();
     }

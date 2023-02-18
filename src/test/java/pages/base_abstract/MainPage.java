@@ -86,6 +86,12 @@ public abstract class MainPage extends BasePage {
         super(driver);
     }
 
+    public HomePage clickHomeMenu() {
+        click(homeMenu);
+
+        return new HomePage(getDriver());
+    }
+
     public ApparelAndAccessoriesPage clickApparelAndAccessoriesMenu() {
         click(apparelAccessoriesMenu);
 
