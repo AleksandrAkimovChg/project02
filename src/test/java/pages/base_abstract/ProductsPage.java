@@ -15,7 +15,7 @@ public abstract class ProductsPage<ProductsPageType> extends MainPage {
     final static String FIXED_WRAPPER = "//div[@class='fixed_wrapper']";
     final static String PRDOCUTNAME = "//a[@class ='prdocutname']";
     final static String PRDOCUTNAME_PATH = MAIN_CONTAINER + FIXED_WRAPPER + PRDOCUTNAME;
-    final static String THUMBNAIL = "//div[@class='thumbnail'][1]";
+    final static String THUMBNAIL = "//div[@class='thumbnail']";
     final static String HREF_IMG_SCR = "/a[@href]/img[@src]";
 
     // sort
@@ -82,29 +82,29 @@ public abstract class ProductsPage<ProductsPageType> extends MainPage {
     private WebElement gridProductName8;
 
     // prdocutimage
-    @FindBy(xpath = MAIN_CONTAINER + THUMBNAILS_GRID + THUMBNAIL + "[1]" + HREF_IMG_SCR)
-    private WebElement gridProductImage1;
+    @FindBy(xpath = MAIN_CONTAINER + THUMBNAILS_GRID + "/div[1]" + THUMBNAIL + HREF_IMG_SCR)
+    private WebElement gridProduct1Image;
+
+    @FindBy(xpath = MAIN_CONTAINER + THUMBNAILS_GRID + "/div[2]" + THUMBNAIL + HREF_IMG_SCR)
+    private WebElement gridProduct2Image;
 
     @FindBy(xpath = "")
-    private WebElement gridProductImage2;
+    private WebElement gridProduct3Image;
 
     @FindBy(xpath = "")
-    private WebElement gridProductImage3;
+    private WebElement gridProduct4Image;
 
     @FindBy(xpath = "")
-    private WebElement gridProductImage4;
+    private WebElement gridProduct5Image;
 
     @FindBy(xpath = "")
-    private WebElement gridProductImage5;
+    private WebElement gridProduct6Image;
 
     @FindBy(xpath = "")
-    private WebElement gridProductImage6;
+    private WebElement gridProduct7Image;
 
     @FindBy(xpath = "")
-    private WebElement gridProductImage7;
-
-    @FindBy(xpath = "")
-    private WebElement gridProductImage8;
+    private WebElement gridProduct8Image;
 
     public ProductsPage(WebDriver driver) {
         super(driver);
@@ -149,35 +149,47 @@ public abstract class ProductsPage<ProductsPageType> extends MainPage {
     }
 
     public void clickGridProduct1() {
-        click(gridProductImage1);
+        click(gridProduct1Image);
+    }
+
+    public ProductsPageType clickGridRow1Product1() {
+        click(gridProduct1Image);
+
+        return createProductsPage();
     }
 
     public void clickGridProduct2() {
-        click(gridProductImage2);
+        click(gridProduct2Image);
+    }
+
+    public ProductsPageType clickGridRow1Product2() {
+        click(gridProduct2Image);
+
+        return createProductsPage();
     }
 
     public void clickGridProduct3() {
-        click(gridProductImage3);
+        click(gridProduct3Image);
     }
 
     public void clickGridProduct4() {
-        click(gridProductImage5);
+        click(gridProduct4Image);
     }
 
     public void clickGridProduct5() {
-        click(gridProductImage5);
+        click(gridProduct5Image);
     }
 
-    public void clickGridProduct6() {
-        click(gridProductImage6);
+    public void clickGridRow2Product6() {
+        click(gridProduct6Image);
     }
 
     public void clickGridProduct7() {
-        click(gridProductImage7);
+        click(gridProduct7Image);
     }
 
     public void clickGridProduct8() {
-        click(gridProductImage8);
+        click(gridProduct8Image);
     }
 
     public List<String> getLinksText() {
