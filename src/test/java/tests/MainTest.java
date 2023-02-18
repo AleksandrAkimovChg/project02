@@ -37,12 +37,12 @@ public class MainTest extends BaseTest {
         String actualUrlHref = homePage.getHref(index);
 
         String actualUrl = homePage.clickMenu(index, brandsScrollingMenu).getURL();
-        //String actualTitle = homePage.clickMenu(index, brandsScrollingMenu).getTitle();
+        String actualTitle = homePage.clickHomeMenu().clickMenu(index, brandsScrollingMenu).getTitle();
 
         Assert.assertNotEquals(actualUrl, oldUrl);
         Assert.assertEquals(actualUrl, url);
-        //Assert.assertNotEquals(actualTitle, oldTitle);
-        //Assert.assertEquals(actualTitle, title);
+        Assert.assertNotEquals(actualTitle, oldTitle);
+        Assert.assertEquals(actualTitle, title);
         Assert.assertEquals(actualAltText, altText);
         Assert.assertEquals(actualUrlHref, href);
     }
