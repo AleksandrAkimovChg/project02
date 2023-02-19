@@ -10,7 +10,7 @@ import java.util.stream.Collectors;
 
 public class SearchPage extends MainPage {
 
-    @FindBy(xpath = "//*[@id='keyword']")
+    @FindBy(xpath = "//input[@id='keyword']")
     private WebElement searchCriteriaField;
 
     @FindBy(xpath = "//a[@class ='prdocutname']")
