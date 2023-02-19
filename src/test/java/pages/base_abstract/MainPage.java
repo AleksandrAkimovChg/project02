@@ -3,6 +3,7 @@ package pages.base_abstract;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import pages.SearchPage;
 import pages.apparel_and_accessories.ApparelAndAccessoriesPage;
 import pages.apparel_and_accessories.TShirtsPage;
 import pages.books.BooksPage;
@@ -41,7 +42,7 @@ public abstract class MainPage extends BasePage {
     private WebElement logoHref;
 
     /**
-     *  top menu
+     * top menu
      */
 
     @FindBy(xpath = "//ul[@id='customer_menu_top']")
@@ -55,7 +56,7 @@ public abstract class MainPage extends BasePage {
      */
 
     /**
-     *  navigation menu
+     * navigation menu
      */
     @FindBy(css = "#categorymenu > nav > ul > li:nth-child(1) > a")
     private WebElement homeMenu;
@@ -92,8 +93,11 @@ public abstract class MainPage extends BasePage {
     @FindBy(css = "#categorymenu > nav > ul > li:nth-child(8) > a")
     private WebElement booksMenu;
 
+    @FindBy(xpath = "//div[@title='Go']//i[@class='fa fa-search']")
+    private WebElement searchField;
+
     /**
-     *  footer
+     * footer
      */
 
 
@@ -103,7 +107,7 @@ public abstract class MainPage extends BasePage {
 
 
     /**
-     *  logo
+     * logo
      */
     public WebElement getImage() {
 
@@ -163,7 +167,7 @@ public abstract class MainPage extends BasePage {
 
 
     /**
-     *  navigation menu
+     * navigation menu
      */
     public HomePage clickHomeMenu() {
         click(homeMenu);
@@ -232,7 +236,6 @@ public abstract class MainPage extends BasePage {
     }
 
 
-
     public HairCarePage clickHairCareMenu() {
         click(haircareMenu);
 
@@ -246,7 +249,7 @@ public abstract class MainPage extends BasePage {
     }
 
     /**
-     *  other
+     * other
      */
 
     public List<String> getDropdownHomeMenuList() {
@@ -257,5 +260,11 @@ public abstract class MainPage extends BasePage {
     public int countCategoriesDropdownHomeMenuList() {
 
         return getListSize(dropdownHomeMenuList);
+    }
+
+    public SearchPage clickSearchField() {
+        click(searchField);
+
+        return new SearchPage(getDriver());
     }
 }
