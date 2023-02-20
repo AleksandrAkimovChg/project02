@@ -14,7 +14,7 @@ public class HomePage extends ProductsPage<HomePage> {
     private static final String BRANDCAROUSAL_POPULARBRANDS_MENU_IMG = POPULARBRANDS_MENU + "//ul[@id='brandcarousal']/li//a/img[@alt]";
 
     @FindBy(xpath = BRANDCAROUSAL_POPULARBRANDS_MENU_HREF)
-    private List<WebElement> brandsscrollinglistHreflinks;
+    private List<WebElement> brandsScrollingListHrefLinks;
 
     @FindBy(xpath = BRANDCAROUSAL_POPULARBRANDS_MENU_IMG)
     private List<WebElement> brandsscrollinglistImglinks;
@@ -33,7 +33,7 @@ public class HomePage extends ProductsPage<HomePage> {
 
     public List<WebElement> getBrandsScrollingListHrefLinks() {
 
-        return brandsscrollinglistHreflinks;
+        return brandsScrollingListHrefLinks;
     }
 
     public List<WebElement> getBrandsScrollingListImgLinks() {
@@ -59,5 +59,15 @@ public class HomePage extends ProductsPage<HomePage> {
     public String getTopMenuHrefByIndex(int index) {
 
         return getAttributeByIndex(index, getTopMenuHrefLinks(), "href");
+    }
+
+    public String getFooterMenuTextByIndex(int index) {
+
+        return getAttributeByIndex(index, getFooterMenuListLinks(), "text");
+    }
+
+    public String getFooterMenuHrefByIndex(int index) {
+
+        return getAttributeByIndex(index, getFooterMenuListLinks(), "href");
     }
 }
