@@ -27,6 +27,8 @@ public abstract class MainPage extends BasePage {
     private static final String DROPDOWN_HOME_MENU = NAV_PILLS_CATEGORYMENU + "/div/ul[@id='main_menu']/li";
     private static final String TOP_MENU_HREF = "//ul[@id='main_menu_top']/li/a[@href]";
 
+    private static final String FOOTER_MENU = "//ul[@class = 'info_links_footer']//a";
+
     /**
      * logo
      */
@@ -122,11 +124,12 @@ public abstract class MainPage extends BasePage {
      * footer
      */
 
+    @FindBy(xpath = FOOTER_MENU)
+    private List<WebElement> footerMenus;
 
     public MainPage(WebDriver driver) {
         super(driver);
     }
-
 
     /**
      * logo
@@ -298,6 +301,16 @@ public abstract class MainPage extends BasePage {
 
         return new BooksPage(getDriver());
     }
+
+    /**
+     *  footer menu
+     */
+
+    public List<WebElement> getFooterMenuLinks() {
+
+        return footerMenus;
+    }
+    
 
     /**
      * other
