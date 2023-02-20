@@ -28,7 +28,7 @@ public class MainTest extends BaseTest {
 
         HomePage homePage = openBaseURL();
 
-        List<WebElement> footerMenu = homePage.getFooterMenuListLinks();
+        List<WebElement> footerMenu = homePage.getFooterMenuLinks();
 
         String oldUrl = homePage.getURL();
         String oldTitle = homePage.getTitle();

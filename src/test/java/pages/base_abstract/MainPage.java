@@ -306,7 +306,7 @@ public abstract class MainPage extends BasePage {
      *  footer menu
      */
 
-    public List<WebElement> getFooterMenuListLinks() {
+    public List<WebElement> getFooterMenuLinks() {
 
         return footerMenus;
     }

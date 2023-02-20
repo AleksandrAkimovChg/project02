@@ -41,12 +41,12 @@ public class HomePage extends ProductsPage<HomePage> {
         return brandsscrollinglistImglinks;
     }
 
-    public String getAltText(int index) {
+    public String getBrandsScrollingListAltText(int index) {
 
         return getAttributeByIndex(index, getBrandsScrollingListImgLinks(), "alt");
     }
 
-    public String getHref(int index) {
+    public String getBrandsScrollingListHref(int index) {
 
         return getAttributeByIndex(index, getBrandsScrollingListHrefLinks(), "href");
     }
@@ -63,11 +63,11 @@ public class HomePage extends ProductsPage<HomePage> {
 
     public String getFooterMenuTextByIndex(int index) {
 
-        return getAttributeByIndex(index, getFooterMenuListLinks(), "text");
+        return getAttributeByIndex(index, getFooterMenuLinks(), "text");
     }
 
     public String getFooterMenuHrefByIndex(int index) {
 
-        return getAttributeByIndex(index, getFooterMenuListLinks(), "href");
+        return getAttributeByIndex(index, getFooterMenuLinks(), "href");
     }
 }

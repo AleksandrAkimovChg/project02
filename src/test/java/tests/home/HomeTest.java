@@ -49,8 +49,8 @@ public class HomeTest extends BaseTest {
         String oldUrl = homePage.getURL();
         String oldTitle = homePage.getTitle();
 
-        String actualAltText = homePage.getAltText(index);
-        String actualUrlHref = homePage.getHref(index);
+        String actualAltText = homePage.getBrandsScrollingListAltText(index);
+        String actualUrlHref = homePage.getBrandsScrollingListHref(index);
 
         String actualUrl = homePage.clickMenu(index, brandsScrollingMenu).getURL();
         String actualTitle = homePage.clickHomeMenu().clickMenu(index, brandsScrollingMenu).getTitle();
