@@ -94,6 +94,15 @@ public abstract class MainPage extends BasePage {
     @FindBy(css = "#categorymenu > nav > ul > li:nth-child(4) > a")
     private WebElement skincareMenu;
 
+    @FindBy(xpath = NAV_PILLS_CATEGORYMENU + "//a[contains(text(),'Gift Ideas & Sets')]")
+    private WebElement skincareGiftIdeasAndSetsSubmenu;
+
+    @FindBy(xpath = NAV_PILLS_CATEGORYMENU + "//a[contains(text(),'Hands & Nails')]")
+    private WebElement skincareHandsAndNailsSubmenu;
+
+    @FindBy(xpath = NAV_PILLS_CATEGORYMENU + "//a[contains(text(),'Sun')]")
+    private WebElement skincareSunSubmenu;
+
     @FindBy(css = "#categorymenu > nav > ul > li:nth-child(5) > a")
     private WebElement fragranceMenu;
 
@@ -237,6 +246,30 @@ public abstract class MainPage extends BasePage {
 
     public SkincarePage clickSkincareMenu() {
         click(skincareMenu);
+
+        return new SkincarePage(getDriver());
+    }
+
+    public SkincarePage mouseHoverOnSkincareMenu() {
+        mouseHover(skincareMenu);
+
+        return new SkincarePage(getDriver());
+    }
+
+    public SkincarePage ClickGiftIdeasAndSetsSubmenu() {
+        mouseHoverAndClick(skincareGiftIdeasAndSetsSubmenu);
+
+        return new SkincarePage(getDriver());
+    }
+
+    public SkincarePage ClickHandsAndNailsSubmenu() {
+        mouseHoverAndClick(skincareHandsAndNailsSubmenu);
+
+        return new SkincarePage(getDriver());
+    }
+
+    public SkincarePage ClickSunSubmenu() {
+        mouseHoverAndClick(skincareSunSubmenu);
 
         return new SkincarePage(getDriver());
     }
