@@ -25,6 +25,7 @@ public abstract class MainPage extends BasePage {
     private static final String NAV_PILLS_CATEGORYMENU = CATEGORYMENU + "/nav/ul/li";
     private static final String HREF = "//a[@href='https://automationteststore.com/index.php?rt=product/category&path=";
     private static final String DROPDOWN_HOME_MENU = NAV_PILLS_CATEGORYMENU + "/div/ul[@id='main_menu']/li";
+    private static final String TOP_MENU_HREF = "//ul[@id='main_menu_top']/li/a[@href]";
 
     /**
      * logo
@@ -48,8 +49,20 @@ public abstract class MainPage extends BasePage {
     @FindBy(xpath = "//ul[@id='customer_menu_top']")
     private WebElement loginCustomerTopMenu;
 
+    @FindBy(xpath = "//ul[@id='main_menu_top']/li/a[@class='top menu_specials']")
+    private WebElement specialsTopMenu;
+
     @FindBy(xpath = "//ul[@id='main_menu_top']//a[@class='top menu_account']")
     private WebElement accountTopMenu;
+
+    @FindBy(xpath = "//ul[@id='main_menu_top']/li/a[@class='top nobackground']")
+    private WebElement cartTopMenu;
+
+    @FindBy(xpath = "//ul[@id='main_menu_top']/li/a[@class='top menu_checkout']")
+    private WebElement checkoutTopMenu;
+
+    @FindBy(xpath = TOP_MENU_HREF)
+    private List<WebElement> topMenuHrefLinks;
 
     /**
      *  currency
@@ -154,7 +167,7 @@ public abstract class MainPage extends BasePage {
     }
 
     /**
-     *
+     * top menu
      */
 
     public AccountLoginPage clickAccountMenu() {
@@ -172,6 +185,11 @@ public abstract class MainPage extends BasePage {
     public String getLoginCustomerText() {
 
         return getText(loginCustomerTopMenu);
+    }
+
+    public List<WebElement> getTopMenuHrefLinks() {
+
+        return topMenuHrefLinks;
     }
 
 
