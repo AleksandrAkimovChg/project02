@@ -50,24 +50,4 @@ public class HomePage extends ProductsPage<HomePage> {
 
         return getAttributeByIndex(index, getBrandsScrollingListHrefLinks(), "href");
     }
-
-    public String getTopMenuTextByIndex(int index) {
-
-        return getAttributeByIndex(index, getTopMenuHrefLinks(), "text");
-    }
-
-    public String getTopMenuHrefByIndex(int index) {
-
-        return getAttributeByIndex(index, getTopMenuHrefLinks(), "href");
-    }
-
-    public String getFooterMenuTextByIndex(int index) {
-
-        return getAttributeByIndex(index, getFooterMenuLinks(), "text");
-    }
-
-    public String getFooterMenuHrefByIndex(int index) {
-
-        return getAttributeByIndex(index, getFooterMenuLinks(), "href");
-    }
 }
