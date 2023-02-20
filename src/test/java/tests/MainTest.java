@@ -23,7 +23,7 @@ public class MainTest extends BaseTest {
     }
 
     @Test(dataProviderClass = TestData.class, dataProvider = "FooterMenuList")
-    public void testFooterMenuListLinksNavigateToCorrespondingPages(
+    public void testFooterMenuLinksNavigateToCorrespondingPages(
             int index, String menuText, String href, String url, String title) {
 
         HomePage homePage = openBaseURL();
