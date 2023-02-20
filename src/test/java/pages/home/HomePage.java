@@ -4,7 +4,6 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import pages.base_abstract.ProductsPage;
-import pages.home.account.AccountLoginPage;
 
 import java.util.List;
 
@@ -50,5 +49,15 @@ public class HomePage extends ProductsPage<HomePage> {
     public String getHref(int index) {
 
         return getAttributeByIndex(index, getBrandsScrollingListHrefLinks(), "href");
+    }
+
+    public String getTopMenuTextByIndex(int index) {
+
+        return getAttributeByIndex(index, getTopMenuHrefLinks(), "text");
+    }
+
+    public String getTopMenuHrefByIndex(int index) {
+
+        return getAttributeByIndex(index, getTopMenuHrefLinks(), "href");
     }
 }
