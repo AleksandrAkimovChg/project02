@@ -62,29 +62,4 @@ public class HomeTest extends BaseTest {
         Assert.assertEquals(actualAltText, altText);
         Assert.assertEquals(actualUrlHref, href);
     }
-
-    @Test(dataProviderClass = TestData.class, dataProvider = "TopMenu")
-    public void testTopMenuLinksNavigateToCorrespondingPages(
-            int index, String text, String href, String url, String title) {
-
-        HomePage homePage = openBaseURL();
-
-        List<WebElement> topListMenu = homePage.getTopMenuHrefLinks();
-
-        String oldUrl = homePage.getURL();
-        String oldTitle = homePage.getTitle();
-
-        String actualText = homePage.getTopMenuTextByIndex(index);
-        String actualHref = homePage.getTopMenuHrefByIndex(index);
-
-        String actualUrl = homePage.clickMenu(index, topListMenu).getURL();
-        String actualTitle = homePage.clickMenu(index, topListMenu).getTitle();
-
-        Assert.assertNotEquals(actualUrl, oldUrl);
-        Assert.assertEquals(actualUrl, url);
-        Assert.assertNotEquals(actualTitle, oldTitle);
-        Assert.assertEquals(actualTitle, title);
-        Assert.assertEquals(actualText, text);
-        Assert.assertEquals(actualHref, href);
-    }
 }

@@ -195,6 +195,17 @@ public abstract class MainPage extends BasePage {
         return topMenuHrefLinks;
     }
 
+    public String getTopMenuTextByIndex(int index) {
+
+        return getAttributeByIndex(index, getTopMenuHrefLinks(), "text");
+    }
+
+    public String getTopMenuHrefByIndex(int index) {
+
+        return getAttributeByIndex(index, getTopMenuHrefLinks(), "href");
+    }
+
+
 
     /**
      * navigation menu
@@ -310,7 +321,16 @@ public abstract class MainPage extends BasePage {
 
         return footerMenus;
     }
-    
+
+    public String getFooterMenuTextByIndex(int index) {
+
+        return getAttributeByIndex(index, getFooterMenuLinks(), "text");
+    }
+
+    public String getFooterMenuHrefByIndex(int index) {
+
+        return getAttributeByIndex(index, getFooterMenuLinks(), "href");
+    }
 
     /**
      * other
