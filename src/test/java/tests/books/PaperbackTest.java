@@ -31,4 +31,25 @@ public class PaperbackTest extends BaseTest {
 
         Assert.assertEquals(actualProductList, expectedProductList);
     }
+
+    @Test
+    public void testProductListSortByZA () {
+        final List<String> productList = List.of(ID_112.toUpperCase(), ID_113.toUpperCase(), ID_114.toUpperCase());
+
+        List<String> expectedProductList = productList
+                .stream()
+                .sorted(Comparator.reverseOrder())
+                .collect(Collectors.toList());
+
+        List<String> actualProductList =
+                openBaseURL()
+                        .mouseHoverOnBooksMenu()
+                        .mouseHoverOnPaperbackSubmenu()
+                        .clickSortBy()
+                        .clickSortByZA()
+                        .getLinksText();
+
+        Assert.assertEquals(actualProductList, expectedProductList);
+
+    }
 }
