@@ -5,6 +5,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import pages.SearchPage;
 import pages.apparel_and_accessories.ApparelAndAccessoriesPage;
+import pages.apparel_and_accessories.ShoesPage;
 import pages.apparel_and_accessories.TShirtsPage;
 import pages.books.BooksPage;
 import pages.books.PaperbackPage;
@@ -237,6 +238,12 @@ public abstract class MainPage extends BasePage {
         mouseHover(apparelAccessoriesMenu);
 
         return new HomePage(getDriver());
+    }
+
+    public ShoesPage mouseHoverOnShoesSubmenu() {
+        mouseHoverAndClick(apparelAndAccessoriesShoesSubMenu);
+
+        return new ShoesPage(getDriver());
     }
 
     public TShirtsPage mouseHoverOnTShirtSubmenu() {

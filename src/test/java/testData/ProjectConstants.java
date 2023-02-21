@@ -39,7 +39,9 @@ public class ProjectConstants {
     public final static String ID_112 = "The Miracle Morning: The Not-So-Obvious Secret Guaranteed to Transform Your Life";
     public final static String ID_113 = "Paper Towns by John Green";
     public final static String ID_114 = "Allegiant by Veronica Roth";
+    public final static String ID_115 = "Fiorella Purple Peep Toes";
     public final static String ID_116 = "New Ladies High Wedge Heel Toe Thong Diamante Flip Flop Sandals";
+    public final static String ID_117 = "Ruby Shoo Womens Jada T-Bar";
     public final static String ID_118 = "Womens high heel point toe stiletto sandals ankle strap court shoes";
 
     /**
