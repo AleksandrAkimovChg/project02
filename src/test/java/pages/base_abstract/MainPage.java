@@ -7,6 +7,7 @@ import pages.SearchPage;
 import pages.apparel_and_accessories.ApparelAndAccessoriesPage;
 import pages.apparel_and_accessories.TShirtsPage;
 import pages.books.BooksPage;
+import pages.books.PaperbackPage;
 import pages.fragrance.FragrancePage;
 import pages.hair_care.HairCarePage;
 import pages.home.HomePage;
@@ -84,6 +85,7 @@ public abstract class MainPage extends BasePage {
 
     @FindBy(xpath = NAV_PILLS_CATEGORYMENU + "//a[contains(text(),'Shoes')]")
     private WebElement apparelAndAccessoriesShoesSubMenu;
+
     @FindBy(xpath = NAV_PILLS_CATEGORYMENU + "//a[contains(text(),'T-shirts')]")
     private WebElement apparelAndAccessoriesTShirtsSubMenu;
 
@@ -116,6 +118,9 @@ public abstract class MainPage extends BasePage {
 
     @FindBy(css = "#categorymenu > nav > ul > li:nth-child(8) > a")
     private WebElement booksMenu;
+
+    @FindBy(xpath = NAV_PILLS_CATEGORYMENU + "//a[contains(text(),'Paperback')]")
+    private WebElement paperbackSubmenu;
 
     @FindBy(xpath = "//div[@title='Go']//i[@class='fa fa-search']")
     private WebElement searchField;
@@ -228,13 +233,13 @@ public abstract class MainPage extends BasePage {
         return new ApparelAndAccessoriesPage(getDriver());
     }
 
-    public HomePage mouseHoverOnApparelAndAccessories() {
+    public HomePage mouseHoverOnApparelAndAccessoriesMenu() {
         mouseHover(apparelAccessoriesMenu);
 
         return new HomePage(getDriver());
     }
 
-    public TShirtsPage mouseHoverSubMenu() {
+    public TShirtsPage mouseHoverOnTShirtSubmenu() {
         mouseHoverAndClick(apparelAndAccessoriesTShirtsSubMenu);
 
         return new TShirtsPage(getDriver());
@@ -311,6 +316,18 @@ public abstract class MainPage extends BasePage {
         click(booksMenu);
 
         return new BooksPage(getDriver());
+    }
+
+    public HomePage mouseHoverOnBooksMenu() {
+        mouseHover(booksMenu);
+
+        return new HomePage(getDriver());
+    }
+
+    public PaperbackPage mouseHoverOnPaperbackSubmenu() {
+        mouseHoverAndClick(paperbackSubmenu);
+
+        return new PaperbackPage(getDriver());
     }
 
     /**
