@@ -50,8 +50,8 @@ public class TShirtsTest extends BaseTest {
 
         List<Double> actualProductList =
                 openBaseURL()
-                        .mouseHoverOnApparelAndAccessories()
-                        .mouseHoverSubMenu()
+                        .mouseHoverOnApparelAndAccessoriesMenu()
+                        .mouseHoverOnTShirtSubmenu()
                         .clickSortBy()
                         .clickSortByPriceLowHigh()
                         .getLinksPrices();
@@ -68,8 +68,8 @@ public class TShirtsTest extends BaseTest {
 
         List<Double> actualProductList =
                 openBaseURL()
-                        .mouseHoverOnApparelAndAccessories()
-                        .mouseHoverSubMenu()
+                        .mouseHoverOnApparelAndAccessoriesMenu()
+                        .mouseHoverOnTShirtSubmenu()
                         .clickSortBy()
                         .clickSortByPriceHighLow()
                         .getLinksPrices();
