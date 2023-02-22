@@ -44,4 +44,40 @@ public class TShirtsTest extends BaseTest {
 
         Assert.assertEquals(expectedProductList, actualProductList);
     }
+
+    @Test
+    public void testProductListSortByPriceLowHigh () {
+
+        List<Double> actualProductList =
+                openBaseURL()
+                        .mouseHoverOnApparelAndAccessoriesMenu()
+                        .mouseHoverOnTShirtSubmenu()
+                        .clickSortBy()
+                        .clickSortByPriceLowHigh()
+                        .getLinksPrices();
+
+        List<Double> expectedProductList = actualProductList.stream()
+                .sorted(Comparator.naturalOrder())
+                .collect(Collectors.toList());
+
+        Assert.assertEquals(expectedProductList, actualProductList);
+    }
+
+    @Test
+    public void testProductListSortByPriceHighLow () {
+
+        List<Double> actualProductList =
+                openBaseURL()
+                        .mouseHoverOnApparelAndAccessoriesMenu()
+                        .mouseHoverOnTShirtSubmenu()
+                        .clickSortBy()
+                        .clickSortByPriceHighLow()
+                        .getLinksPrices();
+
+        List<Double> expectedProductList = actualProductList.stream()
+                .sorted(Comparator.reverseOrder())
+                .collect(Collectors.toList());
+
+        Assert.assertEquals(expectedProductList, actualProductList);
+    }
 }

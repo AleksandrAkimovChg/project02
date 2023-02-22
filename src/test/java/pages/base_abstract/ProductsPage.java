@@ -4,6 +4,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public abstract class ProductsPage<ProductsPageType> extends MainPage {
@@ -17,6 +18,7 @@ public abstract class ProductsPage<ProductsPageType> extends MainPage {
     final static String PRODUCT_NAME_PATH = MAIN_CONTAINER + FIXED_WRAPPER + PRODUCT_NAME;
     final static String THUMBNAIL = "//div[@class='thumbnail']";
     final static String HREF_IMG_SCR = "/a[@href]/img[@src]";
+    final static String PRODUCT_PRICE = MAIN_CONTAINER + "//div[@class='pricetag jumbotron']//div[@class ='oneprice']";
 
     /**
      * sort
@@ -64,8 +66,8 @@ public abstract class ProductsPage<ProductsPageType> extends MainPage {
     @FindBy(xpath = PRODUCT_NAME_PATH)
     private List<WebElement> productTitle;
 
-    @FindBy(xpath = "")
-    private WebElement gridProductName1;
+    @FindBy(xpath = PRODUCT_PRICE)
+    private List<WebElement> productPrice;
 
     @FindBy(xpath = "")
     private WebElement gridProductName2;
@@ -208,5 +210,27 @@ public abstract class ProductsPage<ProductsPageType> extends MainPage {
     public List<String> getLinksText() {
 
         return getListText(productTitle);
+    }
+
+    public List<Double> getLinksPrices() {
+        List<String> str = getListText(productPrice);
+        List<Double> pirces = new ArrayList<Double>();
+        for (int i = 0; i < str.size(); i++) {
+            pirces.add(Double.valueOf(str.get(i).replaceAll("[$,]", "")));
+        }
+
+        return pirces;
+    }
+
+    public ProductsPageType clickSortByPriceLowHigh() {
+        click(sortByPriceLowHigh);
+
+        return createProductsPage();
+    }
+
+    public ProductsPageType clickSortByPriceHighLow() {
+        click(sortByPriceHighLow);
+
+        return createProductsPage();
     }
 }
