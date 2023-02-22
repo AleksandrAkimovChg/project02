@@ -14,10 +14,11 @@ public class PaperbackTest extends BaseTest {
 
     @Test
     public void testProductListSortByAZ() {
-        final List<String> productList = List.of(ID_112.toUpperCase(), ID_113.toUpperCase(), ID_114.toUpperCase());
+        final List<String> productList = List.of(ID_112, ID_113, ID_114);
 
         List<String> expectedProductList = productList
                 .stream()
+                .map(String::toUpperCase)
                 .sorted(Comparator.naturalOrder())
                 .collect(Collectors.toList());
 
@@ -33,11 +34,12 @@ public class PaperbackTest extends BaseTest {
     }
 
     @Test
-    public void testProductListSortByZA () {
-        final List<String> productList = List.of(ID_112.toUpperCase(), ID_113.toUpperCase(), ID_114.toUpperCase());
+    public void testProductListSortByZA() {
+        final List<String> productList = List.of(ID_112, ID_113, ID_114);
 
         List<String> expectedProductList = productList
                 .stream()
+                .map(String::toUpperCase)
                 .sorted(Comparator.reverseOrder())
                 .collect(Collectors.toList());
 
