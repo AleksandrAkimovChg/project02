@@ -14,11 +14,11 @@ public class ShoesTest extends BaseTest {
 
     @Test
     public void testProductListSortByAZ() {
-        final List<String> productList = List.of(ID_115.toUpperCase(), ID_116.toUpperCase(), ID_117.toUpperCase(),
-                ID_118.toUpperCase());
+        final List<String> productList = List.of(ID_115, ID_116, ID_117, ID_118);
 
         List<String> expectedProductList = productList
                 .stream()
+                .map(String::toUpperCase)
                 .sorted(Comparator.naturalOrder())
                 .collect(Collectors.toList());
 
