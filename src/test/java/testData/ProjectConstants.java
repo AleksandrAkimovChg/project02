@@ -24,6 +24,7 @@ public class ProjectConstants {
     static final String TAG_FASHION = "&keyword=fashion";
     static final String TAG_SHOE = "&keyword=shoe";
 
+    public final static String CART_PAGE_URL = BASE_URL + "?rt=checkout/cart";
     public final static String MEN_PAGE_URL = BASE_URL + "?rt=product/category&path=58";
     public final static String MEN_PAGE_TITLE = "Men";
     public final static String SKINCARE_PAGE_URL = BASE_URL + "?rt=product/category&path=43";

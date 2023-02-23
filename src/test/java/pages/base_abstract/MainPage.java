@@ -13,6 +13,7 @@ import pages.fragrance.FragrancePage;
 import pages.hair_care.HairCarePage;
 import pages.home.HomePage;
 import pages.home.account.AccountLoginPage;
+import pages.home.cart.CartPage;
 import pages.makeup.CheeksPage;
 import pages.makeup.MakeupPage;
 import pages.men.MenPage;
@@ -69,8 +70,25 @@ public abstract class MainPage extends BasePage {
     private List<WebElement> topMenuHrefLinks;
 
     /**
-     *  currency
+     *  left navigation menu (currency & cart)
      */
+    @FindBy(xpath ="//ul[@class='nav language pull-left']")
+    private WebElement currencyMenu;
+
+    @FindBy(xpath ="//a[contains(text(),'€ Euro')]")
+    private WebElement euroSubmenu;
+
+    @FindBy(xpath ="//a[contains(text(),'£ Pound Sterling')]")
+    private WebElement poundSubmenu;
+
+    @FindBy(xpath ="//a[contains(text(),'$ US Dollar')]")
+    private WebElement dollarSubmenu;
+
+    @FindBy(xpath ="//*[@class='nav topcart pull-left']")
+    private WebElement leftNavTopCartMenu;
+
+    @FindBy(xpath ="//span[@class='cart_total']")
+    private WebElement totalInleftNavTopCartMenu;
 
     /**
      * navigation menu
@@ -125,6 +143,20 @@ public abstract class MainPage extends BasePage {
 
     @FindBy(xpath = "//div[@title='Go']//i[@class='fa fa-search']")
     private WebElement searchField;
+
+    /**
+     *  currency % cart - left nav top menu
+     */
+    public HomePage mouseHoverCurrencyMenu() {
+        click(currencyMenu);
+
+        return new HomePage(getDriver());
+    }
+    public CartPage clickLeftNavTopCartMenu() {
+        click(leftNavTopCartMenu);
+
+        return new CartPage(getDriver());
+    }
 
     /**
      * footer
