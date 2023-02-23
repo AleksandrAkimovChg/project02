@@ -38,11 +38,11 @@ public class TestData {
                 {0, " Specials", "https://automationteststore.com/index.php?rt=product/special",
                         "https://automationteststore.com/index.php?rt=product/special", "Special Offers"},
                 {1, " Account", "https://automationteststore.com/index.php?rt=account/account",
-                        "https://automationteststore.com/index.php?rt=account/login", "Account Login"},
+                        "https://automationteststore.com/index.php?rt=account/account", "My Account"},
                 {2, " Cart", "https://automationteststore.com/index.php?rt=checkout/cart",
                         "https://automationteststore.com/index.php?rt=checkout/cart", "Shopping Cart"},
                 {3, " Checkout", "https://automationteststore.com/index.php?rt=checkout/shipping",
-                        "https://automationteststore.com/index.php?rt=checkout/cart", "Shopping Cart"}
+                        "https://automationteststore.com/index.php?rt=checkout/confirm", "Checkout Confirmation"}
         };
     }
 
