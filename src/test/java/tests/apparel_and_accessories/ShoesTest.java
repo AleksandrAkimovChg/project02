@@ -33,7 +33,6 @@ public class ShoesTest extends BaseTest {
         Assert.assertEquals(actualProductList, expectedProductList);
     }
 
-
     @Test
     public void testProductListSortByZA() {
             final List<String> productList = List.of(ID_115, ID_116, ID_117, ID_118);
