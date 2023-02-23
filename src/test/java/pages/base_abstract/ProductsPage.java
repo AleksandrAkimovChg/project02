@@ -146,7 +146,7 @@ public abstract class ProductsPage<ProductsPageType> extends MainPage {
         return createProductsPage();
     }
 
-    public ProductsPageType clickButtonList() {
+   public ProductsPageType clickButtonList() {
         click(button_list);
 
         return createProductsPage();
