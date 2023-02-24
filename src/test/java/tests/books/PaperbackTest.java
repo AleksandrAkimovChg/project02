@@ -73,4 +73,23 @@ public class PaperbackTest extends BaseTest {
 
         Assert.assertEquals(actualProductPrices, expectedProductPrices);
     }
+
+    @Test
+    public void testProductListSortByPriceHighLow() {
+        final List<Double> productList = List.of(9.99, 16.20, 7.99);
+
+        List<Double> expectedProductPrices = productList
+                .stream()
+                .sorted(Comparator.reverseOrder())
+                .collect(Collectors.toList());
+
+        List<Double> actualProductPrices = openBaseURL()
+                .mouseHoverOnBooksMenu()
+                .mouseHoverOnPaperbackSubmenu()
+                .clickSortBy()
+                .clickSortByPriceHighLow()
+                .getLinksPrices();
+
+        Assert.assertEquals(actualProductPrices, expectedProductPrices);
+    }
 }
