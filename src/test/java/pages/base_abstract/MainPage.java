@@ -60,7 +60,6 @@ public abstract class MainPage extends BasePage {
 
     @FindBy(xpath = "//ul[@id='main_menu_top']/li/a[@class='top menu_specials']")
     private WebElement specialsTopMenu;
-
     @FindBy(xpath = "//ul[@id='main_menu_top']//a[@class='top menu_account']")
     private WebElement accountTopMenu;
 

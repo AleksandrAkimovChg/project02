@@ -3,6 +3,7 @@ package tests.books;
 import base.BaseTest;
 import org.testng.Assert;
 import org.testng.annotations.Test;
+import pages.books.PaperbackPage;
 
 import java.util.Comparator;
 import java.util.List;
