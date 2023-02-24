@@ -38,7 +38,7 @@ public class SkincareTest extends BaseTest {
 
         new HomePage(getDriver())
                 .mouseHoverOnSkincareMenu()
-                .ClickGiftIdeasAndSetsSubmenu();
+                .clickGiftIdeasAndSetsSubmenu();
 
         Assert.assertNotEquals(oldURL, getDriver().getCurrentUrl());
         Assert.assertEquals(skincarePage.getURL(), expectedUrl);
@@ -57,7 +57,7 @@ public class SkincareTest extends BaseTest {
 
         new HomePage(getDriver())
                 .mouseHoverOnSkincareMenu()
-                .ClickHandsAndNailsSubmenu();
+                .clickHandsAndNailsSubmenu();
 
         Assert.assertNotEquals(oldURL, getDriver().getCurrentUrl());
         Assert.assertEquals(skincarePage.getURL(), expectedUrl);
@@ -76,7 +76,7 @@ public class SkincareTest extends BaseTest {
 
         new HomePage(getDriver())
                 .mouseHoverOnSkincareMenu()
-                .ClickSunSubmenu();
+                .clickSunSubmenu();
 
         Assert.assertNotEquals(oldURL, getDriver().getCurrentUrl());
         Assert.assertEquals(skincarePage.getURL(), expectedUrl);

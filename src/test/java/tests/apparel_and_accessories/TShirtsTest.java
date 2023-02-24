@@ -15,7 +15,7 @@ public class TShirtsTest extends BaseTest {
         List<String> actualProductList =
                 openBaseURL()
                         .mouseHoverOnApparelAndAccessoriesMenu()
-                        .mouseHoverOnTShirtSubmenu()
+                        .clickTShirtSubmenu()
                         .clickSortBy()
                         .clickSortByAZ()
                         .getLinksText();
@@ -24,7 +24,7 @@ public class TShirtsTest extends BaseTest {
                 .sorted(Comparator.naturalOrder())
                 .collect(Collectors.toList());
 
-        Assert.assertEquals(expectedProductList, actualProductList);
+        Assert.assertEquals(actualProductList, expectedProductList);
     }
 
     @Test
@@ -33,7 +33,7 @@ public class TShirtsTest extends BaseTest {
         List<String> actualProductList =
                 openBaseURL()
                         .mouseHoverOnApparelAndAccessoriesMenu()
-                        .mouseHoverOnTShirtSubmenu()
+                        .clickTShirtSubmenu()
                         .clickSortBy()
                         .clickSortByZA()
                         .getLinksText();
@@ -42,7 +42,7 @@ public class TShirtsTest extends BaseTest {
                 .sorted(Comparator.reverseOrder())
                 .collect(Collectors.toList());
 
-        Assert.assertEquals(expectedProductList, actualProductList);
+        Assert.assertEquals(actualProductList, expectedProductList);
     }
 
     @Test
@@ -51,7 +51,7 @@ public class TShirtsTest extends BaseTest {
         List<Double> actualProductList =
                 openBaseURL()
                         .mouseHoverOnApparelAndAccessoriesMenu()
-                        .mouseHoverOnTShirtSubmenu()
+                        .clickTShirtSubmenu()
                         .clickSortBy()
                         .clickSortByPriceLowHigh()
                         .getLinksPrices();
@@ -60,7 +60,7 @@ public class TShirtsTest extends BaseTest {
                 .sorted(Comparator.naturalOrder())
                 .collect(Collectors.toList());
 
-        Assert.assertEquals(expectedProductList, actualProductList);
+        Assert.assertEquals(actualProductList, expectedProductList);
     }
 
     @Test
@@ -69,7 +69,7 @@ public class TShirtsTest extends BaseTest {
         List<Double> actualProductList =
                 openBaseURL()
                         .mouseHoverOnApparelAndAccessoriesMenu()
-                        .mouseHoverOnTShirtSubmenu()
+                        .clickTShirtSubmenu()
                         .clickSortBy()
                         .clickSortByPriceHighLow()
                         .getLinksPrices();
@@ -78,6 +78,6 @@ public class TShirtsTest extends BaseTest {
                 .sorted(Comparator.reverseOrder())
                 .collect(Collectors.toList());
 
-        Assert.assertEquals(expectedProductList, actualProductList);
+        Assert.assertEquals(actualProductList, expectedProductList);
     }
 }

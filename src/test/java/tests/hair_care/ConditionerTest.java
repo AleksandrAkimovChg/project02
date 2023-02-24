@@ -26,7 +26,7 @@ public class ConditionerTest extends BaseTest {
         List<String> actualProductList =
                 openBaseURL()
                         .mouseHoverOnHaircareMenu()
-                        .mouseHoverOnConditionerSubmenu()
+                        .clickConditionerSubmenu()
                         .clickSortBy()
                         .clickSortByAZ()
                         .getLinksText();
@@ -48,7 +48,7 @@ public class ConditionerTest extends BaseTest {
         List<String> actualProductList =
                 openBaseURL()
                         .mouseHoverOnHaircareMenu()
-                        .mouseHoverOnConditionerSubmenu()
+                        .clickConditionerSubmenu()
                         .clickSortBy()
                         .clickSortByZA()
                         .getLinksText();
