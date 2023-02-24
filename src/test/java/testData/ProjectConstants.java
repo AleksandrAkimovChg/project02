@@ -38,6 +38,17 @@ public class ProjectConstants {
     /**
      * List of products
      */
+
+    public final static String ID_50 = "Skinsheen Bronzer Stick";
+    public final static String ID_51 = "BeneFit Girl Meets Pearl";
+    public final static String ID_52 = "Benefit Bella Bamba";
+    public final static String ID_53 = "Tropiques Minerale Loose Bronzer";
+    public final static String ID_69 = "Seaweed Conditioner";
+
+    public final static String ID_71 = "Pantene Pro-V Conditioner, Classic Care";
+    public final static String ID_72 = "Brunette expressions Conditioner";
+    public final static String ID_73 = "Highlighting Expressions";
+    public final static String ID_101 = "Pro-V Color Hair Solutions Color Preserve Shine Conditioner";
     public final static String ID_112 = "The Miracle Morning: The Not-So-Obvious Secret Guaranteed to Transform Your Life";
     public final static String ID_113 = "Paper Towns by John Green";
     public final static String ID_114 = "Allegiant by Veronica Roth";
@@ -45,10 +56,8 @@ public class ProjectConstants {
     public final static String ID_116 = "New Ladies High Wedge Heel Toe Thong Diamante Flip Flop Sandals";
     public final static String ID_117 = "Ruby Shoo Womens Jada T-Bar";
     public final static String ID_118 = "Womens high heel point toe stiletto sandals ankle strap court shoes";
-    public final static String ID_50 = "Skinsheen Bronzer Stick";
-    public final static String ID_53 = "Tropiques Minerale Loose Bronzer";
-    public final static String ID_51 = "BeneFit Girl Meets Pearl";
-    public final static String ID_52 = "Benefit Bella Bamba";
+
+
       /**
      * List of products URL
      */
