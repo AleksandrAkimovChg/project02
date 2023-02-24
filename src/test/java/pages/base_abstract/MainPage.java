@@ -10,6 +10,7 @@ import pages.apparel_and_accessories.TShirtsPage;
 import pages.books.BooksPage;
 import pages.books.PaperbackPage;
 import pages.fragrance.FragrancePage;
+import pages.hair_care.ConditionerPage;
 import pages.hair_care.HairCarePage;
 import pages.home.HomePage;
 import pages.home.account.AccountLoginPage;
@@ -56,7 +57,6 @@ public abstract class MainPage extends BasePage {
 
     @FindBy(xpath = "//ul[@id='main_menu_top']/li/a[@class='top menu_specials']")
     private WebElement specialsTopMenu;
-
     @FindBy(xpath = "//ul[@id='main_menu_top']//a[@class='top menu_account']")
     private WebElement accountTopMenu;
 
@@ -125,6 +125,9 @@ public abstract class MainPage extends BasePage {
 
     @FindBy(xpath = NAV_PILLS_CATEGORYMENU + "//a[contains(text(),'Sun')]")
     private WebElement skincareSunSubmenu;
+
+    @FindBy(xpath = NAV_PILLS_CATEGORYMENU + "//a[contains(text(),'Conditioner')]")
+    private WebElement conditionerSubmenu;
 
     @FindBy(css = "#categorymenu > nav > ul > li:nth-child(5) > a")
     private WebElement fragranceMenu;
@@ -242,7 +245,6 @@ public abstract class MainPage extends BasePage {
 
         return getAttributeByIndex(index, getTopMenuHrefLinks(), "href");
     }
-
 
 
     /**
@@ -363,10 +365,22 @@ public abstract class MainPage extends BasePage {
         return new HomePage(getDriver());
     }
 
+    public HomePage mouseHoverOnHaircareMenu() {
+        mouseHover(haircareMenu);
+
+        return new HomePage(getDriver());
+    }
+
     public PaperbackPage mouseHoverOnPaperbackSubmenu() {
         mouseHoverAndClick(paperbackSubmenu);
 
         return new PaperbackPage(getDriver());
+    }
+
+    public ConditionerPage mouseHoverOnConditionerSubmenu() {
+        mouseHoverAndClick(conditionerSubmenu);
+
+        return new ConditionerPage(getDriver());
     }
 
     /**
