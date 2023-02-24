@@ -223,13 +223,13 @@ public abstract class ProductsPage<ProductsPageType> extends MainPage {
 
     public List<Double> getLinksPrices() {
         List<String> str = getListText(productPrice);
-        List<Double> pirces = new ArrayList<Double>();
+        List<Double> prices = new ArrayList<Double>();
         
         for (int i = 0; i < str.size(); i++) {
-            pirces.add(Double.valueOf(str.get(i).replaceAll("[$,]", "")));
+            prices.add(Double.valueOf(str.get(i).replaceAll("[$,]", "")));
         }
 
-        return pirces;
+        return prices;
     }
 
     public ProductsPageType clickSortByPriceLowHigh() {
