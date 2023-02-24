@@ -73,7 +73,7 @@ public class ShoesTest extends BaseTest {
             List<String> actualProductList =
                     openBaseURL()
                             .mouseHoverOnApparelAndAccessoriesMenu()
-                            .mouseHoverOnShoesSubmenu()
+                            .clickShoesSubmenu()
                             .clickSortBy()
                             .clickSortByZA()
                             .getLinksText();
