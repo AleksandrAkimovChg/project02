@@ -23,7 +23,9 @@ public class ProjectConstants {
     static final String CATEGORY_PAPERBACK = "65&product_id=";
     static final String TAG_FASHION = "&keyword=fashion";
     static final String TAG_SHOE = "&keyword=shoe";
+    static final String CATEGORY_CHEEKS = "40&product_id=";
 
+    public final static String CART_PAGE_URL = BASE_URL + "?rt=checkout/cart";
     public final static String MEN_PAGE_URL = BASE_URL + "?rt=product/category&path=58";
     public final static String MEN_PAGE_TITLE = "Men";
     public final static String SKINCARE_PAGE_URL = BASE_URL + "?rt=product/category&path=43";
@@ -43,8 +45,11 @@ public class ProjectConstants {
     public final static String ID_116 = "New Ladies High Wedge Heel Toe Thong Diamante Flip Flop Sandals";
     public final static String ID_117 = "Ruby Shoo Womens Jada T-Bar";
     public final static String ID_118 = "Womens high heel point toe stiletto sandals ankle strap court shoes";
-
-    /**
+    public final static String ID_50 = "Skinsheen Bronzer Stick";
+    public final static String ID_53 = "Tropiques Minerale Loose Bronzer";
+    public final static String ID_51 = "BeneFit Girl Meets Pearl";
+    public final static String ID_52 = "Benefit Bella Bamba";
+      /**
      * List of products URL
      */
 
@@ -68,5 +73,19 @@ public class ProjectConstants {
 
     @Description(ID_114)
     public static final String EXPECTED_URL_PRODUCT_ID_114 = URL_PRODUCT_ID + CATEGORY_PAPERBACK + "114";
-}
 
+    /**
+     * Makeup/Cheeks
+     */
+    @Description(ID_50)
+    public static final String EXPECTED_URL_PRODUCT_ID_50 = URL_PRODUCT_ID + CATEGORY_CHEEKS + "50";
+
+    @Description(ID_53)
+    public static final String EXPECTED_URL_PRODUCT_ID_53 = URL_PRODUCT_ID + CATEGORY_CHEEKS + "53";
+
+    @Description(ID_51)
+    public static final String EXPECTED_URL_PRODUCT_ID_51 = URL_PRODUCT_ID + CATEGORY_CHEEKS + "51";
+
+    @Description(ID_52)
+    public static final String EXPECTED_URL_PRODUCT_ID_52 = URL_PRODUCT_ID + CATEGORY_CHEEKS + "52";
+}
