@@ -23,19 +23,31 @@ public class ProjectConstants {
     static final String CATEGORY_PAPERBACK = "65&product_id=";
     static final String TAG_FASHION = "&keyword=fashion";
     static final String TAG_SHOE = "&keyword=shoe";
+    static final String CATEGORY_CHEEKS = "40&product_id=";
 
+    public final static String CART_PAGE_URL = BASE_URL + "?rt=checkout/cart";
     public final static String MEN_PAGE_URL = BASE_URL + "?rt=product/category&path=58";
     public final static String MEN_PAGE_TITLE = "Men";
     public final static String SKINCARE_PAGE_URL = BASE_URL + "?rt=product/category&path=43";
     public final static String SKINCARE_PAGE_TITLE = "Skincare";
 
-    public final static String SEARCH_CRITERIA = "MEN";
-    public final static String SEARCH_PAGE_URL = BASE_URL + "?rt=product/search&limit=&keyword=" + SEARCH_CRITERIA
-            + "&category_id=0";
+    public final static String SEARCH_CRITERIA = " MEN ";
+    public final static String SEARCH_PAGE_URL = BASE_URL + "?rt=product/search&limit=&keyword=%20MEN%20&category_id=0";
 
     /**
      * List of products
      */
+
+    public final static String ID_50 = "Skinsheen Bronzer Stick";
+    public final static String ID_51 = "BeneFit Girl Meets Pearl";
+    public final static String ID_52 = "Benefit Bella Bamba";
+    public final static String ID_53 = "Tropiques Minerale Loose Bronzer";
+    public final static String ID_69 = "Seaweed Conditioner";
+
+    public final static String ID_71 = "Pantene Pro-V Conditioner, Classic Care";
+    public final static String ID_72 = "Brunette expressions Conditioner";
+    public final static String ID_73 = "Highlighting Expressions";
+    public final static String ID_101 = "Pro-V Color Hair Solutions Color Preserve Shine Conditioner";
     public final static String ID_112 = "The Miracle Morning: The Not-So-Obvious Secret Guaranteed to Transform Your Life";
     public final static String ID_113 = "Paper Towns by John Green";
     public final static String ID_114 = "Allegiant by Veronica Roth";
@@ -44,13 +56,20 @@ public class ProjectConstants {
     public final static String ID_117 = "Ruby Shoo Womens Jada T-Bar";
     public final static String ID_118 = "Womens high heel point toe stiletto sandals ankle strap court shoes";
 
-    /**
+
+      /**
      * List of products URL
      */
 
     /**
      * Shoes
      */
+    @Description("SHOES page")
+    public static final String EXPECTED_URL_SHOES_PAGE = BASE_URL + "?rt=product/category&path=68_69";
+
+    @Description("SHOES page title")
+    public static final String EXPECTED_TITLE_SHOES_PAGE = "SHOES";
+
     @Description(ID_116)
     public static final String EXPECTED_URL_PRODUCT_ID_116 = URL_PRODUCT_ID + CATEGORY_SHOES + "116";
 
@@ -68,5 +87,19 @@ public class ProjectConstants {
 
     @Description(ID_114)
     public static final String EXPECTED_URL_PRODUCT_ID_114 = URL_PRODUCT_ID + CATEGORY_PAPERBACK + "114";
-}
 
+    /**
+     * Makeup/Cheeks
+     */
+    @Description(ID_50)
+    public static final String EXPECTED_URL_PRODUCT_ID_50 = URL_PRODUCT_ID + CATEGORY_CHEEKS + "50";
+
+    @Description(ID_53)
+    public static final String EXPECTED_URL_PRODUCT_ID_53 = URL_PRODUCT_ID + CATEGORY_CHEEKS + "53";
+
+    @Description(ID_51)
+    public static final String EXPECTED_URL_PRODUCT_ID_51 = URL_PRODUCT_ID + CATEGORY_CHEEKS + "51";
+
+    @Description(ID_52)
+    public static final String EXPECTED_URL_PRODUCT_ID_52 = URL_PRODUCT_ID + CATEGORY_CHEEKS + "52";
+}

@@ -6,7 +6,6 @@ import org.openqa.selenium.support.FindBy;
 import pages.base_abstract.MainPage;
 
 import java.util.List;
-import java.util.stream.Collectors;
 
 public class SearchPage extends MainPage {
 
@@ -35,13 +34,5 @@ public class SearchPage extends MainPage {
     public List<WebElement> getProductNames() {
 
         return this.productList;
-    }
-
-    public List<String> getFilteredProductNames(String searchCriteria) {
-        return getProductNames()
-                .stream()
-                .map(WebElement::getText)
-                .filter(name -> !name.isBlank() && (name.contains(" " + searchCriteria + " ")))
-                .collect(Collectors.toList());
     }
 }

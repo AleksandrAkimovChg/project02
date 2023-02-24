@@ -5,9 +5,13 @@ import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.home.HomePage;
+import pages.my_account.MyAccountPage;
 import testData.TestData;
 
 import java.util.List;
+
+import static testData.ProjectConstants.LOGIN_NAME;
+import static testData.ProjectConstants.PASSWORD;
 
 public class MainTest extends BaseTest {
 
@@ -52,7 +56,13 @@ public class MainTest extends BaseTest {
     public void testTopMenuLinksNavigateToCorrespondingPages(
             int index, String text, String href, String url, String title) {
 
-        HomePage homePage = openBaseURL();
+        HomePage homePage = openBaseURL()
+                .clickAccountMenu()
+                .clickLoginAccountSubmenu()
+                .clickClearInputRegularUserLogin(LOGIN_NAME)
+                .clickClearInputRegularUserPassword(PASSWORD)
+                .clickLoginButton()
+                .clickLogo();
 
         List<WebElement> topListMenu = homePage.getTopMenuHrefLinks();
 
