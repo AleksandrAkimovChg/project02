@@ -24,12 +24,12 @@ public class ShoesTest extends BaseTest {
 
         String actualURL = homePage
                 .mouseHoverOnApparelAndAccessoriesMenu()
-                .mouseHoverOnShoesSubmenu()
+                .clickShoesSubmenu()
                 .getURL();
 
         String actualTitle = homePage
                 .mouseHoverOnApparelAndAccessoriesMenu()
-                .mouseHoverOnShoesSubmenu()
+                .clickShoesSubmenu()
                 .getTitle().toUpperCase();
 
         Assert.assertNotEquals(oldURL, actualURL);
@@ -52,7 +52,7 @@ public class ShoesTest extends BaseTest {
         List<String> actualProductList =
                 openBaseURL()
                         .mouseHoverOnApparelAndAccessoriesMenu()
-                        .mouseHoverOnShoesSubmenu()
+                        .clickShoesSubmenu()
                         .clickSortBy()
                         .clickSortByAZ()
                         .getLinksText();
@@ -73,7 +73,7 @@ public class ShoesTest extends BaseTest {
             List<String> actualProductList =
                     openBaseURL()
                             .mouseHoverOnApparelAndAccessoriesMenu()
-                            .mouseHoverOnShoesSubmenu()
+                            .clickShoesSubmenu()
                             .clickSortBy()
                             .clickSortByZA()
                             .getLinksText();

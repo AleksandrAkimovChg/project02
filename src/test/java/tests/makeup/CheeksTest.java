@@ -6,7 +6,6 @@ import org.testng.annotations.Test;
 
 import java.util.Comparator;
 import java.util.List;
-import java.util.function.ToDoubleFunction;
 import java.util.stream.Collectors;
 
 import static testData.ProjectConstants.*;
@@ -20,7 +19,7 @@ public class CheeksTest extends BaseTest {
 
         openBaseURL()
                 .mouseHoverOnMakeupMenu()
-                .mouseHoverOnCheeksSubmenu()
+                .clickCheeksSubmenu()
                 .clickAddToCart()
                 .isPriceTagChanged()
         );
@@ -39,12 +38,12 @@ public class CheeksTest extends BaseTest {
         List<String> actualCheeksProductList =
                 openBaseURL()
                         .mouseHoverOnMakeupMenu()
-                        .mouseHoverOnCheeksSubmenu()
+                        .clickCheeksSubmenu()
                         .clickSortBy()
                         .clickSortByAZ()
                         .getLinksText();
 
-        Assert.assertEquals(expectedCheeksProductList, actualCheeksProductList);
+        Assert.assertEquals(actualCheeksProductList, expectedCheeksProductList);
     }
 
     @Test
@@ -60,11 +59,11 @@ public class CheeksTest extends BaseTest {
         List<String> actualCheeksProductList =
                 openBaseURL()
                         .mouseHoverOnMakeupMenu()
-                        .mouseHoverOnCheeksSubmenu()
+                        .clickCheeksSubmenu()
                         .clickSortBy()
                         .clickSortByZA()
                         .getLinksText();
 
-        Assert.assertEquals(expectedCheeksProductList, actualCheeksProductList);
+        Assert.assertEquals(actualCheeksProductList, expectedCheeksProductList);
     }
 }

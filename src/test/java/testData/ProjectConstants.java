@@ -43,7 +43,6 @@ public class ProjectConstants {
     public final static String ID_52 = "Benefit Bella Bamba";
     public final static String ID_53 = "Tropiques Minerale Loose Bronzer";
     public final static String ID_69 = "Seaweed Conditioner";
-
     public final static String ID_71 = "Pantene Pro-V Conditioner, Classic Care";
     public final static String ID_72 = "Brunette expressions Conditioner";
     public final static String ID_73 = "Highlighting Expressions";

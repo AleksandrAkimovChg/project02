@@ -26,7 +26,7 @@ public class PaperbackTest extends BaseTest {
         List<String> actualProductList =
                 openBaseURL()
                         .mouseHoverOnBooksMenu()
-                        .mouseHoverOnPaperbackSubmenu()
+                        .clickPaperbackSubmenu()
                         .clickSortBy()
                         .clickSortByAZ()
                         .getLinksText();
@@ -47,7 +47,7 @@ public class PaperbackTest extends BaseTest {
         List<String> actualProductList =
                 openBaseURL()
                         .mouseHoverOnBooksMenu()
-                        .mouseHoverOnPaperbackSubmenu()
+                        .clickPaperbackSubmenu()
                         .clickSortBy()
                         .clickSortByZA()
                         .getLinksText();
@@ -66,7 +66,7 @@ public class PaperbackTest extends BaseTest {
 
         List<Double> actualProductPrices = openBaseURL()
                 .mouseHoverOnBooksMenu()
-                .mouseHoverOnPaperbackSubmenu()
+                .clickPaperbackSubmenu()
                 .clickSortBy()
                 .clickSortByPriceLowHigh()
                 .getLinksPrices();
@@ -85,7 +85,7 @@ public class PaperbackTest extends BaseTest {
 
         List<Double> actualProductPrices = openBaseURL()
                 .mouseHoverOnBooksMenu()
-                .mouseHoverOnPaperbackSubmenu()
+                .clickPaperbackSubmenu()
                 .clickSortBy()
                 .clickSortByPriceHighLow()
                 .getLinksPrices();
