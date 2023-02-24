@@ -3,6 +3,7 @@ package tests.books;
 import base.BaseTest;
 import org.testng.Assert;
 import org.testng.annotations.Test;
+import pages.books.PaperbackPage;
 
 import java.util.Comparator;
 import java.util.List;
@@ -19,7 +20,7 @@ public class PaperbackTest extends BaseTest {
         List<String> expectedProductList = productList
                 .stream()
                 .map(String::toUpperCase)
-                .sorted(Comparator.naturalOrder())
+                .sorted()
                 .collect(Collectors.toList());
 
         List<String> actualProductList =
@@ -52,6 +53,24 @@ public class PaperbackTest extends BaseTest {
                         .getLinksText();
 
         Assert.assertEquals(actualProductList, expectedProductList);
+    }
 
+    @Test
+    public void testProductListSortByPriceLowHigh() {
+        final List<Double> productList = List.of(16.2, 9.99, 7.99);
+
+        List<Double> expectedProductPrices = productList
+                .stream()
+                .sorted()
+                .collect(Collectors.toList());
+
+        List<Double> actualProductPrices = openBaseURL()
+                .mouseHoverOnBooksMenu()
+                .mouseHoverOnPaperbackSubmenu()
+                .clickSortBy()
+                .clickSortByPriceLowHigh()
+                .getLinksPrices();
+
+        Assert.assertEquals(actualProductPrices, expectedProductPrices);
     }
 }
