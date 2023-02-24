@@ -12,7 +12,6 @@ public class NewLadies_Sandals_ID116_Test extends BaseTest {
 
     @Test
     public void testNavigatesToNewLadiesSandals_ID116_Page() {
-        final String expectedURL = EXPECTED_URL_PRODUCT_ID_116;
 
         ApparelAndAccessoriesPage apparelAndAccessoriesPage =
                 new ApparelAndAccessoriesPage(getDriver());
@@ -22,7 +21,7 @@ public class NewLadies_Sandals_ID116_Test extends BaseTest {
                 new NewLadies_Sandals_ID116_Page(getDriver());
 
         String oldURL = openBaseURL()
-                .clickApparelAndAccessoriesMenu().getURL();;
+                .clickApparelAndAccessoriesMenu().getURL();
 
         apparelAndAccessoriesPage
                 .clickNewLadiesSandals();
@@ -32,6 +31,6 @@ public class NewLadies_Sandals_ID116_Test extends BaseTest {
                         .getURL();
 
         Assert.assertNotEquals(oldURL, actualURL);
-        Assert.assertEquals(actualURL, expectedURL);
+        Assert.assertEquals(actualURL, EXPECTED_URL_PRODUCT_ID_116);
     }
 }
