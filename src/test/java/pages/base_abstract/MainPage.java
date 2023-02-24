@@ -18,10 +18,7 @@ import pages.home.cart.CartPage;
 import pages.makeup.CheeksPage;
 import pages.makeup.MakeupPage;
 import pages.men.MenPage;
-import pages.skincare.GiftIdeasAndSetsPage;
-import pages.skincare.HandsAndNailsPage;
-import pages.skincare.SkincarePage;
-import pages.skincare.SunPage;
+import pages.skincare.*;
 
 import java.util.List;
 
@@ -121,6 +118,9 @@ public abstract class MainPage extends BasePage {
 
     @FindBy(xpath = NAV_PILLS_CATEGORYMENU + "//a[contains(text(),'T-shirts')]")
     private WebElement apparelAndAccessoriesTShirtsSubMenu;
+
+    @FindBy(xpath = CATEGORYMENU + HREF + "43_47']")
+    private WebElement skincareEyesSubmenu;
 
     @FindBy(xpath = NAV_PILLS_CATEGORYMENU + "//a[contains(text(),'Gift Ideas & Sets')]")
     private WebElement skincareGiftIdeasAndSetsSubmenu;
@@ -303,6 +303,12 @@ public abstract class MainPage extends BasePage {
         click(booksMenu);
 
         return new BooksPage(getDriver());
+    }
+
+    public EyesSkincarePage clickEyesSubmenu() {
+        mouseHoverAndClick(skincareEyesSubmenu);
+
+        return new EyesSkincarePage(getDriver());
     }
 
     public GiftIdeasAndSetsPage clickGiftIdeasAndSetsSubmenu() {

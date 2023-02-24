@@ -26,6 +26,8 @@ public class ProjectConstants {
     static final String CATEGORY_CHEEKS = "40&product_id=";
 
     public final static String CART_PAGE_URL = BASE_URL + "?rt=checkout/cart";
+    public final static String EYES_SKINCARE_PAGE_URL = BASE_URL + "?rt=product/category&path=43_47";
+    public final static String EYES_SKINCARE_PAGE_TITLE = "Eyes";
     public final static String MEN_PAGE_URL = BASE_URL + "?rt=product/category&path=58";
     public final static String MEN_PAGE_TITLE = "Men";
     public final static String SKINCARE_PAGE_URL = BASE_URL + "?rt=product/category&path=43";
