@@ -6,8 +6,7 @@ import org.testng.annotations.Test;
 import pages.home.HomePage;
 import pages.skincare.SkincarePage;
 
-import static testData.ProjectConstants.SKINCARE_PAGE_TITLE;
-import static testData.ProjectConstants.SKINCARE_PAGE_URL;
+import static testData.ProjectConstants.*;
 
 public class SkincareTest extends BaseTest {
 
@@ -81,5 +80,22 @@ public class SkincareTest extends BaseTest {
         Assert.assertNotEquals(oldURL, getDriver().getCurrentUrl());
         Assert.assertEquals(skincarePage.getURL(), expectedUrl);
         Assert.assertEquals(skincarePage.getTitle(), expectedTitle);
+    }
+
+    @Test
+    public void testEyesSubmenuLink_NavigatesToEyesPage() {
+
+        SkincarePage skincarePage = new SkincarePage(getDriver());
+
+        String oldURL = openBaseURL()
+                        .getURL();
+
+        new HomePage(getDriver())
+                .mouseHoverOnSkincareMenu()
+                .clickEyesSubmenu();
+
+        Assert.assertNotEquals(oldURL, getDriver().getCurrentUrl());
+        Assert.assertEquals(skincarePage.getURL(), EYES_SKINCARE_PAGE_URL);
+        Assert.assertEquals(skincarePage.getTitle(), EYES_SKINCARE_PAGE_TITLE);
     }
 }
