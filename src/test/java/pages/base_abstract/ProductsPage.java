@@ -243,4 +243,25 @@ public abstract class ProductsPage<ProductsPageType> extends MainPage {
 
         return createProductsPage();
     }
+
+    public Double[] bubbleSortDoubleArray(Double[] array) {
+        boolean isSorted = false;
+
+        while (!isSorted) {
+
+            isSorted = true;
+
+            for (int i = 1; i < array.length; i ++)  {
+                if (array[i - 1] > array[i]) {
+                    Double temp = array[i];
+                    array[i] = array[i - 1];
+                    array[i - 1] = temp;
+
+                    isSorted = false;
+                }
+            }
+        }
+
+        return array;
+    }
 }
