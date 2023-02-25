@@ -38,7 +38,7 @@ public class BodyAndShowerTest extends BaseTest {
         Assert.assertEquals(actualTitle, EXPECTED_TITLE_BODY_AND_SHOWER_PAGE);
     }
 
-    @Test (priority = -4, dependsOnMethods = "testNavigatesToBodyAndShowerPage")
+    @Test (priority = -1, dependsOnMethods = "testNavigatesToBodyAndShowerPage")
     public void testProductListSortByAZ() {
         final List<String> productList = List.of(ID_75, ID_77, ID_107);
 
@@ -54,6 +54,27 @@ public class BodyAndShowerTest extends BaseTest {
                         .clickBodyAndShowerSubmenu()
                         .clickSortBy()
                         .clickSortByAZ()
+                        .getLinksText();
+
+        Assert.assertEquals(actualProductList, expectedProductList);
+    }
+
+    @Test(priority = -1, dependsOnMethods = "testNavigatesToBodyAndShowerPage")
+    public void testProductListSortByZA() {
+        final List<String> productList = List.of(ID_75, ID_77, ID_107);
+
+        List<String> expectedProductList = productList
+                .stream()
+                .map(String::toUpperCase)
+                .sorted(Comparator.reverseOrder())
+                .collect(Collectors.toList());
+
+        List<String> actualProductList =
+                openBaseURL()
+                        .mouseHoverOnMenMenu()
+                        .clickBodyAndShowerSubmenu()
+                        .clickSortBy()
+                        .clickSortByZA()
                         .getLinksText();
 
         Assert.assertEquals(actualProductList, expectedProductList);
