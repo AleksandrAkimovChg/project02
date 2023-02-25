@@ -112,4 +112,25 @@ public class PaperbackTest extends BaseTest {
 
         Assert.assertEquals(actualProductPrices, expectedProductPrices);
     }
+
+    @Test
+    public void testProductListSortByPriceHighLow_V2() {
+        final Double[] productList = {9.99, 16.20, 7.99};
+
+        PaperbackPage paperbackPage = new PaperbackPage(getDriver());
+
+        Double[] sortDoubleArray = paperbackPage.bubbleSortDoubleArray(productList);
+        Double[] expectedProductPrices = paperbackPage.reverseDoubleArray(sortDoubleArray);
+
+        List<Double> listProductPrices = openBaseURL()
+                .mouseHoverOnBooksMenu()
+                .clickPaperbackSubmenu()
+                .clickSortBy()
+                .clickSortByPriceHighLow()
+                .getLinksPrices();
+
+        Double[] actualProductPrices = listProductPrices.stream().toArray(Double[]::new);
+
+        Assert.assertEquals(actualProductPrices, expectedProductPrices);
+    }
 }
