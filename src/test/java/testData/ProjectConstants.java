@@ -83,6 +83,16 @@ public class ProjectConstants {
     public static final String EXPECTED_URL_PRODUCT_ID_118 = URL_PRODUCT_ID + CATEGORY_SHOES + "118";
 
     /**
+     * Men
+     */
+    @Description("SHOES page")
+    public static final String EXPECTED_URL_BODY_AND_SHOWER_PAGE = BASE_URL + "?rt=product/category&path=58_63";
+
+    @Description("BODY & SHOWER page title")
+    public static final String EXPECTED_TITLE_BODY_AND_SHOWER_PAGE = "BODY & SHOWER";
+
+
+    /**
      * Paperback
      */
     @Description(ID_112)
