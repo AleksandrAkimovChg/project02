@@ -20,7 +20,7 @@ public abstract class ProductsPage<ProductsPageType> extends MainPage {
     final static String PRODUCT_NAME_PATH = MAIN_CONTAINER + FIXED_WRAPPER + PRODUCT_NAME;
     final static String THUMBNAIL = "//div[@class='thumbnail']";
     final static String HREF_IMG_SCR = "/a[@href]/img[@src]";
-    final static String PRODUCT_PRICE = MAIN_CONTAINER + "//div[@class='pricetag jumbotron']//div[@class ='oneprice']";
+    final static String PRODUCT_PRICE = MAIN_CONTAINER + "//div[@class='pricetag jumbotron']/div[@class='price']/div[1]";
 
     /**
      * title

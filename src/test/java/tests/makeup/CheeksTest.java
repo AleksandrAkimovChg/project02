@@ -66,4 +66,42 @@ public class CheeksTest extends BaseTest {
 
         Assert.assertEquals(actualCheeksProductList, expectedCheeksProductList);
     }
+
+    @Test
+    public void testCheeksProductListSortByPriceLowHigh() {
+        final List<Double> productList = List.of(19.00, 28.00, 29.50, 38.50);
+
+        List<Double> expectedCheeksProductPrices = productList
+                .stream()
+                .sorted()
+                .collect(Collectors.toList());
+
+        List<Double> actualCheeksProductPrices = openBaseURL()
+                .mouseHoverOnMakeupMenu()
+                .clickCheeksSubmenu()
+                .clickSortBy()
+                .clickSortByPriceLowHigh()
+                .getLinksPrices();
+
+        Assert.assertEquals(actualCheeksProductPrices, expectedCheeksProductPrices);
+    }
+
+    @Test
+    public void testCheeksProductListSortByPriceHighLow() {
+        final List<Double> productList = List.of(19.00, 28.00, 29.50, 38.50);
+
+        List<Double> expectedCheeksProductPrices = productList
+                .stream()
+                .sorted(Comparator.reverseOrder())
+                .collect(Collectors.toList());
+
+        List<Double> actualCheeksProductPrices = openBaseURL()
+                .mouseHoverOnMakeupMenu()
+                .clickCheeksSubmenu()
+                .clickSortBy()
+                .clickSortByPriceHighLow()
+                .getLinksPrices();
+
+        Assert.assertEquals(actualCheeksProductPrices, expectedCheeksProductPrices);
+    }
 }
