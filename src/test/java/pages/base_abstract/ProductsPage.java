@@ -264,4 +264,21 @@ public abstract class ProductsPage<ProductsPageType> extends MainPage {
 
         return array;
     }
+
+    public Double[] reverseDoubleArray(Double[] array) {
+        if (array.length == 0) {
+
+            return new Double[]{};
+        }
+
+        Double[] result = new Double[array.length];
+        int count = array.length - 1;
+
+        for (int i = 0; i < array.length; i++) {
+            result[count] = array[i];
+            count--;
+        }
+
+        return result;
+    }
 }
