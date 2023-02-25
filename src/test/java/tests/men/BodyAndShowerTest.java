@@ -5,11 +5,15 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.home.HomePage;
 
+import java.util.Comparator;
+import java.util.List;
+import java.util.stream.Collectors;
+
 import static testData.ProjectConstants.*;
 
 public class BodyAndShowerTest extends BaseTest {
 
-    @Test
+    @Test (priority = -5)
     public void testNavigatesToBodyAndShowerPage() {
 
         HomePage homePage = openBaseURL();
@@ -32,5 +36,26 @@ public class BodyAndShowerTest extends BaseTest {
 
         Assert.assertNotEquals(oldTitle, actualTitle);
         Assert.assertEquals(actualTitle, EXPECTED_TITLE_BODY_AND_SHOWER_PAGE);
+    }
+
+    @Test (priority = -4, dependsOnMethods = "testNavigatesToBodyAndShowerPage")
+    public void testProductListSortByAZ() {
+        final List<String> productList = List.of(ID_75, ID_77, ID_107);
+
+        List<String> expectedProductList = productList
+                .stream()
+                .map(String::toUpperCase)
+                .sorted(Comparator.naturalOrder())
+                .collect(Collectors.toList());
+
+        List<String> actualProductList =
+                openBaseURL()
+                        .mouseHoverOnMenMenu()
+                        .clickBodyAndShowerSubmenu()
+                        .clickSortBy()
+                        .clickSortByAZ()
+                        .getLinksText();
+
+        Assert.assertEquals(actualProductList, expectedProductList);
     }
 }

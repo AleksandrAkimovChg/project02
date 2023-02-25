@@ -51,9 +51,12 @@ public class ProjectConstants {
     public final static String ID_71 = "Pantene Pro-V Conditioner, Classic Care";
     public final static String ID_72 = "Brunette expressions Conditioner";
     public final static String ID_73 = "Highlighting Expressions";
+    public final static String ID_75 = "Dove Men +Care Body Wash";
+    public final static String ID_77 = "Men+Care Active Clean Shower Tool";
     public final static String ID_96 = "Eye master";
     public final static String ID_97 = "Eye Rejuvenating Serum";
     public final static String ID_101 = "Pro-V Color Hair Solutions Color Preserve Shine Conditioner";
+    public final static String ID_107 = "Lancome Slimissime 360 Slimming Activating Concentrate Unisex Treatment";
     public final static String ID_112 = "The Miracle Morning: The Not-So-Obvious Secret Guaranteed to Transform Your Life";
     public final static String ID_113 = "Paper Towns by John Green";
     public final static String ID_114 = "Allegiant by Veronica Roth";
