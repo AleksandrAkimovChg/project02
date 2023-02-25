@@ -75,6 +75,26 @@ public class PaperbackTest extends BaseTest {
     }
 
     @Test
+    public void testProductListSortByPriceLowHigh_V2() {
+        final Double[] productList = {16.2, 9.99, 7.99};
+
+        PaperbackPage paperbackPage = new PaperbackPage(getDriver());
+
+        Double[] expectedProductPrices = paperbackPage.bubbleSortDoubleArray(productList);
+
+        List<Double> listProductPrices = openBaseURL()
+                .mouseHoverOnBooksMenu()
+                .clickPaperbackSubmenu()
+                .clickSortBy()
+                .clickSortByPriceLowHigh()
+                .getLinksPrices();
+
+        Double[] actualProductPrices = listProductPrices.stream().toArray(Double[]::new);
+
+        Assert.assertEquals(actualProductPrices, expectedProductPrices);
+    }
+
+    @Test
     public void testProductListSortByPriceHighLow() {
         final List<Double> productList = List.of(9.99, 16.20, 7.99);
 
