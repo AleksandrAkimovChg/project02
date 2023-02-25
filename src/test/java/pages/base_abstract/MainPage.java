@@ -122,6 +122,9 @@ public abstract class MainPage extends BasePage {
     @FindBy(xpath = CATEGORYMENU + HREF + "43_47']")
     private WebElement skincareEyesSubmenu;
 
+    @FindBy(xpath = CATEGORYMENU + HREF + "43_46']")
+    private WebElement skincareFaceSubmenu;
+
     @FindBy(xpath = NAV_PILLS_CATEGORYMENU + "//a[contains(text(),'Gift Ideas & Sets')]")
     private WebElement skincareGiftIdeasAndSetsSubmenu;
 
@@ -309,6 +312,12 @@ public abstract class MainPage extends BasePage {
         mouseHoverAndClick(skincareEyesSubmenu);
 
         return new EyesSkincarePage(getDriver());
+    }
+
+    public FaceSkincarePage clickFaceSubmenu() {
+        mouseHoverAndClick(skincareFaceSubmenu);
+
+        return new FaceSkincarePage(getDriver());
     }
 
     public GiftIdeasAndSetsPage clickGiftIdeasAndSetsSubmenu() {
