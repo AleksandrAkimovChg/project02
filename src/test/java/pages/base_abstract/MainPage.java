@@ -17,6 +17,7 @@ import pages.home.account.AccountLoginPage;
 import pages.home.cart.CartPage;
 import pages.makeup.CheeksPage;
 import pages.makeup.MakeupPage;
+import pages.men.BodyAndShowerPage;
 import pages.men.MenPage;
 import pages.skincare.*;
 
@@ -145,6 +146,9 @@ public abstract class MainPage extends BasePage {
 
     @FindBy(css = "#categorymenu > nav > ul > li:nth-child(6) > a")
     private WebElement menMenu;
+
+    @FindBy(xpath = NAV_PILLS_CATEGORYMENU + "//a[contains(text(),'Body & Shower')]")
+    private WebElement bodyShowerSubmenu;
 
     @FindBy(css = "#categorymenu > nav > ul > li:nth-child(7) > a")
     private WebElement haircareMenu;
@@ -296,6 +300,12 @@ public abstract class MainPage extends BasePage {
         return new MenPage(getDriver());
     }
 
+    public BodyAndShowerPage clickBodyAndShowerSubmenu() {
+        mouseHoverAndClick(bodyShowerSubmenu);
+
+        return new BodyAndShowerPage(getDriver());
+    }
+
     public HairCarePage clickHairCareMenu() {
         click(haircareMenu);
 
@@ -388,6 +398,12 @@ public abstract class MainPage extends BasePage {
 
     public HomePage mouseHoverOnSkincareMenu() {
         mouseHover(skincareMenu);
+
+        return new HomePage(getDriver());
+    }
+
+    public HomePage mouseHoverOnMenMenu() {
+        mouseHover(menMenu);
 
         return new HomePage(getDriver());
     }
