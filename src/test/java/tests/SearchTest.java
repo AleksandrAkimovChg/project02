@@ -24,10 +24,11 @@ public class SearchTest extends BaseTest {
                 .stream()
                 .map(WebElement::getText)
                 .filter(name -> !name.isBlank() && (name.contains(SEARCH_CRITERIA)))
-                .collect(Collectors.toList());;
+                .collect(Collectors.toList());
 
         Assert.assertEquals(searchPage.getURL(), SEARCH_PAGE_URL);
         Assert.assertEquals(productNames.size(), 4);
         Assert.assertTrue(productNames.stream().allMatch(name -> name.contains(SEARCH_CRITERIA)));
     }
 }
+
