@@ -110,9 +110,9 @@ public class MenTest extends BaseTest {
                 .filter(isWorking -> isWorking)
                 .count();
 
-        Assert.assertEquals(menPage.getURL(), MEN_PAGE_URL, "The Men page URL is as expected");
-        Assert.assertEquals(actualWorkingLinksCount, internalLinksCount, "Number of internal working links is as expected");
-        Assert.assertEquals(actualWorkingLinksCount, expectedWorkingLinksCount, "Number of working links is as expected");
+        Assert.assertEquals(menPage.getURL(), MEN_PAGE_URL, "The Men page URL is not as expected");
+        Assert.assertEquals(actualWorkingLinksCount, internalLinksCount, "Number of internal working links is not as expected");
+        Assert.assertEquals(actualWorkingLinksCount, expectedWorkingLinksCount, "Number of working links is not as expected");
         Assert.assertEquals(externalLinks.size(), 0, "External links are present in the Men page menu");
     }
 }
