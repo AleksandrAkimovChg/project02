@@ -26,6 +26,10 @@ public class ProjectConstants {
     static final String CATEGORY_CHEEKS = "40&product_id=";
 
     public final static String CART_PAGE_URL = BASE_URL + "?rt=checkout/cart";
+    public final static String EYES_SKINCARE_PAGE_URL = BASE_URL + "?rt=product/category&path=43_47";
+    public final static String EYES_SKINCARE_PAGE_TITLE = "Eyes";
+    public final static String FACE_SKINCARE_PAGE_URL = BASE_URL + "?rt=product/category&path=43_46";
+    public final static String FACE_SKINCARE_PAGE_TITLE = "Face";
     public final static String MEN_PAGE_URL = BASE_URL + "?rt=product/category&path=58";
     public final static String MEN_PAGE_TITLE = "Men";
     public final static String SKINCARE_PAGE_URL = BASE_URL + "?rt=product/category&path=43";
@@ -37,6 +41,22 @@ public class ProjectConstants {
     /**
      * List of products
      */
+
+    public final static String ID_50 = "Skinsheen Bronzer Stick";
+    public final static String ID_51 = "BeneFit Girl Meets Pearl";
+    public final static String ID_52 = "Benefit Bella Bamba";
+    public final static String ID_53 = "Tropiques Minerale Loose Bronzer";
+    public final static String ID_65 = "Absolue Eye Precious Cells";
+    public final static String ID_69 = "Seaweed Conditioner";
+    public final static String ID_71 = "Pantene Pro-V Conditioner, Classic Care";
+    public final static String ID_72 = "Brunette expressions Conditioner";
+    public final static String ID_73 = "Highlighting Expressions";
+    public final static String ID_75 = "Dove Men +Care Body Wash";
+    public final static String ID_77 = "Men+Care Active Clean Shower Tool";
+    public final static String ID_96 = "Eye master";
+    public final static String ID_97 = "Eye Rejuvenating Serum";
+    public final static String ID_101 = "Pro-V Color Hair Solutions Color Preserve Shine Conditioner";
+    public final static String ID_107 = "Lancome Slimissime 360 Slimming Activating Concentrate Unisex Treatment";
     public final static String ID_112 = "The Miracle Morning: The Not-So-Obvious Secret Guaranteed to Transform Your Life";
     public final static String ID_113 = "Paper Towns by John Green";
     public final static String ID_114 = "Allegiant by Veronica Roth";
@@ -44,10 +64,8 @@ public class ProjectConstants {
     public final static String ID_116 = "New Ladies High Wedge Heel Toe Thong Diamante Flip Flop Sandals";
     public final static String ID_117 = "Ruby Shoo Womens Jada T-Bar";
     public final static String ID_118 = "Womens high heel point toe stiletto sandals ankle strap court shoes";
-    public final static String ID_50 = "Skinsheen Bronzer Stick";
-    public final static String ID_53 = "Tropiques Minerale Loose Bronzer";
-    public final static String ID_51 = "BeneFit Girl Meets Pearl";
-    public final static String ID_52 = "Benefit Bella Bamba";
+
+
       /**
      * List of products URL
      */
@@ -55,11 +73,27 @@ public class ProjectConstants {
     /**
      * Shoes
      */
+    @Description("SHOES page")
+    public static final String EXPECTED_URL_SHOES_PAGE = BASE_URL + "?rt=product/category&path=68_69";
+
+    @Description("SHOES page title")
+    public static final String EXPECTED_TITLE_SHOES_PAGE = "SHOES";
+
     @Description(ID_116)
     public static final String EXPECTED_URL_PRODUCT_ID_116 = URL_PRODUCT_ID + CATEGORY_SHOES + "116";
 
     @Description(ID_118)
     public static final String EXPECTED_URL_PRODUCT_ID_118 = URL_PRODUCT_ID + CATEGORY_SHOES + "118";
+
+    /**
+     * Men
+     */
+    @Description("SHOES page")
+    public static final String EXPECTED_URL_BODY_AND_SHOWER_PAGE = BASE_URL + "?rt=product/category&path=58_63";
+
+    @Description("BODY & SHOWER page title")
+    public static final String EXPECTED_TITLE_BODY_AND_SHOWER_PAGE = "BODY & SHOWER";
+
 
     /**
      * Paperback

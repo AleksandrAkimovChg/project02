@@ -10,15 +10,24 @@ import java.util.List;
 public abstract class ProductsPage<ProductsPageType> extends MainPage {
 
     final static String MAIN_CONTAINER = "//div[@id='maincontainer']";
+
+    final static String TITLE_CATEGORY_PAGE = MAIN_CONTAINER + "//h1/span[@class='maintext']";
     final static String SORT_BY = "//select[@id='sort']";
     final static String THUMBNAILS_GRID = "//div[@class='thumbnails grid row list-inline']";
     final static String THUMBNAILS_LIST = "//div[@class='thumbnails list row]";
     final static String FIXED_WRAPPER = "//div[@class='fixed_wrapper']";
-    final static String PRODUCT_NAME = "//a[@class ='prdocutname']";
+    final static String PRODUCT_NAME = "//a[@class='prdocutname']";
     final static String PRODUCT_NAME_PATH = MAIN_CONTAINER + FIXED_WRAPPER + PRODUCT_NAME;
     final static String THUMBNAIL = "//div[@class='thumbnail']";
     final static String HREF_IMG_SCR = "/a[@href]/img[@src]";
-    final static String PRODUCT_PRICE = MAIN_CONTAINER + "//div[@class='pricetag jumbotron']//div[@class ='oneprice']";
+    final static String PRODUCT_PRICE = MAIN_CONTAINER + "//div[@class='pricetag jumbotron']/div[@class='price']/div[1]";
+
+    /**
+     * title
+     */
+
+    @FindBy(xpath = TITLE_CATEGORY_PAGE)
+    private WebElement title;
 
     /**
      * sort
@@ -214,12 +223,13 @@ public abstract class ProductsPage<ProductsPageType> extends MainPage {
 
     public List<Double> getLinksPrices() {
         List<String> str = getListText(productPrice);
-        List<Double> pirces = new ArrayList<Double>();
+        List<Double> prices = new ArrayList<Double>();
+        
         for (int i = 0; i < str.size(); i++) {
-            pirces.add(Double.valueOf(str.get(i).replaceAll("[$,]", "")));
+            prices.add(Double.valueOf(str.get(i).replaceAll("[$,]", "")));
         }
 
-        return pirces;
+        return prices;
     }
 
     public ProductsPageType clickSortByPriceLowHigh() {
@@ -232,5 +242,43 @@ public abstract class ProductsPage<ProductsPageType> extends MainPage {
         click(sortByPriceHighLow);
 
         return createProductsPage();
+    }
+
+    public Double[] bubbleSortDoubleArray(Double[] array) {
+        boolean isSorted = false;
+
+        while (!isSorted) {
+
+            isSorted = true;
+
+            for (int i = 1; i < array.length; i ++)  {
+                if (array[i - 1] > array[i]) {
+                    Double temp = array[i];
+                    array[i] = array[i - 1];
+                    array[i - 1] = temp;
+
+                    isSorted = false;
+                }
+            }
+        }
+
+        return array;
+    }
+
+    public Double[] reverseDoubleArray(Double[] array) {
+        if (array.length == 0) {
+
+            return new Double[]{};
+        }
+
+        Double[] result = new Double[array.length];
+        int count = array.length - 1;
+
+        for (int i = 0; i < array.length; i++) {
+            result[count] = array[i];
+            count--;
+        }
+
+        return result;
     }
 }

@@ -4,10 +4,11 @@ import base.BaseTest;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.home.HomePage;
+import pages.skincare.EyesSkincarePage;
+import pages.skincare.FaceSkincarePage;
 import pages.skincare.SkincarePage;
 
-import static testData.ProjectConstants.SKINCARE_PAGE_TITLE;
-import static testData.ProjectConstants.SKINCARE_PAGE_URL;
+import static testData.ProjectConstants.*;
 
 public class SkincareTest extends BaseTest {
 
@@ -38,7 +39,7 @@ public class SkincareTest extends BaseTest {
 
         new HomePage(getDriver())
                 .mouseHoverOnSkincareMenu()
-                .ClickGiftIdeasAndSetsSubmenu();
+                .clickGiftIdeasAndSetsSubmenu();
 
         Assert.assertNotEquals(oldURL, getDriver().getCurrentUrl());
         Assert.assertEquals(skincarePage.getURL(), expectedUrl);
@@ -57,7 +58,7 @@ public class SkincareTest extends BaseTest {
 
         new HomePage(getDriver())
                 .mouseHoverOnSkincareMenu()
-                .ClickHandsAndNailsSubmenu();
+                .clickHandsAndNailsSubmenu();
 
         Assert.assertNotEquals(oldURL, getDriver().getCurrentUrl());
         Assert.assertEquals(skincarePage.getURL(), expectedUrl);
@@ -76,10 +77,44 @@ public class SkincareTest extends BaseTest {
 
         new HomePage(getDriver())
                 .mouseHoverOnSkincareMenu()
-                .ClickSunSubmenu();
+                .clickSunSubmenu();
 
         Assert.assertNotEquals(oldURL, getDriver().getCurrentUrl());
         Assert.assertEquals(skincarePage.getURL(), expectedUrl);
         Assert.assertEquals(skincarePage.getTitle(), expectedTitle);
+    }
+
+    @Test
+    public void testEyesSubmenuLink_NavigatesToEyesPage() {
+
+        EyesSkincarePage eyesSkincarePage = new EyesSkincarePage(getDriver());
+
+        String oldURL = openBaseURL()
+                        .getURL();
+
+        new HomePage(getDriver())
+                .mouseHoverOnSkincareMenu()
+                .clickEyesSubmenu();
+
+        Assert.assertNotEquals(oldURL, getDriver().getCurrentUrl());
+        Assert.assertEquals(eyesSkincarePage.getURL(), EYES_SKINCARE_PAGE_URL);
+        Assert.assertEquals(eyesSkincarePage.getTitle(), EYES_SKINCARE_PAGE_TITLE);
+    }
+
+    @Test
+    public void testFaceSubmenuLink_NavigatesToFacePage() {
+
+        FaceSkincarePage faceSkincarePage = new FaceSkincarePage(getDriver());
+
+        String oldURL = openBaseURL()
+                .getURL();
+
+        new HomePage(getDriver())
+                .mouseHoverOnSkincareMenu()
+                .clickFaceSubmenu();
+
+        Assert.assertNotEquals(oldURL, getDriver().getCurrentUrl());
+        Assert.assertEquals(faceSkincarePage.getURL(), FACE_SKINCARE_PAGE_URL);
+        Assert.assertEquals(faceSkincarePage.getTitle(), FACE_SKINCARE_PAGE_TITLE);
     }
 }

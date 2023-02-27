@@ -10,14 +10,16 @@ import pages.apparel_and_accessories.TShirtsPage;
 import pages.books.BooksPage;
 import pages.books.PaperbackPage;
 import pages.fragrance.FragrancePage;
+import pages.hair_care.ConditionerPage;
 import pages.hair_care.HairCarePage;
 import pages.home.HomePage;
 import pages.home.account.AccountLoginPage;
 import pages.home.cart.CartPage;
 import pages.makeup.CheeksPage;
 import pages.makeup.MakeupPage;
+import pages.men.BodyAndShowerPage;
 import pages.men.MenPage;
-import pages.skincare.SkincarePage;
+import pages.skincare.*;
 
 import java.util.List;
 
@@ -29,12 +31,12 @@ public abstract class MainPage extends BasePage {
     private static final String HREF = "//a[@href='https://automationteststore.com/index.php?rt=product/category&path=";
     private static final String DROPDOWN_HOME_MENU = NAV_PILLS_CATEGORYMENU + "/div/ul[@id='main_menu']/li";
     private static final String TOP_MENU_HREF = "//ul[@id='main_menu_top']/li/a[@href]";
-
     private static final String FOOTER_MENU = "//ul[@class = 'info_links_footer']//a";
 
     /**
      * logo
      */
+
     @FindBy(xpath = "//a/img[@src='resources/image/18/7a/8.png']")
     private WebElement logoImage;
 
@@ -56,7 +58,6 @@ public abstract class MainPage extends BasePage {
 
     @FindBy(xpath = "//ul[@id='main_menu_top']/li/a[@class='top menu_specials']")
     private WebElement specialsTopMenu;
-
     @FindBy(xpath = "//ul[@id='main_menu_top']//a[@class='top menu_account']")
     private WebElement accountTopMenu;
 
@@ -72,6 +73,7 @@ public abstract class MainPage extends BasePage {
     /**
      *  left navigation menu (currency & cart)
      */
+
     @FindBy(xpath ="//ul[@class='nav language pull-left']")
     private WebElement currencyMenu;
 
@@ -93,6 +95,7 @@ public abstract class MainPage extends BasePage {
     /**
      * navigation menu
      */
+
     @FindBy(css = "#categorymenu > nav > ul > li:nth-child(1) > a")
     private WebElement homeMenu;
 
@@ -101,12 +104,6 @@ public abstract class MainPage extends BasePage {
 
     @FindBy(css = "#categorymenu > nav > ul > li:nth-child(2) > a")
     private WebElement apparelAccessoriesMenu;
-
-    @FindBy(xpath = NAV_PILLS_CATEGORYMENU + "//a[contains(text(),'Shoes')]")
-    private WebElement apparelAndAccessoriesShoesSubMenu;
-
-    @FindBy(xpath = NAV_PILLS_CATEGORYMENU + "//a[contains(text(),'T-shirts')]")
-    private WebElement apparelAndAccessoriesTShirtsSubMenu;
 
     @FindBy(css = "#categorymenu > nav > ul > li:nth-child(3) > a")
     private WebElement makeupMenu;
@@ -117,6 +114,18 @@ public abstract class MainPage extends BasePage {
     @FindBy(css = "#categorymenu > nav > ul > li:nth-child(4) > a")
     private WebElement skincareMenu;
 
+    @FindBy(xpath = NAV_PILLS_CATEGORYMENU + "//a[contains(text(),'Shoes')]")
+    private WebElement apparelAndAccessoriesShoesSubMenu;
+
+    @FindBy(xpath = NAV_PILLS_CATEGORYMENU + "//a[contains(text(),'T-shirts')]")
+    private WebElement apparelAndAccessoriesTShirtsSubMenu;
+
+    @FindBy(xpath = CATEGORYMENU + HREF + "43_47']")
+    private WebElement skincareEyesSubmenu;
+
+    @FindBy(xpath = CATEGORYMENU + HREF + "43_46']")
+    private WebElement skincareFaceSubmenu;
+
     @FindBy(xpath = NAV_PILLS_CATEGORYMENU + "//a[contains(text(),'Gift Ideas & Sets')]")
     private WebElement skincareGiftIdeasAndSetsSubmenu;
 
@@ -126,11 +135,20 @@ public abstract class MainPage extends BasePage {
     @FindBy(xpath = NAV_PILLS_CATEGORYMENU + "//a[contains(text(),'Sun')]")
     private WebElement skincareSunSubmenu;
 
+    @FindBy(xpath = NAV_PILLS_CATEGORYMENU + "//a[contains(text(),'Conditioner')]")
+    private WebElement conditionerSubmenu;
+
+    @FindBy(xpath = NAV_PILLS_CATEGORYMENU + "//a[contains(text(),'Paperback')]")
+    private WebElement paperbackSubmenu;
+
     @FindBy(css = "#categorymenu > nav > ul > li:nth-child(5) > a")
     private WebElement fragranceMenu;
 
     @FindBy(css = "#categorymenu > nav > ul > li:nth-child(6) > a")
     private WebElement menMenu;
+
+    @FindBy(xpath = NAV_PILLS_CATEGORYMENU + "//a[contains(text(),'Body & Shower')]")
+    private WebElement bodyShowerSubmenu;
 
     @FindBy(css = "#categorymenu > nav > ul > li:nth-child(7) > a")
     private WebElement haircareMenu;
@@ -138,25 +156,8 @@ public abstract class MainPage extends BasePage {
     @FindBy(css = "#categorymenu > nav > ul > li:nth-child(8) > a")
     private WebElement booksMenu;
 
-    @FindBy(xpath = NAV_PILLS_CATEGORYMENU + "//a[contains(text(),'Paperback')]")
-    private WebElement paperbackSubmenu;
-
     @FindBy(xpath = "//div[@title='Go']//i[@class='fa fa-search']")
     private WebElement searchField;
-
-    /**
-     *  currency % cart - left nav top menu
-     */
-    public HomePage mouseHoverCurrencyMenu() {
-        click(currencyMenu);
-
-        return new HomePage(getDriver());
-    }
-    public CartPage clickLeftNavTopCartMenu() {
-        click(leftNavTopCartMenu);
-
-        return new CartPage(getDriver());
-    }
 
     /**
      * footer
@@ -172,9 +173,23 @@ public abstract class MainPage extends BasePage {
     /**
      * logo
      */
+
     public WebElement getImage() {
 
         return logoImage;
+    }
+
+    public String getLogoTitle() {
+        return logoImage.getAttribute("title");
+    }
+
+    public String getLogoText() {
+        return logoImage.getAttribute("alt");
+    }
+
+    public String getLogoHref() {
+
+        return getAttribute(logoHref, "href");
     }
 
     public boolean isLogoDisplayed() {
@@ -192,19 +207,6 @@ public abstract class MainPage extends BasePage {
     public HomePage clickLogo() {
         click(logoImage);
         return new HomePage(getDriver());
-    }
-
-    public String getLogoTitle() {
-        return logoImage.getAttribute("title");
-    }
-
-    public String getLogoText() {
-        return logoImage.getAttribute("alt");
-    }
-
-    public String getLogoHref() {
-
-        return getAttribute(logoHref, "href");
     }
 
     /**
@@ -243,19 +245,27 @@ public abstract class MainPage extends BasePage {
         return getAttributeByIndex(index, getTopMenuHrefLinks(), "href");
     }
 
+    /**
+     *  currency % cart - left nav top menu
+     */
 
+    public HomePage mouseHoverCurrencyMenu() {
+        click(currencyMenu);
+
+        return new HomePage(getDriver());
+    }
+    public CartPage clickLeftNavTopCartMenu() {
+        click(leftNavTopCartMenu);
+
+        return new CartPage(getDriver());
+    }
 
     /**
      * navigation menu
      */
+
     public HomePage clickHomeMenu() {
         click(homeMenu);
-
-        return new HomePage(getDriver());
-    }
-
-    public HomePage mouseHoverOnHomeMenu() {
-        mouseHover(homeMenu);
 
         return new HomePage(getDriver());
     }
@@ -266,68 +276,14 @@ public abstract class MainPage extends BasePage {
         return new ApparelAndAccessoriesPage(getDriver());
     }
 
-    public HomePage mouseHoverOnApparelAndAccessoriesMenu() {
-        mouseHover(apparelAccessoriesMenu);
-
-        return new HomePage(getDriver());
-    }
-
-    public ShoesPage mouseHoverOnShoesSubmenu() {
-        mouseHoverAndClick(apparelAndAccessoriesShoesSubMenu);
-
-        return new ShoesPage(getDriver());
-    }
-
-    public TShirtsPage mouseHoverOnTShirtSubmenu() {
-        mouseHoverAndClick(apparelAndAccessoriesTShirtsSubMenu);
-
-        return new TShirtsPage(getDriver());
-    }
-
     public MakeupPage clickMakeupMenu() {
         click(makeupMenu);
 
         return new MakeupPage(getDriver());
     }
 
-    public HomePage mouseHoverOnMakeupMenu() {
-        mouseHover(makeupMenu);
-
-        return new HomePage(getDriver());
-    }
-
-    public CheeksPage mouseHoverOnCheeksSubmenu() {
-        mouseHoverAndClick(cheeksSubmenu);
-
-        return new CheeksPage(getDriver());
-    }
-
     public SkincarePage clickSkincareMenu() {
         click(skincareMenu);
-
-        return new SkincarePage(getDriver());
-    }
-
-    public SkincarePage mouseHoverOnSkincareMenu() {
-        mouseHover(skincareMenu);
-
-        return new SkincarePage(getDriver());
-    }
-
-    public SkincarePage ClickGiftIdeasAndSetsSubmenu() {
-        mouseHoverAndClick(skincareGiftIdeasAndSetsSubmenu);
-
-        return new SkincarePage(getDriver());
-    }
-
-    public SkincarePage ClickHandsAndNailsSubmenu() {
-        mouseHoverAndClick(skincareHandsAndNailsSubmenu);
-
-        return new SkincarePage(getDriver());
-    }
-
-    public SkincarePage ClickSunSubmenu() {
-        mouseHoverAndClick(skincareSunSubmenu);
 
         return new SkincarePage(getDriver());
     }
@@ -344,6 +300,11 @@ public abstract class MainPage extends BasePage {
         return new MenPage(getDriver());
     }
 
+    public BodyAndShowerPage clickBodyAndShowerSubmenu() {
+        mouseHoverAndClick(bodyShowerSubmenu);
+
+        return new BodyAndShowerPage(getDriver());
+    }
 
     public HairCarePage clickHairCareMenu() {
         click(haircareMenu);
@@ -357,16 +318,106 @@ public abstract class MainPage extends BasePage {
         return new BooksPage(getDriver());
     }
 
-    public HomePage mouseHoverOnBooksMenu() {
-        mouseHover(booksMenu);
+    public EyesSkincarePage clickEyesSubmenu() {
+        mouseHoverAndClick(skincareEyesSubmenu);
+
+        return new EyesSkincarePage(getDriver());
+    }
+
+    public FaceSkincarePage clickFaceSubmenu() {
+        mouseHoverAndClick(skincareFaceSubmenu);
+
+        return new FaceSkincarePage(getDriver());
+    }
+
+    public GiftIdeasAndSetsPage clickGiftIdeasAndSetsSubmenu() {
+        mouseHoverAndClick(skincareGiftIdeasAndSetsSubmenu);
+
+        return new GiftIdeasAndSetsPage(getDriver());
+    }
+
+    public HandsAndNailsPage clickHandsAndNailsSubmenu() {
+        mouseHoverAndClick(skincareHandsAndNailsSubmenu);
+
+        return new HandsAndNailsPage(getDriver());
+    }
+
+    public SunPage clickSunSubmenu() {
+        mouseHoverAndClick(skincareSunSubmenu);
+
+        return new SunPage(getDriver());
+    }
+
+    public ShoesPage clickShoesSubmenu() {
+        mouseHoverAndClick(apparelAndAccessoriesShoesSubMenu);
+
+        return new ShoesPage(getDriver());
+    }
+
+    public TShirtsPage clickTShirtSubmenu() {
+        mouseHoverAndClick(apparelAndAccessoriesTShirtsSubMenu);
+
+        return new TShirtsPage(getDriver());
+    }
+
+    public CheeksPage clickCheeksSubmenu() {
+        mouseHoverAndClick(cheeksSubmenu);
+
+        return new CheeksPage(getDriver());
+    }
+
+    public PaperbackPage clickPaperbackSubmenu() {
+        mouseHoverAndClick(paperbackSubmenu);
+
+        return new PaperbackPage(getDriver());
+    }
+
+    public ConditionerPage clickConditionerSubmenu() {
+        mouseHoverAndClick(conditionerSubmenu);
+
+        return new ConditionerPage(getDriver());
+    }
+
+    public HomePage mouseHoverOnHomeMenu() {
+        mouseHover(homeMenu);
 
         return new HomePage(getDriver());
     }
 
-    public PaperbackPage mouseHoverOnPaperbackSubmenu() {
-        mouseHoverAndClick(paperbackSubmenu);
+    public HomePage mouseHoverOnApparelAndAccessoriesMenu() {
+        mouseHover(apparelAccessoriesMenu);
 
-        return new PaperbackPage(getDriver());
+        return new HomePage(getDriver());
+    }
+
+    public HomePage mouseHoverOnMakeupMenu() {
+        mouseHover(makeupMenu);
+
+        return new HomePage(getDriver());
+    }
+
+    public HomePage mouseHoverOnSkincareMenu() {
+        mouseHover(skincareMenu);
+
+        return new HomePage(getDriver());
+    }
+
+    public HomePage mouseHoverOnMenMenu() {
+        mouseHover(menMenu);
+
+        return new HomePage(getDriver());
+    }
+
+    public HomePage mouseHoverOnHaircareMenu() {
+        mouseHover(haircareMenu);
+
+        return new HomePage(getDriver());
+    }
+
+    public HomePage mouseHoverOnBooksMenu() {
+        mouseHover(booksMenu);
+
+        return new HomePage(getDriver());
     }
 
     /**
