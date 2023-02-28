@@ -46,6 +46,8 @@ public class ProjectConstants {
     public final static String ID_51 = "BeneFit Girl Meets Pearl";
     public final static String ID_52 = "Benefit Bella Bamba";
     public final static String ID_53 = "Tropiques Minerale Loose Bronzer";
+    public final static String ID_54 = "L'EXTRÊME Instant Extensions Lengthening Mascara";
+    public final static String ID_56 = "Waterproof Protective Undereye Concealer";
     public final static String ID_65 = "Absolue Eye Precious Cells";
     public final static String ID_69 = "Seaweed Conditioner";
     public final static String ID_71 = "Pantene Pro-V Conditioner, Classic Care";
@@ -57,6 +59,7 @@ public class ProjectConstants {
     public final static String ID_97 = "Eye Rejuvenating Serum";
     public final static String ID_101 = "Pro-V Color Hair Solutions Color Preserve Shine Conditioner";
     public final static String ID_107 = "Lancome Slimissime 360 Slimming Activating Concentrate Unisex Treatment";
+    public final static String ID_108 = "Lancome Hypnose Doll Lashes Mascara 4-Piece Gift Set";
     public final static String ID_112 = "The Miracle Morning: The Not-So-Obvious Secret Guaranteed to Transform Your Life";
     public final static String ID_113 = "Paper Towns by John Green";
     public final static String ID_114 = "Allegiant by Veronica Roth";
