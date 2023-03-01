@@ -12,55 +12,55 @@ public abstract class ProductDescriptionPage<ProductDescriptionPageType> extends
      * каждый локатор надо проверять.
      */
 
-    final static String MAIN_CONTAINER = "//div[@id='maincontainer']";
-    final static String COLUMN_LEFT = "//div[@class='column_left col-md-3 col-xs-12']";
-    final static String ROW_1 = "//li[1]";
-    final static String ROW_2 = "//li[2]";
-    final static String ROW_3 = "//li[3]";
-    final static String ROW_4 = "//li[4]";
-    final static String ONE_PRICE = "/div/span[@class='oneprice']";
-    final static String PRICE_NEW = "/div/span[@class='pricenew']";
-    final static String PRICE_OLD = "/div/span[@class='priceold']";
+    static final String MAIN_CONTAINER = "//div[@id='maincontainer']";
+    static final String COLUMN_LEFT = "//div[@class='column_left col-md-3 col-xs-12']";
+    static final String ROW_1 = "//li[1]";
+    static final String ROW_2 = "//li[2]";
+    static final String ROW_3 = "//li[3]";
+    static final String ROW_4 = "//li[4]";
+    static final String ONE_PRICE = "/div/span[@class='oneprice']";
+    static final String PRICE_NEW = "/div/span[@class='pricenew']";
+    static final String PRICE_OLD = "/div/span[@class='priceold']";
 
-    final static String CONTINUE = "Continue";
+    static final String CONTINUE = "Continue";
 
-    final static String PRODUCT_PRICE = "//div[@class='productfilneprice']";
-    final static String PRODUCT_FORM = "//form[@id='product']";
-    final static String RADIOBUTTON_1 = "//label[1]//input[@type='radio']";
-    final static String RADIOBUTTON_2 = "//label[2]//input[@type='radio']";
-    final static String RADIOBUTTON_3 = "//label[3]//input[@type='radio']";
-    final static String RADIOBUTTON_4 = "//label[4]//input[@type='radio']";
-    final static String RADIOBUTTON_5 = "//label[5]//input[@type='radio']";
-    final static String SELECTOR = "//input[@id='product_quantity']";
-    final static String PRODUCT_QUANTITY = "//input[@id='product_quantity']";
-    final static String TOTAL_PRICE = "//span[@class='total-price']";
-    final static String ADD_TO_CARD = "//ul[@class='productpagecart']";
-    final static String PRINT = "//a[@class='productprint btn btn-large']";
+    static final String PRODUCT_PRICE = "//div[@class='productfilneprice']";
+    static final String PRODUCT_FORM = "//form[@id='product']";
+    static final String RADIOBUTTON_1 = "//label[1]//input[@type='radio']";
+    static final String RADIOBUTTON_2 = "//label[2]//input[@type='radio']";
+    static final String RADIOBUTTON_3 = "//label[3]//input[@type='radio']";
+    static final String RADIOBUTTON_4 = "//label[4]//input[@type='radio']";
+    static final String RADIOBUTTON_5 = "//label[5]//input[@type='radio']";
+    static final String SELECTOR = "//input[@id='product_quantity']";
+    static final String PRODUCT_QUANTITY = "//input[@id='product_quantity']";
+    static final String TOTAL_PRICE = "//span[@class='total-price']";
+    static final String ADD_TO_CARD = "//ul[@class='productpagecart']";
+    static final String PRINT = "//a[@class='productprint btn btn-large']";
 
-    final static String PRODUCT_DESCRIPTION = "//div[@id='productdesc']//ul[@id='myTab']";
-    final static String HREF_DESCRIPTION = "//a[@href='#description']";
-    final static String HREF_REVIEW = "//a[@href='#review']";
-    final static String HREF_TAGS = "//a[@href='#producttag']";
-    final static String HREF_RELATED_PRODUCTS = "//a[@href='#relatedproducts']";
+    static final String PRODUCT_DESCRIPTION = "//div[@id='productdesc']//ul[@id='myTab']";
+    static final String HREF_DESCRIPTION = "//a[@href='#description']";
+    static final String HREF_REVIEW = "//a[@href='#review']";
+    static final String HREF_TAGS = "//a[@href='#producttag']";
+    static final String HREF_RELATED_PRODUCTS = "//a[@href='#relatedproducts']";
 
     // Review
-    final static String TAB_PANEL_REVIEW = "//div[@id='review']";
-    final static String RATING1 = "//div[@id='rating1']";
-    final static String RATING2 = "//div[@id='rating2']";
-    final static String RATING3 = "//div[@id='rating3']";
-    final static String RATING4 = "//div[@id='rating4']";
-    final static String RATING5 = "//div[@id='rating5']";
-    final static String INPUT_NAME = "//input[@name='name' and @id='name']";
-    final static String INPUT_REVIEW = "//textarea[@name='text' and @id='text']";
-    final static String CAPTCHA = "//input[@name='captcha' and @id='captcha']";
-    final static String SUBMIT_BUTTON = "//button[@id='review_submit']";
+    static final String TAB_PANEL_REVIEW = "//div[@id='review']";
+    static final String RATING1 = "//div[@id='rating1']";
+    static final String RATING2 = "//div[@id='rating2']";
+    static final String RATING3 = "//div[@id='rating3']";
+    static final String RATING4 = "//div[@id='rating4']";
+    static final String RATING5 = "//div[@id='rating5']";
+    static final String INPUT_NAME = "//input[@name='name' and @id='name']";
+    static final String INPUT_REVIEW = "//textarea[@name='text' and @id='text']";
+    static final String CAPTCHA = "//input[@name='captcha' and @id='captcha']";
+    static final String SUBMIT_BUTTON = "//button[@id='review_submit']";
 
     // TAGS
-    final static String TAB_PANEL_TAG = "//div[@id='producttag']";
-    final static String BASE_URL = "https://automationteststore.com/index.php";
-    final static String PRODUCT_SEARCH = "?rt=product/search";
-    final static String TAG_FASHION = "&keyword=fashion";
-    final static String TAG_SHOE = "&keyword=shoe";
+    static final String TAB_PANEL_TAG = "//div[@id='producttag']";
+    static final String BASE_URL = "https://automationteststore.com/index.php";
+    static final String PRODUCT_SEARCH = "?rt=product/search";
+    static final String TAG_FASHION = "&keyword=fashion";
+    static final String TAG_SHOE = "&keyword=shoe";
 
     // COLUMN_LEFT
     @FindBy(xpath = MAIN_CONTAINER + COLUMN_LEFT)
