@@ -16,6 +16,7 @@ import pages.home.HomePage;
 import pages.home.account.AccountLoginPage;
 import pages.home.cart.CartPage;
 import pages.makeup.CheeksPage;
+import pages.makeup.EyesMakeupPage;
 import pages.makeup.MakeupPage;
 import pages.men.BodyAndShowerPage;
 import pages.men.MenPage;
@@ -110,6 +111,9 @@ public abstract class MainPage extends BasePage {
 
     @FindBy(xpath = CATEGORYMENU + HREF + "36_40']")
     private WebElement cheeksSubmenu;
+
+    @FindBy(xpath = CATEGORYMENU + HREF + "36_39']")
+    private WebElement eyesMakeupSubmenu;
 
     @FindBy(css = "#categorymenu > nav > ul > li:nth-child(4) > a")
     private WebElement skincareMenu;
@@ -322,6 +326,12 @@ public abstract class MainPage extends BasePage {
         mouseHoverAndClick(skincareEyesSubmenu);
 
         return new EyesSkincarePage(getDriver());
+    }
+
+    public EyesMakeupPage clickEyesMakeupSubmenu() {
+        mouseHoverAndClick(eyesMakeupSubmenu);
+
+        return new EyesMakeupPage(getDriver());
     }
 
     public FaceSkincarePage clickFaceSubmenu() {
