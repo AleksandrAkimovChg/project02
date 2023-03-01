@@ -11,6 +11,8 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+import static testData.ProjectConstants.ID_50;
+
 public class HomeTest extends BaseTest {
 
     @Test
@@ -61,5 +63,19 @@ public class HomeTest extends BaseTest {
         Assert.assertEquals(actualTitle, title);
         Assert.assertEquals(actualAltText, altText);
         Assert.assertEquals(actualUrlHref, href);
+    }
+
+    @Test
+    public void testGetGridProduct1NameAndPrice_ID50() {
+        final String expectedProductName = ID_50.toUpperCase();
+        final String expectedProductPrice = "29.50";
+
+        HomePage homePage = openBaseURL();
+
+        String gridProductName = homePage.getGridProduct1_Name();
+        String gridProductPrice = homePage.getGridProduct1_Price().replaceAll("[$€£]", "");
+
+        Assert.assertEquals(gridProductName, expectedProductName);
+        Assert.assertEquals(gridProductPrice, expectedProductPrice);
     }
 }
