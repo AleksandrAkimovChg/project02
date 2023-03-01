@@ -1,6 +1,7 @@
 package utils;
 
 import org.apache.commons.lang3.RandomStringUtils;
+import org.apache.commons.lang3.StringUtils;
 
 public final class TestUtils {
 
@@ -26,5 +27,16 @@ public final class TestUtils {
         }
 
         return -1;
+    }
+
+    public static String capitalizeEachWordInString(String string) {
+        String words[] = string.trim().toLowerCase().split("\\s");
+        String capitalizeWord="";
+        for(String w:words){
+            String s = StringUtils.capitalize(w);
+            capitalizeWord+= s + " ";
+        }
+
+        return capitalizeWord.trim();
     }
 }
