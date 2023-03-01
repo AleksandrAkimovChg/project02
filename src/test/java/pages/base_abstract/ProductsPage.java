@@ -26,7 +26,7 @@ public abstract class ProductsPage<ProductsPageType> extends MainPage {
     static final String PRICE_NEW = "//div[@class ='pricenew']";
     static final String PRICE_OLD = "//div[@class ='priceold']";
     static final String PRODUCT_ONE_PRICE = MAIN_CONTAINER + PRICE_CONTAINER + ONE_PRICE;
-    static final String PRODUCT_PRICE = MAIN_CONTAINER + PRICE_CONTAINER + PRICE;
+    static final String PRODUCT_PRICE = MAIN_CONTAINER + PRICE_CONTAINER + "/div[@class='price']/div[1]";
     static final String OUT_OF_STOCK = "//span[@class='nostock']";
 
     /**
@@ -232,7 +232,7 @@ public abstract class ProductsPage<ProductsPageType> extends MainPage {
     /**
      * Product prices
      */
-    @FindBy(xpath = PRODUCT_ONE_PRICE)
+    @FindBy(xpath = PRODUCT_PRICE)
     private List<WebElement> productPrice;
 
     @FindBy(xpath = FEATURED + GRID_PRODUCT_1 + "//.." + ONE_PRICE)
