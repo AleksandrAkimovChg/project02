@@ -10,6 +10,7 @@ import pages.apparel_and_accessories.TShirtsPage;
 import pages.books.BooksPage;
 import pages.books.PaperbackPage;
 import pages.fragrance.FragrancePage;
+import pages.fragrance.WomenPage;
 import pages.hair_care.ConditionerPage;
 import pages.hair_care.HairCarePage;
 import pages.home.HomePage;
@@ -162,6 +163,9 @@ public abstract class MainPage extends BasePage {
 
     @FindBy(xpath = "//div[@title='Go']//i[@class='fa fa-search']")
     private WebElement searchField;
+
+    @FindBy(xpath = NAV_PILLS_CATEGORYMENU + "//a[contains(text(),'Women')]")
+    private WebElement womenSubmenu;
 
     /**
      * footer
@@ -388,6 +392,12 @@ public abstract class MainPage extends BasePage {
         return new ConditionerPage(getDriver());
     }
 
+    public WomenPage clickWomenSubmenu() {
+        mouseHoverAndClick(womenSubmenu);
+
+        return new WomenPage(getDriver());
+    }
+
     public HomePage mouseHoverOnHomeMenu() {
         mouseHover(homeMenu);
 
@@ -426,6 +436,12 @@ public abstract class MainPage extends BasePage {
 
     public HomePage mouseHoverOnBooksMenu() {
         mouseHover(booksMenu);
+
+        return new HomePage(getDriver());
+    }
+
+    public HomePage mouseHoverOnFragranceMenu() {
+        mouseHover(fragranceMenu);
 
         return new HomePage(getDriver());
     }
