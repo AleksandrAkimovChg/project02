@@ -5,6 +5,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.home.HomePage;
 import pages.home.account.AccountLoginPage;
+import pages.home.cart.CartPage;
 
 import static testData.ProjectConstants.*;
 
@@ -64,5 +65,35 @@ public class AccountLoginTest extends BaseTest {
               );
 
       Assert.assertFalse(loginPage.clickCloseButtonForErrorMessage().isErrorMessagePresent());
+    }
+
+    @Test (priority = -5)
+    public void testClickBothCheckoutButtons_navigatesToLoginPage_ifUserIsNotSignedIn() {
+        final String expectedURL = LOGIN_PAGE_URL;
+        final String expectedTitle = "Account Login";
+
+        CartPage cartPage = openBaseURL()
+                .clickAddToCart_GridProduct1()
+                .clickLeftNavTopCartMenu();
+
+        String oldURL = cartPage.getURL();
+
+        cartPage.clickCartCheckoutButton1();
+
+        AccountLoginPage accountLoginPage = new AccountLoginPage(getDriver());
+        String actual1URL = accountLoginPage.getURL();
+        String actual1Title = accountLoginPage.getTitle();
+
+        cartPage.clickLeftNavTopCartMenu().clickCartCheckoutButton2();
+        String actual2URL = accountLoginPage.getURL();
+        String actual2Title = accountLoginPage.getTitle();
+
+        Assert.assertNotEquals(oldURL, getDriver().getCurrentUrl());
+
+        Assert.assertEquals(actual1URL, expectedURL);
+        Assert.assertEquals(actual1Title, expectedTitle);
+
+        Assert.assertEquals(actual2URL, expectedURL);
+        Assert.assertEquals(actual2Title, expectedTitle);
     }
 }
