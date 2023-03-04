@@ -159,7 +159,6 @@ public abstract class MainPage extends BasePage {
     @FindBy(xpath = NAV_PILLS_CATEGORYMENU + "//a[contains(text(),'Fragrance Sets')]")
     private WebElement fragranceSetsSubmenu;
 
-
     @FindBy(css = "#categorymenu > nav > ul > li:nth-child(7) > a")
     private WebElement haircareMenu;
 
