@@ -104,12 +104,17 @@ public class ProjectConstants {
     /**
      * Men
      */
-    @Description("SHOES page")
+    @Description("BODY & SHOWER page")
     public static final String EXPECTED_URL_BODY_AND_SHOWER_PAGE = BASE_URL + "?rt=product/category&path=58_63";
 
     @Description("BODY & SHOWER page title")
     public static final String EXPECTED_TITLE_BODY_AND_SHOWER_PAGE = "BODY & SHOWER";
 
+    @Description("FRAGRANCE SETS page")
+    public static final String EXPECTED_URL_FRAGRANCE_SETS_PAGE = BASE_URL + "?rt=product/category&path=58_59";
+
+    @Description("FRAGRANCE SETS page title")
+    public static final String EXPECTED_TITLE_FRAGRANCE_SETS_PAGE = "FRAGRANCE SETS";
 
     /**
      * Paperback
