@@ -20,6 +20,7 @@ import pages.makeup.CheeksPage;
 import pages.makeup.EyesMakeupPage;
 import pages.makeup.MakeupPage;
 import pages.men.BodyAndShowerPage;
+import pages.men.FragranceSetsPage;
 import pages.men.MenPage;
 import pages.skincare.*;
 
@@ -154,6 +155,9 @@ public abstract class MainPage extends BasePage {
 
     @FindBy(xpath = NAV_PILLS_CATEGORYMENU + "//a[contains(text(),'Body & Shower')]")
     private WebElement bodyShowerSubmenu;
+
+    @FindBy(xpath = NAV_PILLS_CATEGORYMENU + "//a[contains(text(),'Fragrance Sets')]")
+    private WebElement fragranceSetsSubmenu;
 
     @FindBy(css = "#categorymenu > nav > ul > li:nth-child(7) > a")
     private WebElement haircareMenu;
@@ -312,6 +316,12 @@ public abstract class MainPage extends BasePage {
         mouseHoverAndClick(bodyShowerSubmenu);
 
         return new BodyAndShowerPage(getDriver());
+    }
+
+    public FragranceSetsPage clickFragranceSetsSubmenu() {
+        mouseHoverAndClick(fragranceSetsSubmenu);
+
+        return new FragranceSetsPage(getDriver());
     }
 
     public HairCarePage clickHairCareMenu() {
