@@ -26,6 +26,9 @@ import pages.skincare.*;
 
 import java.util.List;
 
+import static testData.ProjectConstants.LOGIN_NAME;
+import static testData.ProjectConstants.PASSWORD;
+
 public abstract class MainPage extends BasePage {
 
     final static String MAIN_CONTAINER = "//div[@id='maincontainer']";
@@ -227,6 +230,15 @@ public abstract class MainPage extends BasePage {
 
     public AccountLoginPage clickAccountMenu() {
         click(accountTopMenu);
+
+        return new AccountLoginPage(getDriver());
+    }
+
+    public AccountLoginPage BaseLogIn() {
+        clickAccountMenu().clickLoginAccountSubmenu()
+                .clickClearInputRegularUserLogin(LOGIN_NAME)
+                .clickClearInputRegularUserPassword(PASSWORD)
+                .clickLoginButton();
 
         return new AccountLoginPage(getDriver());
     }
