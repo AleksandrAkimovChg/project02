@@ -95,6 +95,12 @@ public class ProjectConstants {
     @Description("SHOES page title")
     public static final String EXPECTED_TITLE_SHOES_PAGE = "SHOES";
 
+    @Description("TSHIRTS page")
+    public static final String EXPECTED_URL_TSHIRTS_PAGE = BASE_URL + "?rt=product/category&path=68_70";
+
+    @Description("TSHIRTS page title")
+    public static final String EXPECTED_TITLE_TSHIRTS_PAGE = "T-SHIRTS";
+
     @Description(ID_116)
     public static final String EXPECTED_URL_PRODUCT_ID_116 = URL_PRODUCT_ID + CATEGORY_SHOES + "116";
 
