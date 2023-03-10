@@ -3,9 +3,11 @@ package tests.hair_care;
 import base.BaseTest;
 import org.testng.Assert;
 import org.testng.annotations.Test;
+import pages.hair_care.ConditionerPage;
 
 import java.util.Comparator;
 import java.util.List;
+import java.util.concurrent.locks.Condition;
 import java.util.stream.Collectors;
 
 import static testData.ProjectConstants.*;
@@ -54,5 +56,25 @@ public class ConditionerTest extends BaseTest {
                         .getLinksText();
 
         Assert.assertEquals(actualProductList, expectedProductList);
+    }
+
+    @Test
+    public void testConditionerProductListByPriceLowToHigh() {
+        final Double[] productPrice = {19.0, 8.23, 11.45, 24.0, 33.0};
+
+        ConditionerPage conditionerPage = new ConditionerPage(getDriver());
+
+        Double[] expectedProductPrices = conditionerPage.bubbleSortDoubleArray(productPrice);
+
+        List<Double> productPriceList = openBaseURL()
+                .mouseHoverOnHaircareMenu()
+                .clickConditionerSubmenu()
+                .clickSortBy()
+                .clickSortByPriceLowHigh()
+                .getLinksPrices();
+
+        Double[] actualProductPrices = productPriceList.stream().toArray(Double[]::new);
+
+        Assert.assertEquals(actualProductPrices, expectedProductPrices);
     }
 }
