@@ -27,6 +27,8 @@ public class ProjectConstants {
 
     public final static String LOGIN_PAGE_URL = BASE_URL + "?rt=account/login";
     public final static String CART_PAGE_URL = BASE_URL + "?rt=checkout/cart";
+    public final static String CHECKOUT_PAGE_URL = BASE_URL + "?rt=checkout/confirm";
+    public final static String SUCCSESS_PAGE_URL = BASE_URL + "?rt=checkout/success";
     public final static String EYES_SKINCARE_PAGE_URL = BASE_URL + "?rt=product/category&path=43_47";
     public final static String EYES_SKINCARE_PAGE_TITLE = "Eyes";
     public final static String FACE_SKINCARE_PAGE_URL = BASE_URL + "?rt=product/category&path=43_46";
@@ -94,6 +96,12 @@ public class ProjectConstants {
 
     @Description("SHOES page title")
     public static final String EXPECTED_TITLE_SHOES_PAGE = "SHOES";
+
+    @Description("TSHIRTS page")
+    public static final String EXPECTED_URL_TSHIRTS_PAGE = BASE_URL + "?rt=product/category&path=68_70";
+
+    @Description("TSHIRTS page title")
+    public static final String EXPECTED_TITLE_TSHIRTS_PAGE = "T-SHIRTS";
 
     @Description(ID_116)
     public static final String EXPECTED_URL_PRODUCT_ID_116 = URL_PRODUCT_ID + CATEGORY_SHOES + "116";

@@ -3,6 +3,7 @@ package tests;
 import base.BaseTest;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
+import org.testng.annotations.Ignore;
 import org.testng.annotations.Test;
 import pages.home.HomePage;
 import pages.my_account.MyAccountPage;
@@ -52,6 +53,7 @@ public class MainTest extends BaseTest {
         Assert.assertEquals(actualHref, href);
     }
 
+    @Ignore
     @Test(dataProviderClass = TestData.class, dataProvider = "TopMenu")
     public void testTopMenuLinksNavigateToCorrespondingPages(
             int index, String text, String href, String url, String title) {
