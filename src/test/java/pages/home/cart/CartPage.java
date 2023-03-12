@@ -4,6 +4,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import pages.base_abstract.TablePage;
+import pages.home.CheckoutPage;
 
 public class CartPage extends TablePage {
 
@@ -17,15 +18,15 @@ public class CartPage extends TablePage {
         super(driver);
     }
 
-    public CartPage clickCartCheckoutButton1() {
+    public CheckoutPage clickCartCheckoutButton1() {
         click(cartCheckoutButton1);
 
-        return new CartPage(getDriver());
+        return new CheckoutPage(getDriver());
     }
 
-    public CartPage clickCartCheckoutButton2() {
+    public CheckoutPage clickCartCheckoutButton2() {
         click(cartCheckoutButton1);
 
-        return new CartPage(getDriver());
+        return new CheckoutPage(getDriver());
     }
 }

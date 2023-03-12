@@ -238,4 +238,8 @@ public abstract class BasePage {
     protected boolean isElementDisplayed(WebElement element) {
         return element.isDisplayed();
     }
+
+    public void waitForBlueContainerDisappeared(WebElement element) {
+        getWait10().until(ExpectedConditions.invisibilityOf(element));
+    }
 }
