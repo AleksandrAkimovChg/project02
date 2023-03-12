@@ -22,6 +22,7 @@ import pages.makeup.MakeupPage;
 import pages.men.BodyAndShowerPage;
 import pages.men.FragranceSetsPage;
 import pages.men.MenPage;
+import pages.men.PreShaveAndShavingPage;
 import pages.skincare.*;
 
 import java.util.List;
@@ -158,6 +159,9 @@ public abstract class MainPage extends BasePage {
 
     @FindBy(xpath = NAV_PILLS_CATEGORYMENU + "//a[contains(text(),'Fragrance Sets')]")
     private WebElement fragranceSetsSubmenu;
+
+    @FindBy(xpath = NAV_PILLS_CATEGORYMENU + "//a[contains(text(),'Pre-Shave & Shaving')]")
+    private WebElement preShaveAndShavingSubmenu;
 
     @FindBy(css = "#categorymenu > nav > ul > li:nth-child(7) > a")
     private WebElement haircareMenu;
@@ -322,6 +326,12 @@ public abstract class MainPage extends BasePage {
         mouseHoverAndClick(fragranceSetsSubmenu);
 
         return new FragranceSetsPage(getDriver());
+    }
+
+    public PreShaveAndShavingPage clickPreShaveAndShavingSubmenu() {
+        mouseHoverAndClick(preShaveAndShavingSubmenu);
+
+        return new PreShaveAndShavingPage(getDriver());
     }
 
     public HairCarePage clickHairCareMenu() {
