@@ -124,6 +124,12 @@ public class ProjectConstants {
     @Description("FRAGRANCE SETS page title")
     public static final String EXPECTED_TITLE_FRAGRANCE_SETS_PAGE = "FRAGRANCE SETS";
 
+    @Description("PRE-SHAVE & SHAVING page")
+    public static final String EXPECTED_URL_PRESHAVE_AND_SHAVING_PAGE = BASE_URL + "?rt=product/category&path=58_61";
+
+    @Description("PRE-SHAVE & SHAVING page title")
+    public static final String EXPECTED_TITLE_PRESHAVE_AND_SHAVING_PAGE = "PRE-SHAVE & SHAVING";
+
     /**
      * Paperback
      */
