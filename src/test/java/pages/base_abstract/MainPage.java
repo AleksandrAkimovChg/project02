@@ -23,6 +23,7 @@ import pages.men.BodyAndShowerPage;
 import pages.men.FragranceSetsPage;
 import pages.men.MenPage;
 import pages.men.PreShaveAndShavingPage;
+import pages.my_account.MyAccountPage;
 import pages.skincare.*;
 
 import java.util.List;
@@ -37,6 +38,7 @@ public abstract class MainPage extends BasePage {
     private static final String NAV_PILLS_CATEGORYMENU = CATEGORYMENU + "/nav/ul/li";
     private static final String HREF = "//a[@href='https://automationteststore.com/index.php?rt=product/category&path=";
     private static final String DROPDOWN_HOME_MENU = NAV_PILLS_CATEGORYMENU + "/div/ul[@id='main_menu']/li";
+    final static String MAIN_MENU_TOP = "//ul[@id='main_menu_top']";
     private static final String TOP_MENU_HREF = "//ul[@id='main_menu_top']/li/a[@href]";
     private static final String FOOTER_MENU = "//ul[@class = 'info_links_footer']//a";
 
@@ -63,16 +65,22 @@ public abstract class MainPage extends BasePage {
     @FindBy(xpath = "//ul[@id='customer_menu_top']")
     private WebElement loginCustomerTopMenu;
 
-    @FindBy(xpath = "//ul[@id='main_menu_top']/li/a[@class='top menu_specials']")
+    @FindBy(xpath = MAIN_MENU_TOP + "/li/a[@class='top menu_specials']")
     private WebElement specialsTopMenu;
-    @FindBy(xpath = "//ul[@id='main_menu_top']//a[@class='top menu_account']")
+    @FindBy(xpath = MAIN_MENU_TOP + "//a[@class='top menu_account']")
     private WebElement accountTopMenu;
 
-    @FindBy(xpath = "//ul[@id='main_menu_top']/li/a[@class='top nobackground']")
+    @FindBy(xpath = MAIN_MENU_TOP + "/li/a[@class='top nobackground']")
     private WebElement cartTopMenu;
 
-    @FindBy(xpath = "//ul[@id='main_menu_top']/li/a[@class='top menu_checkout']")
+    @FindBy(xpath = MAIN_MENU_TOP + "/li/a[@class='top menu_checkout']")
     private WebElement checkoutTopMenu;
+
+    @FindBy(xpath = MAIN_MENU_TOP + "//a[@class='sub menu_login']")
+    private WebElement loginAccountSubmenu;
+
+    @FindBy(xpath = MAIN_MENU_TOP + "//a[@class='sub menu_logout']/span")
+    private WebElement logoutAccountSubmenu;
 
     @FindBy(xpath = TOP_MENU_HREF)
     private List<WebElement> topMenuHrefLinks;
@@ -261,6 +269,22 @@ public abstract class MainPage extends BasePage {
     public List<WebElement> getTopMenuHrefLinks() {
 
         return topMenuHrefLinks;
+    }
+
+    public MyAccountPage mouseHoverAccountTopMenu() {
+        mouseHover(accountTopMenu);
+
+        return new MyAccountPage(getDriver());
+    }
+
+    public String getAccountLoginSubmenuText() {
+
+        return getText(loginAccountSubmenu);
+    }
+
+    public String getAccountLogoutSubmenuText() {
+
+        return getText(logoutAccountSubmenu);
     }
 
     public String getTopMenuTextByIndex(int index) {
