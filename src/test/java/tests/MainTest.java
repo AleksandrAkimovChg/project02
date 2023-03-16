@@ -3,10 +3,8 @@ package tests;
 import base.BaseTest;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
-import org.testng.annotations.Ignore;
 import org.testng.annotations.Test;
 import pages.home.HomePage;
-import pages.my_account.MyAccountPage;
 import testData.TestData;
 
 import java.util.List;
@@ -53,12 +51,12 @@ public class MainTest extends BaseTest {
         Assert.assertEquals(actualHref, href);
     }
 
-    @Ignore
     @Test(dataProviderClass = TestData.class, dataProvider = "TopMenu")
     public void testTopMenuLinksNavigateToCorrespondingPages(
             int index, String text, String href, String url, String title) {
 
         HomePage homePage = openBaseURL()
+                .clickAddToCart_GridProduct1()
                 .clickAccountMenu()
                 .clickLoginAccountSubmenu()
                 .clickClearInputRegularUserLogin(LOGIN_NAME)
