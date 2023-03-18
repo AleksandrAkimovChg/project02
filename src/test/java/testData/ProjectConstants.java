@@ -130,6 +130,12 @@ public class ProjectConstants {
     @Description("PRE-SHAVE & SHAVING page title")
     public static final String EXPECTED_TITLE_PRESHAVE_AND_SHAVING_PAGE = "PRE-SHAVE & SHAVING";
 
+    @Description("SKINCARE page")
+    public static final String EXPECTED_URL_SKINCARE_PAGE = BASE_URL + "?rt=product/category&path=58_60";
+
+    @Description("SKINCARE page title")
+    public static final String EXPECTED_TITLE_SKINCARE_PAGE = "SKINCARE";
+
     /**
      * Paperback
      */
