@@ -31,4 +31,25 @@ public class FaceTest extends BaseTest {
 
         Assert.assertEquals(actualFaceProductList, expectedFaceProductList);
     }
+
+    @Test
+    public void testFaceMakeupProductListSortByZA() {
+        final List<String> productList = List.of(ID_57, ID_58);
+
+        List<String> expectedFaceProductList = productList
+                .stream()
+                .map(String::toUpperCase)
+                .sorted(Comparator.reverseOrder())
+                .collect(Collectors.toList());
+
+        List<String> actualFaceProductList =
+                openBaseURL()
+                        .mouseHoverOnMakeupMenu()
+                        .clickFaceMakeupSubmenu()
+                        .clickSortBy()
+                        .clickSortByZA()
+                        .getLinksText();
+
+        Assert.assertEquals(actualFaceProductList, expectedFaceProductList);
+    }
 }
