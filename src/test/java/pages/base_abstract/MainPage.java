@@ -178,6 +178,9 @@ public abstract class MainPage extends BasePage {
     @FindBy(xpath = NAV_PILLS_CATEGORYMENU + "//a[contains(text(),'Pre-Shave & Shaving')]")
     private WebElement preShaveAndShavingSubmenu;
 
+    @FindBy(xpath = NAV_PILLS_CATEGORYMENU + "//div[@class='subcategories']//a[contains(text(),'Skincare')]")
+    private WebElement skincareSubmenu;
+
     @FindBy(css = "#categorymenu > nav > ul > li:nth-child(7) > a")
     private WebElement haircareMenu;
 
@@ -373,6 +376,12 @@ public abstract class MainPage extends BasePage {
         mouseHoverAndClick(preShaveAndShavingSubmenu);
 
         return new PreShaveAndShavingPage(getDriver());
+    }
+
+    public SkincarePage clickSkincareSubmenu() {
+        mouseHoverAndClick(skincareSubmenu);
+
+        return new SkincarePage(getDriver());
     }
 
     public HairCarePage clickHairCareMenu() {
