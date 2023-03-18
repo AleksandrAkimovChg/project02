@@ -18,6 +18,7 @@ import pages.home.account.AccountLoginPage;
 import pages.home.cart.CartPage;
 import pages.makeup.CheeksPage;
 import pages.makeup.EyesMakeupPage;
+import pages.makeup.FaceMakeupPage;
 import pages.makeup.MakeupPage;
 import pages.men.BodyAndShowerPage;
 import pages.men.FragranceSetsPage;
@@ -86,25 +87,25 @@ public abstract class MainPage extends BasePage {
     private List<WebElement> topMenuHrefLinks;
 
     /**
-     *  left navigation menu (currency & cart)
+     * left navigation menu (currency & cart)
      */
 
-    @FindBy(xpath ="//ul[@class='nav language pull-left']")
+    @FindBy(xpath = "//ul[@class='nav language pull-left']")
     private WebElement currencyMenu;
 
-    @FindBy(xpath ="//a[contains(text(),'€ Euro')]")
+    @FindBy(xpath = "//a[contains(text(),'€ Euro')]")
     private WebElement euroSubmenu;
 
-    @FindBy(xpath ="//a[contains(text(),'£ Pound Sterling')]")
+    @FindBy(xpath = "//a[contains(text(),'£ Pound Sterling')]")
     private WebElement poundSubmenu;
 
-    @FindBy(xpath ="//a[contains(text(),'$ US Dollar')]")
+    @FindBy(xpath = "//a[contains(text(),'$ US Dollar')]")
     private WebElement dollarSubmenu;
 
-    @FindBy(xpath ="//*[@class='nav topcart pull-left']")
+    @FindBy(xpath = "//*[@class='nav topcart pull-left']")
     private WebElement leftNavTopCartMenu;
 
-    @FindBy(xpath ="//span[@class='cart_total']")
+    @FindBy(xpath = "//span[@class='cart_total']")
     private WebElement totalInleftNavTopCartMenu;
 
     /**
@@ -128,6 +129,9 @@ public abstract class MainPage extends BasePage {
 
     @FindBy(xpath = CATEGORYMENU + HREF + "36_39']")
     private WebElement eyesMakeupSubmenu;
+
+    @FindBy(xpath = CATEGORYMENU + HREF + "36_38']")
+    private WebElement faceMakeupSubmenu;
 
     @FindBy(css = "#categorymenu > nav > ul > li:nth-child(4) > a")
     private WebElement skincareMenu;
@@ -301,7 +305,7 @@ public abstract class MainPage extends BasePage {
     }
 
     /**
-     *  currency % cart - left nav top menu
+     * currency % cart - left nav top menu
      */
 
     public HomePage mouseHoverCurrencyMenu() {
@@ -309,6 +313,7 @@ public abstract class MainPage extends BasePage {
 
         return new HomePage(getDriver());
     }
+
     public CartPage clickLeftNavTopCartMenu() {
         click(leftNavTopCartMenu);
 
@@ -407,6 +412,12 @@ public abstract class MainPage extends BasePage {
         mouseHoverAndClick(skincareFaceSubmenu);
 
         return new FaceSkincarePage(getDriver());
+    }
+
+    public FaceMakeupPage clickFaceMakeupSubmenu() {
+        mouseHoverAndClick(faceMakeupSubmenu);
+
+        return new FaceMakeupPage(getDriver());
     }
 
     public GiftIdeasAndSetsPage clickGiftIdeasAndSetsSubmenu() {
@@ -512,7 +523,7 @@ public abstract class MainPage extends BasePage {
     }
 
     /**
-     *  footer menu
+     * footer menu
      */
 
     public List<WebElement> getFooterMenuLinks() {
