@@ -50,7 +50,11 @@ public class ProjectConstants {
     public final static String ID_52 = "Benefit Bella Bamba";
     public final static String ID_53 = "Tropiques Minerale Loose Bronzer";
     public final static String ID_54 = "L'EXTRÊME Instant Extensions Lengthening Mascara";
+    public final static String ID_55 = "LE ROUGE ABSOLU Reshaping & Replenishing LipColour SPF 15";
     public final static String ID_56 = "Waterproof Protective Undereye Concealer";
+    public final static String ID_57 = "Delicate Oil-Free Powder Blush";
+    public final static String ID_58 = "Product with stock locations";
+    public final static String ID_59 = "Viva Glam Lipstick";
     public final static String ID_64 = "Beauty Eau de Parfum";
     public final static String ID_65 = "Absolue Eye Precious Cells";
     public final static String ID_69 = "Seaweed Conditioner";
