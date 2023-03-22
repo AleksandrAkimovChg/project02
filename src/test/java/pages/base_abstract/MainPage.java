@@ -200,6 +200,12 @@ public abstract class MainPage extends BasePage {
     @FindBy(xpath = FOOTER_MENU)
     private List<WebElement> footerMenus;
 
+    /**
+     * other
+     */
+    @FindBy(xpath = "//div[@id='maincontainer']//h1/span[1]")
+    private WebElement h1Header;
+
     public MainPage(WebDriver driver) {
         super(driver);
     }
@@ -559,5 +565,12 @@ public abstract class MainPage extends BasePage {
         click(searchField);
 
         return new SearchPage(getDriver());
+    }
+    /**
+     * method to get any H1 text on any page
+     **/
+    public String getH1HeaderText() {
+
+        return getText(h1Header);
     }
 }
