@@ -77,4 +77,25 @@ public class ConditionerTest extends BaseTest {
 
         Assert.assertEquals(actualProductPrices, expectedProductPrices);
     }
+
+    @Test
+    public void testConditionerProductListByPriceHighToLow() {
+        final Double[] productPrice = {19.0, 8.23, 11.45, 24.0, 33.0};
+
+        ConditionerPage conditionerPage = new ConditionerPage(getDriver());
+
+        Double[] sortDoubleArray = conditionerPage.bubbleSortDoubleArray(productPrice);
+        Double[] expectedProductPrices = conditionerPage.reverseDoubleArray(sortDoubleArray);
+
+        List<Double> productPriceList = openBaseURL()
+                .mouseHoverOnHaircareMenu()
+                .clickConditionerSubmenu()
+                .clickSortBy()
+                .clickSortByPriceHighLow()
+                .getLinksPrices();
+
+        Double[] actualProductPrices = productPriceList.stream().toArray(Double[]::new);
+
+        Assert.assertEquals(actualProductPrices, expectedProductPrices);
+    }
 }
