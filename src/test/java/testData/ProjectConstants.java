@@ -103,6 +103,9 @@ public class ProjectConstants {
     @Description("SHOES page title")
     public static final String EXPECTED_TITLE_SHOES_PAGE = "SHOES";
 
+    /**
+     * T-shirts
+     */
     @Description("TSHIRTS page")
     public static final String EXPECTED_URL_TSHIRTS_PAGE = BASE_URL + "?rt=product/category&path=68_70";
 
@@ -114,6 +117,15 @@ public class ProjectConstants {
 
     @Description(ID_118)
     public static final String EXPECTED_URL_PRODUCT_ID_118 = URL_PRODUCT_ID + CATEGORY_SHOES + "118";
+
+    /**
+     * Face
+     */
+    @Description("SHOES page")
+    public static final String EXPECTED_URL_FACE_MAKEUP_PAGE = BASE_URL + "?rt=product/category&path=36_38";
+
+    @Description("SHOES page title")
+    public static final String EXPECTED_TITLE_FACE_MAKEUP_PAGE = "FACE";
 
     /**
      * Men
