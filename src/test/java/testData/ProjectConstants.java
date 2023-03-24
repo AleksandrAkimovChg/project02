@@ -121,10 +121,10 @@ public class ProjectConstants {
     /**
      * Face
      */
-    @Description("SHOES page")
+    @Description("FACE_MAKEUP page")
     public static final String EXPECTED_URL_FACE_MAKEUP_PAGE = BASE_URL + "?rt=product/category&path=36_38";
 
-    @Description("SHOES page title")
+    @Description("FACE_MAKEUP page title")
     public static final String EXPECTED_TITLE_FACE_MAKEUP_PAGE = "FACE";
 
     /**
