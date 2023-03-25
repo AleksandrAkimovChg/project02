@@ -64,69 +64,69 @@ public abstract class ProductDescriptionPage<ProductDescriptionPageType> extends
 
     // COLUMN_LEFT
     @FindBy(xpath = MAIN_CONTAINER + COLUMN_LEFT)
-    private WebElement column_left;
+    private WebElement columnLeft;
 
     @FindBy(xpath = MAIN_CONTAINER + COLUMN_LEFT + ROW_1)
-    private WebElement column_left_first_row;
+    private WebElement columnLeftFirstRow;
 
     @FindBy(xpath = MAIN_CONTAINER + COLUMN_LEFT + ROW_2)
-    private WebElement column_left_second_row;
+    private WebElement columnLeftSecondRow;
 
     @FindBy(xpath = MAIN_CONTAINER + COLUMN_LEFT + ROW_3)
-    private WebElement column_left_third_row;
+    private WebElement columnLeftThirdRow;
 
     @FindBy(xpath = MAIN_CONTAINER + COLUMN_LEFT + ROW_4)
-    private WebElement column_left_fourth_row;
+    private WebElement columnLeftFourthRow;
 
     @FindBy(xpath = MAIN_CONTAINER + COLUMN_LEFT + ROW_1 + "/a[1][@href]")
-    private WebElement column_left_row_1_img_href;
+    private WebElement columnLeftRow1ImgHref;
 
     @FindBy(xpath = MAIN_CONTAINER + COLUMN_LEFT + ROW_2 + "/a[2][@href]")
-    private WebElement column_left_row_2_img_href;
+    private WebElement columnLeftRow2ImgHref;
 
     @FindBy(xpath = MAIN_CONTAINER + COLUMN_LEFT + ROW_3 + "/a[2][@href]")
-    private WebElement column_left_row_3_img_href;
+    private WebElement columnLeftRow3ImgHref;
 
     @FindBy(xpath = MAIN_CONTAINER + COLUMN_LEFT + ROW_4 + "/a[4][@href]")
-    private WebElement column_left_row_4_img_href;
+    private WebElement columnLeftRow4ImgHref;
 
     @FindBy(xpath = MAIN_CONTAINER + COLUMN_LEFT + ROW_1 + "/a[1][@href]")
-    private WebElement column_left_row_1_link_href;
+    private WebElement columnLeftRow1LinkHref;
 
     @FindBy(xpath = MAIN_CONTAINER + COLUMN_LEFT + ROW_2 + "/a[2][@href]")
-    private WebElement column_left_row_2_link_href;
+    private WebElement columnLeftRow2LinkHref;
 
     @FindBy(xpath = MAIN_CONTAINER + COLUMN_LEFT + ROW_3 + "/a[3][@href]")
-    private WebElement column_left_row_3_link_href;
+    private WebElement columnLeftRow3LinkHref;
 
     @FindBy(xpath = MAIN_CONTAINER + COLUMN_LEFT + ROW_4 + "/a[4][@href]")
-    private WebElement column_left_row_4_link_href;
+    private WebElement columnLeftRow4LinkHref;
 
 
     // PRODUCT_DESCRIPTION
     @FindBy(xpath = MAIN_CONTAINER + PRODUCT_DESCRIPTION + "//li[1]")
-    private WebElement product_description_1;
+    private WebElement productDescription1;
 
     @FindBy(xpath = MAIN_CONTAINER + PRODUCT_DESCRIPTION + "//li[2]")
-    private WebElement product_description_2;
+    private WebElement productDescription2;
 
     @FindBy(xpath = MAIN_CONTAINER + PRODUCT_DESCRIPTION + "//li[3]")
-    private WebElement product_description_3;
+    private WebElement productDescription3;
 
     @FindBy(xpath = MAIN_CONTAINER + PRODUCT_DESCRIPTION + "//li[4]")
-    private WebElement product_description_4;
+    private WebElement productDescription4;
 
     @FindBy(xpath = MAIN_CONTAINER + PRODUCT_DESCRIPTION + HREF_DESCRIPTION)
-    private WebElement href_description;
+    private WebElement hrefDescription;
 
     @FindBy(xpath = MAIN_CONTAINER + PRODUCT_DESCRIPTION + HREF_REVIEW)
-    private WebElement href_review;
+    private WebElement hrefReview;
 
     @FindBy(xpath = MAIN_CONTAINER + PRODUCT_DESCRIPTION + HREF_TAGS)
-    private WebElement href_tags;
+    private WebElement hrefTags;
 
     @FindBy(xpath = MAIN_CONTAINER + PRODUCT_DESCRIPTION + HREF_RELATED_PRODUCTS)
-    private WebElement href_relatedProducts;
+    private WebElement hrefRelatedProducts;
 
     // Review
     @FindBy(xpath = PRODUCT_DESCRIPTION + TAB_PANEL_REVIEW + RATING1)
@@ -163,37 +163,37 @@ public abstract class ProductDescriptionPage<ProductDescriptionPageType> extends
     protected abstract ProductDescriptionPageType createProductDescriptionPage();
 
     public ProductDescriptionPageType clickRow1() {
-        click(column_left_row_1_link_href);
+        click(columnLeftRow1LinkHref);
 
         return createProductDescriptionPage();
     }
 
     public ProductDescriptionPageType clickRow2() {
-        click(column_left_row_2_link_href);
+        click(columnLeftRow2LinkHref);
 
         return createProductDescriptionPage();
     }
 
     public ProductDescriptionPageType clickRow3() {
-        click(column_left_row_3_link_href);
+        click(columnLeftRow3LinkHref);
 
         return createProductDescriptionPage();
     }
 
     public ProductDescriptionPageType clickRow4() {
-        click(column_left_row_4_link_href);
+        click(columnLeftRow4LinkHref);
 
         return createProductDescriptionPage();
     }
 
     public ProductDescriptionPageType clickDescription() {
-        click(href_description);
+        click(hrefDescription);
 
         return createProductDescriptionPage();
     }
 
     public ProductDescriptionPageType clickReviews() {
-        click(href_review);
+        click(hrefReview);
 
         return createProductDescriptionPage();
     }
@@ -256,13 +256,13 @@ public abstract class ProductDescriptionPage<ProductDescriptionPageType> extends
     }
 
     public ProductDescriptionPageType clickTags() {
-        click(href_tags);
+        click(hrefTags);
 
         return createProductDescriptionPage();
     }
 
     public ProductDescriptionPageType clickRelatedProducts() {
-        click(href_relatedProducts);
+        click(hrefRelatedProducts);
 
         return createProductDescriptionPage();
     }
