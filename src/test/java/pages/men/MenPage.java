@@ -1,10 +1,9 @@
 package pages.men;
 
 import org.openqa.selenium.WebDriver;
-import pages.base_abstract.ProductsPage;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import pages.base_abstract.*;
+import pages.base_abstract.ProductsPage;
 
 import java.util.List;
 

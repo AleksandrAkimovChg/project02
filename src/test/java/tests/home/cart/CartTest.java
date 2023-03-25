@@ -1,7 +1,6 @@
 package tests.home.cart;
 
 import base.BaseTest;
-import org.apache.commons.lang3.StringUtils;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.home.HomePage;
@@ -12,7 +11,7 @@ import static testData.ProjectConstants.CART_PAGE_URL;
 
 public class CartTest extends BaseTest {
 
-    @Test (priority = -4)
+    @Test(priority = -4)
     public void testClickLeftNavTopCartLink_NavigatesToCart() {
         final String expectedTitle = "Shopping Cart";
         final String expectedURL = CART_PAGE_URL;
@@ -26,7 +25,7 @@ public class CartTest extends BaseTest {
         Assert.assertEquals(cartPage.getTitle(), expectedTitle);
     }
 
-    @Test (priority = -5)
+    @Test(priority = -5)
     public void testClickAddToCartButton_savesProduct1ToCart() {
         HomePage homePage = openBaseURL()
                 .clickAddToCart_GridProduct1();
@@ -34,7 +33,7 @@ public class CartTest extends BaseTest {
         String gridProductName = TestUtils.capitalizeEachWordInString(
                 homePage.getGridProduct1_Name()
                         .toLowerCase()
-                );
+        );
         String gridProductPrice = homePage.getGridProduct1_Price();
 
         CartPage cartPage = homePage

@@ -116,4 +116,3 @@ public class MenTest extends BaseTest {
         Assert.assertEquals(externalLinks.size(), 0, "External links are present in the Men page menu");
     }
 }
-

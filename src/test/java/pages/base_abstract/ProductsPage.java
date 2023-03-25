@@ -411,10 +411,12 @@ public abstract class ProductsPage<ProductsPageType> extends MainPage {
     public ProductsPageType clickAddToCart_GridProduct13() {
         click10(addProductToCartButton_13);
         return createProductsPage();
-    }    public ProductsPageType clickAddToCart_GridProduct14() {
+    }
+    public ProductsPageType clickAddToCart_GridProduct14() {
         click10(addProductToCartButton_14);
         return createProductsPage();
-    }    public ProductsPageType clickAddToCart_GridProduct16() {
+    }
+    public ProductsPageType clickAddToCart_GridProduct16() {
         click10(addProductToCartButton_16);
         return createProductsPage();
     }
@@ -503,7 +505,7 @@ public abstract class ProductsPage<ProductsPageType> extends MainPage {
     public String getGridProduct3_Name() {
         return getText(gridProduct3_Name);
     }
-    public String getGridProductN4_Name() {
+    public String getGridProduct4_Name() {
         return getText(gridProduct4_Name);
     }
     public String getGridProduct5_Name() {

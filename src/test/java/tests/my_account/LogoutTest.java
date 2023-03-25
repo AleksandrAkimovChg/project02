@@ -6,14 +6,14 @@ import org.testng.annotations.Test;
 import pages.my_account.LogoutPage;
 import pages.my_account.MyAccountPage;
 
-import static testData.ProjectConstants.LOGUNT_PAGE_URL;
+import static testData.ProjectConstants.LOGOUT_PAGE_URL;
 
 public class LogoutTest extends BaseTest {
 
     @Test
     public void testClickLogofLink_navigatesTo_LogoutPage() {
 
-        final String expectedURL = LOGUNT_PAGE_URL;
+        final String expectedURL = LOGOUT_PAGE_URL;
         final String expectedTitle = "Account Logout";
         final String expectedTH1Header = "ACCOUNT LOGOUT";
 

@@ -6,13 +6,13 @@ import org.testng.annotations.Test;
 import pages.home.CheckoutPage;
 import pages.home.cart.SuccessPage;
 
-import static testData.ProjectConstants.SUCCSESS_PAGE_URL;
+import static testData.ProjectConstants.SUCCESS_PAGE_URL;
 
 public class SuccessTest extends BaseTest {
 
     @Test(priority = -5)
     public void testClickConfirmOrderButtons_navigatesToSuccessPage() {
-        final String expectedURL = SUCCSESS_PAGE_URL;
+        final String expectedURL = SUCCESS_PAGE_URL;
         final String expectedTitle = "Your Order Has Been Processed!";
         final String expectedTH1Header = "YOUR ORDER HAS BEEN PROCESSED!";
 

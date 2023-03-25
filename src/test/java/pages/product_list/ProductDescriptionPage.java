@@ -126,7 +126,7 @@ public abstract class ProductDescriptionPage<ProductDescriptionPageType> extends
     private WebElement href_tags;
 
     @FindBy(xpath = MAIN_CONTAINER + PRODUCT_DESCRIPTION + HREF_RELATED_PRODUCTS)
-    private WebElement href_relatedproducts;
+    private WebElement href_relatedProducts;
 
     // Review
     @FindBy(xpath = PRODUCT_DESCRIPTION + TAB_PANEL_REVIEW + RATING1)
@@ -262,7 +262,7 @@ public abstract class ProductDescriptionPage<ProductDescriptionPageType> extends
     }
 
     public ProductDescriptionPageType clickRelatedProducts() {
-        click(href_relatedproducts);
+        click(href_relatedProducts);
 
         return createProductDescriptionPage();
     }
