@@ -17,7 +17,7 @@ public class HomePage extends ProductsPage<HomePage> {
     private List<WebElement> brandsScrollingListHrefLinks;
 
     @FindBy(xpath = BRANDCAROUSAL_POPULARBRANDS_MENU_IMG)
-    private List<WebElement> brandsscrollinglistImglinks;
+    private List<WebElement> brandsScrollingListImgLinks;
 
     @FindBy(xpath = POPULARBRANDS_MENU)
     private WebElement brandScrollingList;
@@ -38,7 +38,7 @@ public class HomePage extends ProductsPage<HomePage> {
 
     public List<WebElement> getBrandsScrollingListImgLinks() {
 
-        return brandsscrollinglistImglinks;
+        return brandsScrollingListImgLinks;
     }
 
     public String getBrandsScrollingListAltText(int index) {
