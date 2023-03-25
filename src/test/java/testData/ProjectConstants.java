@@ -15,7 +15,7 @@ public class ProjectConstants {
     /**
      * Test URL
      */
-    static final String BASE_URL = "https://automationteststore.com/index.php";
+    public static final String BASE_URL = "https://automationteststore.com/index.php";
     static final String PRODUCT_SEARCH = "?rt=product/search";
     static final String PRODUCT_QUERY_PARAMS = "?rt=product/product&path=";
     static final String URL_PRODUCT_ID = BASE_URL + PRODUCT_QUERY_PARAMS;

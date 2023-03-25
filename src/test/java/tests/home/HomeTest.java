@@ -11,7 +11,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-import static testData.ProjectConstants.ID_50;
+import static testData.ProjectConstants.*;
 
 public class HomeTest extends BaseTest {
 
@@ -77,5 +77,22 @@ public class HomeTest extends BaseTest {
 
         Assert.assertEquals(gridProductName, expectedProductName);
         Assert.assertEquals(gridProductPrice, expectedProductPrice);
+    }
+
+    @Test
+    public void testRefreshHomePage() {
+        final String expectedURL = openBaseURL().getURL();
+        final String expectedTitle = openBaseURL().getTitle();
+
+        String actualURL = openBaseURL()
+                .refresh()
+                .getURL();
+
+        String actualTitle = openBaseURL()
+                .refresh()
+                .getTitle();
+
+        Assert.assertEquals(actualURL, expectedURL);
+        Assert.assertEquals(actualTitle, expectedTitle);
     }
 }

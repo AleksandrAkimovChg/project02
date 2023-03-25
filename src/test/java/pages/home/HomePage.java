@@ -50,4 +50,10 @@ public class HomePage extends ProductsPage<HomePage> {
 
         return getAttributeByIndex(index, getBrandsScrollingListHrefLinks(), "href");
     }
+
+    public HomePage refresh() {
+        getDriver().navigate().refresh();
+
+        return this;
+    }
 }
