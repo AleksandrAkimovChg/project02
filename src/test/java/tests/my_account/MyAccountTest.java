@@ -57,4 +57,24 @@ public class MyAccountTest extends BaseTest {
         Assert.assertEquals(oldLoginMenuText, expectedLoginMenuText);
         Assert.assertEquals(actualLogoutMenuText, expectedLogoutMenuText);
     }
+
+    @Test
+    public void testLoginMenuCustomerText_changesAfterLogin() {
+        final String expectedLoginMenuText = "Welcome back Test";
+
+        HomePage homePage = new HomePage(getDriver());
+
+        String oldLoginMenuText = openBaseURL().getLoginCustomerText();
+
+        homePage.clickLoginCustomerMenu()
+                .clickClearInputRegularUserLogin(LOGIN_NAME)
+                .clickClearInputRegularUserPassword(PASSWORD)
+                .clickLoginButton();
+
+        String actualLoginMenuText = homePage.getLoginCustomerText();
+
+        Assert.assertNotEquals(oldLoginMenuText, actualLoginMenuText);
+        Assert.assertEquals(actualLoginMenuText, expectedLoginMenuText);
+    }
+
 }

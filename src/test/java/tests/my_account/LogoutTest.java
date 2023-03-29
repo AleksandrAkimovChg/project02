@@ -11,7 +11,7 @@ import static testData.ProjectConstants.LOGOUT_PAGE_URL;
 public class LogoutTest extends BaseTest {
 
     @Test
-    public void testClickLogofLink_navigatesTo_LogoutPage() {
+    public void testClickLogOffLink_navigatesTo_LogoutPage() {
 
         final String expectedURL = LOGOUT_PAGE_URL;
         final String expectedTitle = "Account Logout";
