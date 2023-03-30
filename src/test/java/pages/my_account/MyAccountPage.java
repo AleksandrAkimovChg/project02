@@ -7,7 +7,11 @@ import pages.base_abstract.MainPage;
 import pages.my_account.address_book.AddressBookPage;
 import pages.my_account.order_history.OrderHistoryPage;
 
+import java.util.List;
+
 public class MyAccountPage extends MainPage {
+
+    private static final String MY_ACCOUNT_SIDE_MENU = "//div[@class='myaccountbox']/ul/li/a";
 
     private static final String MY_ACCOUNT_PAGE_LINKS_PATH =
             "//div[@class='myaccountbox']/ul/li/a[@href='https://automationteststore.com/index.php?rt=account/";
@@ -41,6 +45,9 @@ public class MyAccountPage extends MainPage {
 
     @FindBy(xpath = MY_ACCOUNT_PAGE_LINKS_PATH + "logout']")
     private WebElement logoffLink;
+
+    @FindBy(xpath = MY_ACCOUNT_SIDE_MENU)
+    private List<WebElement> myAccountSideMenus;
 
     public MyAccountPage(WebDriver driver) {
         super(driver);
@@ -104,5 +111,26 @@ public class MyAccountPage extends MainPage {
         click(logoffLink);
 
         return new LogoutPage(getDriver());
+    }
+
+    public MyAccountPage clickMenu(int index, List<WebElement> menus) {
+        menus.get(index).click();
+
+        return new MyAccountPage(getDriver());
+    }
+
+    public List<WebElement> getMyAccountSideMenuLinks() {
+
+        return myAccountSideMenus;
+    }
+
+    public String getMyAccountSideMenuTextByIndex(int index) {
+
+        return getAttributeByIndex(index, getMyAccountSideMenuLinks(), "text");
+    }
+
+    public String getMyAccountSideMenuHrefByIndex(int index) {
+
+        return getAttributeByIndex(index, getMyAccountSideMenuLinks(), "href");
     }
 }
