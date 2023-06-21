@@ -36,4 +36,15 @@ public class SuccessTest extends BaseTest {
         Assert.assertEquals(actualTitle, expectedTitle);
         Assert.assertEquals(expectedTH1Header, actualTH1Header);
     }
+
+    @Test
+    public void testSuccessInscriptionOnTheSuccessPage() {
+        final String expectedSuccessInscription = " Your Order Has Been Processed!";
+
+        openBaseURL()
+                .BaseLogIn()
+                .mouseHoverOnHaircareMenu()
+                .clickConditionerSubmenu();
+
+    }
 }
