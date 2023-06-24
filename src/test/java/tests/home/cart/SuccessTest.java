@@ -3,11 +3,8 @@ package tests.home.cart;
 import base.BaseTest;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import pages.hair_care.ConditionerPage;
 import pages.home.CheckoutPage;
 import pages.home.cart.SuccessPage;
-
-import java.util.List;
 
 import static testData.ProjectConstants.SUCCESS_PAGE_URL;
 
@@ -52,27 +49,21 @@ public class SuccessTest extends BaseTest {
      * 9. На странице checkoutInformatin нажимаю ConfirmOrder
      * 10. Assert - проверяю надпись
      */
+
     @Test
     public void testSuccessInscriptionOnTheSuccessPage() {
-        final String expectedTH1Header = "YOUR ORDER HAS BEEN PROCESSED!";
-        final String expectedSuccessInscription = " Your Order Has Been Processed!";
 
-        List<String> actualConditioners = openBaseURL()
-                .BaseLogIn()
-                .mouseHoverOnHaircareMenu()
-                .clickConditionerSubmenu()
-                .getConditionersList();
+         String actualH1Header = openBaseURL()
+                 .BaseLogIn()
+                 .mouseHoverOnHaircareMenu()
+                 .clickConditionerSubmenu()
+                 .clickOnConditionerByName("Seaweed Conditioner")
+                 .clickAddToCardBtn()
+                 .clickCartCheckoutButton1()
+                 .clickConfirmOrderButton()
+                 .waitForBlueContainerDisappeared()
+                 .getConfirmOrderH1HeaderText();
 
-        if (actualConditioners.size() > 0) {
-            String actualH1Header = new ConditionerPage(getDriver())
-                    .mouseHoverAndClickAddToCard()
-                    .clickLeftNavTopCartMenu()
-                    .clickCartCheckoutButton1()
-                    .clickConfirmOrderButton()
-                    .waitForBlueContainerDisappeared()
-                    .getConfirmOrderH1HeaderText();
-
-        Assert.assertEquals(actualH1Header, expectedTH1Header);
-        }
+         Assert.assertEquals(actualH1Header, "YOUR ORDER HAS BEEN PROCESSED!");
     }
 }

@@ -1,8 +1,6 @@
 package pages.product_list;
 
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.FindBy;
 import pages.base_abstract.FormPage;
 
 public abstract class ProductDescriptionPage<ProductDescriptionPageType> extends FormPage{
@@ -24,18 +22,7 @@ public abstract class ProductDescriptionPage<ProductDescriptionPageType> extends
 
     static final String CONTINUE = "Continue";
 
-    static final String PRODUCT_PRICE = "//div[@class='productfilneprice']";
-    static final String PRODUCT_FORM = "//form[@id='product']";
-    static final String RADIOBUTTON_1 = "//label[1]//input[@type='radio']";
-    static final String RADIOBUTTON_2 = "//label[2]//input[@type='radio']";
-    static final String RADIOBUTTON_3 = "//label[3]//input[@type='radio']";
-    static final String RADIOBUTTON_4 = "//label[4]//input[@type='radio']";
-    static final String RADIOBUTTON_5 = "//label[5]//input[@type='radio']";
-    static final String SELECTOR = "//input[@id='product_quantity']";
-    static final String PRODUCT_QUANTITY = "//input[@id='product_quantity']";
-    static final String TOTAL_PRICE = "//span[@class='total-price']";
-    static final String ADD_TO_CARD = "//ul[@class='productpagecart']";
-    static final String PRINT = "//a[@class='productprint btn btn-large']";
+
 
     static final String PRODUCT_DESCRIPTION = "//div[@id='productdesc']//ul[@id='myTab']";
     static final String HREF_DESCRIPTION = "//a[@href='#description']";
@@ -56,214 +43,12 @@ public abstract class ProductDescriptionPage<ProductDescriptionPageType> extends
     static final String SUBMIT_BUTTON = "//button[@id='review_submit']";
 
     // TAGS
-    static final String TAB_PANEL_TAG = "//div[@id='producttag']";
-    static final String BASE_URL = "https://automationteststore.com/index.php";
-    static final String PRODUCT_SEARCH = "?rt=product/search";
-    static final String TAG_FASHION = "&keyword=fashion";
-    static final String TAG_SHOE = "&keyword=shoe";
 
     // COLUMN_LEFT
-    @FindBy(xpath = MAIN_CONTAINER + COLUMN_LEFT)
-    private WebElement columnLeft;
-
-    @FindBy(xpath = MAIN_CONTAINER + COLUMN_LEFT + ROW_1)
-    private WebElement columnLeftFirstRow;
-
-    @FindBy(xpath = MAIN_CONTAINER + COLUMN_LEFT + ROW_2)
-    private WebElement columnLeftSecondRow;
-
-    @FindBy(xpath = MAIN_CONTAINER + COLUMN_LEFT + ROW_3)
-    private WebElement columnLeftThirdRow;
-
-    @FindBy(xpath = MAIN_CONTAINER + COLUMN_LEFT + ROW_4)
-    private WebElement columnLeftFourthRow;
-
-    @FindBy(xpath = MAIN_CONTAINER + COLUMN_LEFT + ROW_1 + "/a[1][@href]")
-    private WebElement columnLeftRow1ImgHref;
-
-    @FindBy(xpath = MAIN_CONTAINER + COLUMN_LEFT + ROW_2 + "/a[2][@href]")
-    private WebElement columnLeftRow2ImgHref;
-
-    @FindBy(xpath = MAIN_CONTAINER + COLUMN_LEFT + ROW_3 + "/a[2][@href]")
-    private WebElement columnLeftRow3ImgHref;
-
-    @FindBy(xpath = MAIN_CONTAINER + COLUMN_LEFT + ROW_4 + "/a[4][@href]")
-    private WebElement columnLeftRow4ImgHref;
-
-    @FindBy(xpath = MAIN_CONTAINER + COLUMN_LEFT + ROW_1 + "/a[1][@href]")
-    private WebElement columnLeftRow1LinkHref;
-
-    @FindBy(xpath = MAIN_CONTAINER + COLUMN_LEFT + ROW_2 + "/a[2][@href]")
-    private WebElement columnLeftRow2LinkHref;
-
-    @FindBy(xpath = MAIN_CONTAINER + COLUMN_LEFT + ROW_3 + "/a[3][@href]")
-    private WebElement columnLeftRow3LinkHref;
-
-    @FindBy(xpath = MAIN_CONTAINER + COLUMN_LEFT + ROW_4 + "/a[4][@href]")
-    private WebElement columnLeftRow4LinkHref;
-
-
-    // PRODUCT_DESCRIPTION
-    @FindBy(xpath = MAIN_CONTAINER + PRODUCT_DESCRIPTION + "//li[1]")
-    private WebElement productDescription1;
-
-    @FindBy(xpath = MAIN_CONTAINER + PRODUCT_DESCRIPTION + "//li[2]")
-    private WebElement productDescription2;
-
-    @FindBy(xpath = MAIN_CONTAINER + PRODUCT_DESCRIPTION + "//li[3]")
-    private WebElement productDescription3;
-
-    @FindBy(xpath = MAIN_CONTAINER + PRODUCT_DESCRIPTION + "//li[4]")
-    private WebElement productDescription4;
-
-    @FindBy(xpath = MAIN_CONTAINER + PRODUCT_DESCRIPTION + HREF_DESCRIPTION)
-    private WebElement hrefDescription;
-
-    @FindBy(xpath = MAIN_CONTAINER + PRODUCT_DESCRIPTION + HREF_REVIEW)
-    private WebElement hrefReview;
-
-    @FindBy(xpath = MAIN_CONTAINER + PRODUCT_DESCRIPTION + HREF_TAGS)
-    private WebElement hrefTags;
-
-    @FindBy(xpath = MAIN_CONTAINER + PRODUCT_DESCRIPTION + HREF_RELATED_PRODUCTS)
-    private WebElement hrefRelatedProducts;
-
-    // Review
-    @FindBy(xpath = PRODUCT_DESCRIPTION + TAB_PANEL_REVIEW + RATING1)
-    private WebElement rating1;
-
-    @FindBy(xpath = PRODUCT_DESCRIPTION + TAB_PANEL_REVIEW + RATING2)
-    private WebElement rating2;
-
-    @FindBy(xpath = PRODUCT_DESCRIPTION + TAB_PANEL_REVIEW + RATING3)
-    private WebElement rating3;
-
-    @FindBy(xpath = PRODUCT_DESCRIPTION + TAB_PANEL_REVIEW + RATING4)
-    private WebElement rating4;
-
-    @FindBy(xpath = PRODUCT_DESCRIPTION + TAB_PANEL_REVIEW + RATING5)
-    private WebElement rating5;
-
-    @FindBy(xpath = PRODUCT_DESCRIPTION + TAB_PANEL_REVIEW + INPUT_NAME)
-    private WebElement reviewInputName;
-
-    @FindBy(xpath = PRODUCT_DESCRIPTION + TAB_PANEL_REVIEW + INPUT_REVIEW)
-    private WebElement reviewInputReview;
-
-    @FindBy(xpath = PRODUCT_DESCRIPTION + TAB_PANEL_REVIEW + CAPTCHA)
-    private WebElement reviewCaptcha;
-
-    @FindBy(xpath = PRODUCT_DESCRIPTION + TAB_PANEL_REVIEW + SUBMIT_BUTTON)
-    private WebElement reviewSubmit;
 
     public ProductDescriptionPage(WebDriver driver) {
         super(driver);
     }
 
     protected abstract ProductDescriptionPageType createProductDescriptionPage();
-
-    public ProductDescriptionPageType clickRow1() {
-        click(columnLeftRow1LinkHref);
-
-        return createProductDescriptionPage();
-    }
-
-    public ProductDescriptionPageType clickRow2() {
-        click(columnLeftRow2LinkHref);
-
-        return createProductDescriptionPage();
-    }
-
-    public ProductDescriptionPageType clickRow3() {
-        click(columnLeftRow3LinkHref);
-
-        return createProductDescriptionPage();
-    }
-
-    public ProductDescriptionPageType clickRow4() {
-        click(columnLeftRow4LinkHref);
-
-        return createProductDescriptionPage();
-    }
-
-    public ProductDescriptionPageType clickDescription() {
-        click(hrefDescription);
-
-        return createProductDescriptionPage();
-    }
-
-    public ProductDescriptionPageType clickReviews() {
-        click(hrefReview);
-
-        return createProductDescriptionPage();
-    }
-
-    public ProductDescriptionPageType clickRating1() {
-        click(rating1);
-
-        return createProductDescriptionPage();
-    }
-
-    public ProductDescriptionPageType clickRating2() {
-        click(rating2);
-
-        return createProductDescriptionPage();
-    }
-
-    public ProductDescriptionPageType clickRating3() {
-        click(rating3);
-
-        return createProductDescriptionPage();
-    }
-
-    public ProductDescriptionPageType clickRating4() {
-        click(rating4);
-
-        return createProductDescriptionPage();
-    }
-
-    public ProductDescriptionPageType clickRating5() {
-        click(rating5);
-
-        return createProductDescriptionPage();
-    }
-
-    public ProductDescriptionPageType inputName(String text) {
-        click(reviewInputName);
-        input(text, reviewInputName);
-
-        return createProductDescriptionPage();
-    }
-
-    public ProductDescriptionPageType inputReview(String text) {
-        click(reviewInputReview);
-        input(text, reviewInputReview);
-
-        return createProductDescriptionPage();
-    }
-
-    public ProductDescriptionPageType inputCaptcha(String text) {
-        click(reviewCaptcha);
-        input(text, reviewCaptcha);
-
-        return createProductDescriptionPage();
-    }
-
-    public ProductDescriptionPageType submit() {
-        click(reviewSubmit);
-
-        return createProductDescriptionPage();
-    }
-
-    public ProductDescriptionPageType clickTags() {
-        click(hrefTags);
-
-        return createProductDescriptionPage();
-    }
-
-    public ProductDescriptionPageType clickRelatedProducts() {
-        click(hrefRelatedProducts);
-
-        return createProductDescriptionPage();
-    }
 }
