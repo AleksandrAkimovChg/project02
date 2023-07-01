@@ -2,7 +2,7 @@ package pages.product_list;
 
 import org.openqa.selenium.WebDriver;
 
-public class WomensStilettoSandals_ID118_Page extends ProductDescriptionPage<WomensStilettoSandals_ID118_Page> {
+public class WomensStilettoSandals_ID118_Page extends DescriptionPage<WomensStilettoSandals_ID118_Page> {
 
     public WomensStilettoSandals_ID118_Page(WebDriver driver) {
         super(driver);

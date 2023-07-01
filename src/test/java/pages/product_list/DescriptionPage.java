@@ -3,7 +3,7 @@ package pages.product_list;
 import org.openqa.selenium.WebDriver;
 import pages.base_abstract.FormPage;
 
-public abstract class ProductDescriptionPage<ProductDescriptionPageType> extends FormPage{
+public abstract class DescriptionPage<DescriptionPage> extends FormPage{
 
     /**
      * описана модель страницы -- локаторами.
@@ -46,9 +46,9 @@ public abstract class ProductDescriptionPage<ProductDescriptionPageType> extends
 
     // COLUMN_LEFT
 
-    public ProductDescriptionPage(WebDriver driver) {
+    public DescriptionPage(WebDriver driver) {
         super(driver);
     }
 
-    protected abstract ProductDescriptionPageType createProductDescriptionPage();
+    protected abstract DescriptionPage createProductDescriptionPage();
 }

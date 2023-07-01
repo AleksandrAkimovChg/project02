@@ -1,9 +1,9 @@
 package pages.product_list.mac;
 
 import org.openqa.selenium.WebDriver;
-import pages.product_list.ProductDescriptionPage;
+import pages.product_list.DescriptionPage;
 
-public class MacSkinsheenBronzerStickPage extends ProductDescriptionPage<MacSkinsheenBronzerStickPage> {
+public class MacSkinsheenBronzerStickPage extends DescriptionPage<MacSkinsheenBronzerStickPage> {
 
     public MacSkinsheenBronzerStickPage(WebDriver driver) {
         super(driver);

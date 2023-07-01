@@ -7,7 +7,7 @@ import org.openqa.selenium.support.FindBy;
 import java.util.ArrayList;
 import java.util.List;
 
-public abstract class ProductsPage<ProductsPageType> extends MainPage {
+public abstract class ProductsPage<CategoryPage> extends MainPage {
 
     static final String MAIN_CONTAINER = "//div[@id='maincontainer']";
 
@@ -120,14 +120,6 @@ public abstract class ProductsPage<ProductsPageType> extends MainPage {
     @FindBy(xpath = FEATURED + GRID_PRODUCT_1)
     private WebElement addProductToCartButton_1;
 
-
-
-
-
-
-
-
-
     @FindBy(xpath = FEATURED + GRID_PRODUCT_2)
     private WebElement outOfStokeTag_2;
     @FindBy(xpath = LATEST_PRODUCTS + GRID_PRODUCT_8)
@@ -189,23 +181,7 @@ public abstract class ProductsPage<ProductsPageType> extends MainPage {
     @FindBy(xpath = MAIN_CONTAINER + THUMBNAILS_GRID + "/div[2]" + THUMBNAIL + HREF_IMG_SCR)
     private WebElement gridProduct2Image;
 
-    @FindBy(xpath = "")
-    private WebElement gridProduct3Image;
 
-    @FindBy(xpath = "")
-    private WebElement gridProduct4Image;
-
-    @FindBy(xpath = "")
-    private WebElement gridProduct5Image;
-
-    @FindBy(xpath = "")
-    private WebElement gridProduct6Image;
-
-    @FindBy(xpath = "")
-    private WebElement gridProduct7Image;
-
-    @FindBy(xpath = "")
-    private WebElement gridProduct8Image;
 
     /**
      * Product prices
@@ -268,42 +244,42 @@ public abstract class ProductsPage<ProductsPageType> extends MainPage {
         super(driver);
     }
 
-    protected abstract ProductsPageType createProductsPage();
+    protected abstract CategoryPage createProductsPage();
 
     /**
      * click
      */
-    public ProductsPageType clickMenu(int index, List<WebElement> menus) {
+    public CategoryPage clickMenu(int index, List<WebElement> menus) {
         menus.get(index).click();
 
         return createProductsPage();
     }
 
-    public ProductsPageType clickSortBy(){
+    public CategoryPage clickSortBy(){
         click(sortBy);
 
         return createProductsPage();
     }
 
-    public ProductsPageType clickSortByAZ(){
+    public CategoryPage clickSortByAZ(){
         click(sortByAZ);
 
         return createProductsPage();
     }
 
-    public ProductsPageType clickSortByZA() {
+    public CategoryPage clickSortByZA() {
         click(sortByZA);
 
         return createProductsPage();
     }
 
-    public ProductsPageType clickButtonList() {
+    public CategoryPage clickButtonList() {
         click(button_list);
 
         return createProductsPage();
     }
 
-    public ProductsPageType clickButtonGrid() {
+    public CategoryPage clickButtonGrid() {
         click(button_grid);
 
         return createProductsPage();
@@ -313,7 +289,7 @@ public abstract class ProductsPage<ProductsPageType> extends MainPage {
         click(gridProduct1Image);
     }
 
-    public ProductsPageType clickGridRow1Product1() {
+    public CategoryPage clickGridRow1Product1() {
         click(gridProduct1Image);
 
         return createProductsPage();
@@ -323,21 +299,16 @@ public abstract class ProductsPage<ProductsPageType> extends MainPage {
         click(gridProduct2Image);
     }
 
-    public ProductsPageType clickGridRow1Product2() {
+    public CategoryPage clickGridRow1Product2() {
         click(gridProduct2Image);
 
         return createProductsPage();
     }
 
-
-
-
-    public ProductsPageType clickAddToCart_GridProduct1() {
+    public CategoryPage clickAddToCart_GridProduct1() {
         click10(addProductToCartButton_1);
         return createProductsPage();
     }
-
-
 
     /**
      * List
@@ -358,13 +329,13 @@ public abstract class ProductsPage<ProductsPageType> extends MainPage {
         return prices;
     }
 
-    public ProductsPageType clickSortByPriceLowHigh() {
+    public CategoryPage clickSortByPriceLowHigh() {
         click(sortByPriceLowHigh);
 
         return createProductsPage();
     }
 
-    public ProductsPageType clickSortByPriceHighLow() {
+    public CategoryPage clickSortByPriceHighLow() {
         click(sortByPriceHighLow);
 
         return createProductsPage();

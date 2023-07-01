@@ -4,10 +4,10 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import pages.home.cart.CartPage;
-import pages.product_list.ProductDescriptionPage;
+import pages.product_list.DescriptionPage;
 
 
-public class SeaweedConditionerProductPage extends ProductDescriptionPage<SeaweedConditionerProductPage> {
+public class SeaweedConditionerProductPage extends DescriptionPage<SeaweedConditionerProductPage> {
 
     @FindBy(xpath = "//h1")
     private WebElement productTitle;
