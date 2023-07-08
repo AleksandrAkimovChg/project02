@@ -7,6 +7,7 @@ import pages.SearchPage;
 import pages.apparel_and_accessories.ApparelAndAccessoriesPage;
 import pages.apparel_and_accessories.ShoesPage;
 import pages.apparel_and_accessories.TShirtsPage;
+import pages.books.AudioCDPage;
 import pages.books.BooksPage;
 import pages.books.PaperbackPage;
 import pages.fragrance.FragrancePage;
@@ -34,7 +35,6 @@ import static testData.ProjectConstants.PASSWORD;
 
 public abstract class MainPage extends BasePage {
 
-    final static String MAIN_CONTAINER = "//div[@id='maincontainer']";
     private static final String CATEGORYMENU = "//section[@id='categorymenu']";
     private static final String NAV_PILLS_CATEGORYMENU = CATEGORYMENU + "/nav/ul/li";
     private static final String HREF = "//a[@href='https://automationteststore.com/index.php?rt=product/category&path=";
@@ -160,9 +160,6 @@ public abstract class MainPage extends BasePage {
     @FindBy(xpath = NAV_PILLS_CATEGORYMENU + "//a[contains(text(),'Conditioner')]")
     private WebElement conditionerSubmenu;
 
-    @FindBy(xpath = NAV_PILLS_CATEGORYMENU + "//a[contains(text(),'Paperback')]")
-    private WebElement paperbackSubmenu;
-
     @FindBy(css = "#categorymenu > nav > ul > li:nth-child(5) > a")
     private WebElement fragranceMenu;
 
@@ -185,13 +182,22 @@ public abstract class MainPage extends BasePage {
     private WebElement haircareMenu;
 
     @FindBy(css = "#categorymenu > nav > ul > li:nth-child(8) > a")
-    private WebElement booksMenu;
+    private WebElement booksMenuCSS;
 
     @FindBy(xpath = "//div[@title='Go']//i[@class='fa fa-search']")
     private WebElement searchField;
 
     @FindBy(xpath = NAV_PILLS_CATEGORYMENU + "//a[contains(text(),'Women')]")
     private WebElement womenSubmenu;
+
+    @FindBy(xpath = NAV_PILLS_CATEGORYMENU + "//a[contains(text(),'Books')]")
+    private WebElement booksMenuXpath;
+
+    @FindBy(xpath = NAV_PILLS_CATEGORYMENU + "//a[contains(text(),'Paperback')]")
+    private WebElement paperbackSubmenu;
+
+    @FindBy(xpath = NAV_PILLS_CATEGORYMENU + "//a[contains(text(),'Audio CD')]")
+    private WebElement audioCDSubmenu;
 
     /**
      * footer
@@ -398,7 +404,7 @@ public abstract class MainPage extends BasePage {
     }
 
     public BooksPage clickBooksMenu() {
-        click(booksMenu);
+        click(booksMenuCSS);
 
         return new BooksPage(getDriver());
     }
@@ -463,11 +469,6 @@ public abstract class MainPage extends BasePage {
         return new CheeksPage(getDriver());
     }
 
-    public PaperbackPage clickPaperbackSubmenu() {
-        mouseHoverAndClick(paperbackSubmenu);
-
-        return new PaperbackPage(getDriver());
-    }
 
     public ConditionerPage clickConditionerSubmenu() {
         mouseHoverAndClick(conditionerSubmenu);
@@ -518,10 +519,29 @@ public abstract class MainPage extends BasePage {
     }
 
     public HomePage mouseHoverOnBooksMenu() {
-        mouseHover(booksMenu);
+        mouseHover(booksMenuCSS);
 
         return new HomePage(getDriver());
     }
+
+    public BooksPage clickOnBooksMenu() {
+        mouseHoverAndClick(booksMenuXpath);
+
+        return new BooksPage(getDriver());
+    }
+
+    public PaperbackPage clickPaperbackSubmenu() {
+        mouseHoverAndClick(paperbackSubmenu);
+
+        return new PaperbackPage(getDriver());
+    }
+
+    public AudioCDPage clickOnAudioCDSubMenu() {
+        mouseHoverAndClick(audioCDSubmenu);
+
+        return new AudioCDPage(getDriver());
+    }
+
 
     public HomePage mouseHoverOnFragranceMenu() {
         mouseHover(fragranceMenu);

@@ -14,6 +14,16 @@ import static testData.ProjectConstants.*;
 public class PaperbackTest extends BaseTest {
 
     @Test
+    public void testNavigatesToPaperbackPage() {
+        String actualTitle = openBaseURL()
+                .mouseHoverOnBooksMenu()
+                .clickPaperbackSubmenu()
+                .getTitle().toUpperCase();
+
+        Assert.assertEquals(actualTitle, "PAPERBACK");
+    }
+
+    @Test
     public void testProductListSortByAZ() {
         final List<String> productList = List.of(ID_112, ID_113, ID_114);
 

@@ -1,0 +1,273 @@
+@startuml
+class pages.Information.PrivacyPolicyPage {
+}
+class pages.books.BooksPage {
+}
+class pages.my_account.MyAccountPage {
+}
+class pages.skincare.SkincarePage {
+}
+class pages.skincare.HandsAndNailsPage {
+}
+class pages.product_list.WomensStilettoSandals_ID118_Page {
+}
+class pages.product_list.pantene.PanteneHighlightingExpressionsPage {
+}
+class pages.product_list.benefit.BenefitBellaBambaPage {
+}
+class pages.product_list.gucci.GucciGuiltyPage {
+}
+class pages.my_account.TransactionHistoryPage {
+}
+class pages.skincare.FaceSkincarePage {
+}
+class pages.home.account.AccountCheckYourOrderPage {
+}
+class pages.home.account.CreateAccountPage {
+}
+class pages.apparel_and_accessories.ShoesPage {
+}
+class pages.home.account.AccountLoginPage {
+}
+class pages.my_account.order_history.OrderHistoryPage {
+}
+class pages.home.SpecialsPage {
+}
+class pages.product_list.pantene.PanteneCurlsToStraightShampooPage {
+}
+class pages.makeup.NailsPage {
+}
+class pages.product_list.mac.MacSkinsheenBronzerStickPage {
+}
+class pages.fragrance.WomenPage {
+}
+class pages.Information.ReturnPolicyPage {
+}
+class pages.product_list.calvin_klein.CKOneShockForHimDeodorantPage {
+}
+class pages.apparel_and_accessories.TShirtsPage {
+}
+class pages.Information.ContactUsPage {
+}
+abstract class pages.base_abstract.MainPage {
+}
+class pages.apparel_and_accessories.ApparelAndAccessoriesPage {
+}
+class pages.books.AudioCDPage {
+}
+class pages.product_list.books.PaperbackAllegiantByVeronicaRothPage {
+}
+class pages.makeup.LipsPage {
+}
+class pages.men.MenPage {
+}
+class pages.home.brands_scrolling_list.BvlgariPage {
+}
+class pages.makeup.MakeupPage {
+}
+class pages.home.CheckoutPage {
+}
+abstract class pages.base_abstract.FormPage {
+}
+class pages.home.brands_scrolling_list.DovePage {
+}
+class pages.product_list.lancome.LancomeTropiquesMineraleLooseBronzerPage {
+}
+class pages.books.PaperbackPage {
+}
+class pages.my_account.DownloadsPage {
+}
+class pages.makeup.CheeksPage {
+}
+class pages.product_list.sephora.SephoraSeaweedConditionerPage {
+}
+class pages.product_list.dove.DoveMenCareCleanComfortDeodorantPage {
+}
+class pages.skincare.EyesSkincarePage {
+}
+class pages.men.PreShaveAndShavingPage {
+}
+class pages.my_account.LogoutPage {
+}
+class pages.makeup.FaceMakeupPage {
+}
+class pages.home.cart.SuccessPage {
+}
+class pages.Information.SiteMapPage {
+}
+abstract class pages.base_abstract.BasePage {
+}
+class pages.home.brands_scrolling_list.GucciPage {
+}
+class pages.product_list.benefit.BenefitGirlMeetsPearlPage {
+}
+class pages.home.brands_scrolling_list.CalvinKleinPage {
+}
+abstract class pages.base_abstract.ProductsPage {
+}
+class pages.Information.AboutUsPage {
+}
+class pages.men.FragranceSetsPage {
+}
+class pages.fragrance.FragrancePage {
+}
+class pages.my_account.NotificationsPage {
+}
+class pages.makeup.ValueSetsPage {
+}
+class pages.hair_care.ShampooPage {
+}
+class pages.home.brands_scrolling_list.LancomePage {
+}
+class pages.my_account.address_book.AddressBookPage {
+}
+class pages.home.brands_scrolling_list.SephoraPage {
+}
+class pages.home.brands_scrolling_list.BenefitPage {
+}
+class pages.my_account.address_book.EditAddressPage {
+}
+class pages.makeup.EyesMakeupPage {
+}
+class pages.skincare.GiftIdeasAndSetsPage {
+}
+class pages.product_list.NewLadies_Sandals_ID116_Page {
+}
+class pages.men.SkincareMenPage {
+}
+class pages.Information.ShippingPage {
+}
+class pages.fragrance.MenFragrancePage {
+}
+class pages.SearchPage {
+}
+class pages.home.brands_scrolling_list.MacPage {
+}
+class pages.home.brands_scrolling_list.PantenePage {
+}
+class pages.my_account.ChangePasswordPage {
+}
+class pages.home.cart.CartPage {
+}
+class pages.product_list.calvin_klein.CKSecretObsessionPerfumePage {
+}
+class pages.product_list.bvlgari.BvlgariPourHommeEauDeToilettePage {
+}
+abstract class pages.base_abstract.TablePage {
+}
+class pages.my_account.order_history.InvoiceAndOrderDetailsPage {
+}
+class pages.men.BodyAndShowerPage {
+}
+class pages.home.HomePage {
+}
+class pages.hair_care.ConditionerPage {
+}
+abstract class pages.product_list.ProductDescriptionPage {
+}
+class pages.hair_care.HairCarePage {
+}
+class pages.my_account.EditAccountDetailsPage {
+}
+class pages.my_account.MyWishlistPage {
+}
+class pages.product_list.books.AudioCDNewFrenchWithEasePage {
+}
+class pages.product_list.giorgio_armani.GiorgioArmaniCodePourFemmePage {
+}
+class pages.home.brands_scrolling_list.GiorgioArmaniPage {
+}
+class pages.skincare.SunPage {
+}
+
+
+pages.base_abstract.MainPage <|-- pages.Information.PrivacyPolicyPage
+pages.base_abstract.ProductsPage <|-- pages.books.BooksPage
+pages.base_abstract.MainPage <|-- pages.my_account.MyAccountPage
+pages.base_abstract.ProductsPage <|-- pages.skincare.SkincarePage
+pages.base_abstract.ProductsPage <|-- pages.skincare.HandsAndNailsPage
+pages.product_list.ProductDescriptionPage <|-- pages.product_list.WomensStilettoSandals_ID118_Page
+pages.product_list.ProductDescriptionPage <|-- pages.product_list.pantene.PanteneHighlightingExpressionsPage
+pages.product_list.ProductDescriptionPage <|-- pages.product_list.benefit.BenefitBellaBambaPage
+pages.product_list.ProductDescriptionPage <|-- pages.product_list.gucci.GucciGuiltyPage
+pages.base_abstract.TablePage <|-- pages.my_account.TransactionHistoryPage
+pages.base_abstract.ProductsPage <|-- pages.skincare.FaceSkincarePage
+pages.base_abstract.TablePage <|-- pages.home.account.AccountCheckYourOrderPage
+pages.home.account.AccountLoginPage <|-- pages.home.account.CreateAccountPage
+pages.base_abstract.ProductsPage <|-- pages.apparel_and_accessories.ShoesPage
+pages.base_abstract.FormPage <|-- pages.home.account.AccountLoginPage
+pages.base_abstract.TablePage <|-- pages.my_account.order_history.OrderHistoryPage
+pages.base_abstract.ProductsPage <|-- pages.home.SpecialsPage
+pages.product_list.ProductDescriptionPage <|-- pages.product_list.pantene.PanteneCurlsToStraightShampooPage
+pages.base_abstract.ProductsPage <|-- pages.makeup.NailsPage
+pages.product_list.ProductDescriptionPage <|-- pages.product_list.mac.MacSkinsheenBronzerStickPage
+pages.base_abstract.ProductsPage <|-- pages.fragrance.WomenPage
+pages.base_abstract.MainPage <|-- pages.Information.ReturnPolicyPage
+pages.product_list.ProductDescriptionPage <|-- pages.product_list.calvin_klein.CKOneShockForHimDeodorantPage
+pages.base_abstract.ProductsPage <|-- pages.apparel_and_accessories.TShirtsPage
+pages.base_abstract.FormPage <|-- pages.Information.ContactUsPage
+pages.base_abstract.BasePage <|-- pages.base_abstract.MainPage
+pages.base_abstract.ProductsPage <|-- pages.apparel_and_accessories.ApparelAndAccessoriesPage
+pages.base_abstract.ProductsPage <|-- pages.books.AudioCDPage
+pages.product_list.ProductDescriptionPage <|-- pages.product_list.books.PaperbackAllegiantByVeronicaRothPage
+pages.base_abstract.ProductsPage <|-- pages.makeup.LipsPage
+pages.base_abstract.ProductsPage <|-- pages.men.MenPage
+pages.base_abstract.ProductsPage <|-- pages.home.brands_scrolling_list.BvlgariPage
+pages.base_abstract.ProductsPage <|-- pages.makeup.MakeupPage
+pages.base_abstract.TablePage <|-- pages.home.CheckoutPage
+pages.base_abstract.MainPage <|-- pages.base_abstract.FormPage
+pages.base_abstract.ProductsPage <|-- pages.home.brands_scrolling_list.DovePage
+pages.product_list.ProductDescriptionPage <|-- pages.product_list.lancome.LancomeTropiquesMineraleLooseBronzerPage
+pages.base_abstract.ProductsPage <|-- pages.books.PaperbackPage
+pages.base_abstract.TablePage <|-- pages.my_account.DownloadsPage
+pages.base_abstract.ProductsPage <|-- pages.makeup.CheeksPage
+pages.product_list.ProductDescriptionPage <|-- pages.product_list.sephora.SephoraSeaweedConditionerPage
+pages.product_list.ProductDescriptionPage <|-- pages.product_list.dove.DoveMenCareCleanComfortDeodorantPage
+pages.base_abstract.ProductsPage <|-- pages.skincare.EyesSkincarePage
+pages.base_abstract.ProductsPage <|-- pages.men.PreShaveAndShavingPage
+pages.base_abstract.MainPage <|-- pages.my_account.LogoutPage
+pages.base_abstract.ProductsPage <|-- pages.makeup.FaceMakeupPage
+pages.base_abstract.MainPage <|-- pages.home.cart.SuccessPage
+pages.base_abstract.MainPage <|-- pages.Information.SiteMapPage
+pages.base_abstract.ProductsPage <|-- pages.home.brands_scrolling_list.GucciPage
+pages.product_list.ProductDescriptionPage <|-- pages.product_list.benefit.BenefitGirlMeetsPearlPage
+pages.base_abstract.ProductsPage <|-- pages.home.brands_scrolling_list.CalvinKleinPage
+pages.base_abstract.MainPage <|-- pages.base_abstract.ProductsPage
+pages.base_abstract.MainPage <|-- pages.Information.AboutUsPage
+pages.base_abstract.ProductsPage <|-- pages.men.FragranceSetsPage
+pages.base_abstract.ProductsPage <|-- pages.fragrance.FragrancePage
+pages.base_abstract.TablePage <|-- pages.my_account.NotificationsPage
+pages.base_abstract.ProductsPage <|-- pages.makeup.ValueSetsPage
+pages.base_abstract.ProductsPage <|-- pages.hair_care.ShampooPage
+pages.base_abstract.ProductsPage <|-- pages.home.brands_scrolling_list.LancomePage
+pages.base_abstract.MainPage <|-- pages.my_account.address_book.AddressBookPage
+pages.base_abstract.ProductsPage <|-- pages.home.brands_scrolling_list.SephoraPage
+pages.base_abstract.ProductsPage <|-- pages.home.brands_scrolling_list.BenefitPage
+pages.base_abstract.FormPage <|-- pages.my_account.address_book.EditAddressPage
+pages.base_abstract.ProductsPage <|-- pages.makeup.EyesMakeupPage
+pages.base_abstract.ProductsPage <|-- pages.skincare.GiftIdeasAndSetsPage
+pages.product_list.ProductDescriptionPage <|-- pages.product_list.NewLadies_Sandals_ID116_Page
+pages.base_abstract.ProductsPage <|-- pages.men.SkincareMenPage
+pages.base_abstract.MainPage <|-- pages.Information.ShippingPage
+pages.base_abstract.ProductsPage <|-- pages.fragrance.MenFragrancePage
+pages.base_abstract.MainPage <|-- pages.SearchPage
+pages.base_abstract.ProductsPage <|-- pages.home.brands_scrolling_list.MacPage
+pages.base_abstract.ProductsPage <|-- pages.home.brands_scrolling_list.PantenePage
+pages.base_abstract.FormPage <|-- pages.my_account.ChangePasswordPage
+pages.base_abstract.TablePage <|-- pages.home.cart.CartPage
+pages.product_list.ProductDescriptionPage <|-- pages.product_list.calvin_klein.CKSecretObsessionPerfumePage
+pages.product_list.ProductDescriptionPage <|-- pages.product_list.bvlgari.BvlgariPourHommeEauDeToilettePage
+pages.base_abstract.FormPage <|-- pages.base_abstract.TablePage
+pages.base_abstract.TablePage <|-- pages.my_account.order_history.InvoiceAndOrderDetailsPage
+pages.base_abstract.ProductsPage <|-- pages.men.BodyAndShowerPage
+pages.base_abstract.ProductsPage <|-- pages.home.HomePage
+pages.base_abstract.ProductsPage <|-- pages.hair_care.ConditionerPage
+pages.base_abstract.FormPage <|-- pages.product_list.ProductDescriptionPage
+pages.base_abstract.ProductsPage <|-- pages.hair_care.HairCarePage
+pages.base_abstract.FormPage <|-- pages.my_account.EditAccountDetailsPage
+pages.base_abstract.TablePage <|-- pages.my_account.MyWishlistPage
+pages.product_list.ProductDescriptionPage <|-- pages.product_list.books.AudioCDNewFrenchWithEasePage
+pages.product_list.ProductDescriptionPage <|-- pages.product_list.giorgio_armani.GiorgioArmaniCodePourFemmePage
+pages.base_abstract.ProductsPage <|-- pages.home.brands_scrolling_list.GiorgioArmaniPage
+pages.base_abstract.ProductsPage <|-- pages.skincare.SunPage
+@enduml
