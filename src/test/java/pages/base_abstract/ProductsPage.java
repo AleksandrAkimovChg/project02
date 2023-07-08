@@ -7,7 +7,7 @@ import org.openqa.selenium.support.FindBy;
 import java.util.ArrayList;
 import java.util.List;
 
-public abstract class ProductsPage<ProductsPageType> extends MainPage {
+public abstract class ProductsPage<CategoryPage> extends MainPage {
 
     static final String MAIN_CONTAINER = "//div[@id='maincontainer']";
 
@@ -120,36 +120,6 @@ public abstract class ProductsPage<ProductsPageType> extends MainPage {
     @FindBy(xpath = FEATURED + GRID_PRODUCT_1)
     private WebElement addProductToCartButton_1;
 
-    @FindBy(xpath = FEATURED + GRID_PRODUCT_3)
-    private WebElement addProductToCartButton_3;
-
-    @FindBy(xpath = FEATURED + GRID_PRODUCT_4)
-    private WebElement addProductToCartButton_4;
-
-    @FindBy(xpath = LATEST_PRODUCTS + GRID_PRODUCT_5)
-    private WebElement addProductToCartButton_5;
-
-    @FindBy(xpath = LATEST_PRODUCTS + GRID_PRODUCT_6)
-    private WebElement addProductToCartButton_6;
-
-    @FindBy(xpath = LATEST_PRODUCTS + GRID_PRODUCT_7)
-    private WebElement addProductToCartButton_7;
-
-    @FindBy(xpath = BESTSELLERS + GRID_PRODUCT_9)
-    private WebElement addProductToCartButton_9;
-
-    @FindBy(xpath = BESTSELLERS + GRID_PRODUCT_11)
-    private WebElement addProductToCartButton_11;
-
-    @FindBy(xpath = SPECIALS + GRID_PRODUCT_13)
-    private WebElement addProductToCartButton_13;
-
-    @FindBy(xpath = SPECIALS + GRID_PRODUCT_14)
-    private WebElement addProductToCartButton_14;
-
-    @FindBy(xpath = SPECIALS + GRID_PRODUCT_16)
-    private WebElement addProductToCartButton_16;
-
     @FindBy(xpath = FEATURED + GRID_PRODUCT_2)
     private WebElement outOfStokeTag_2;
     @FindBy(xpath = LATEST_PRODUCTS + GRID_PRODUCT_8)
@@ -211,23 +181,7 @@ public abstract class ProductsPage<ProductsPageType> extends MainPage {
     @FindBy(xpath = MAIN_CONTAINER + THUMBNAILS_GRID + "/div[2]" + THUMBNAIL + HREF_IMG_SCR)
     private WebElement gridProduct2Image;
 
-    @FindBy(xpath = "")
-    private WebElement gridProduct3Image;
 
-    @FindBy(xpath = "")
-    private WebElement gridProduct4Image;
-
-    @FindBy(xpath = "")
-    private WebElement gridProduct5Image;
-
-    @FindBy(xpath = "")
-    private WebElement gridProduct6Image;
-
-    @FindBy(xpath = "")
-    private WebElement gridProduct7Image;
-
-    @FindBy(xpath = "")
-    private WebElement gridProduct8Image;
 
     /**
      * Product prices
@@ -290,42 +244,42 @@ public abstract class ProductsPage<ProductsPageType> extends MainPage {
         super(driver);
     }
 
-    protected abstract ProductsPageType createProductsPage();
+    protected abstract CategoryPage createProductsPage();
 
     /**
      * click
      */
-    public ProductsPageType clickMenu(int index, List<WebElement> menus) {
+    public CategoryPage clickMenu(int index, List<WebElement> menus) {
         menus.get(index).click();
 
         return createProductsPage();
     }
 
-    public ProductsPageType clickSortBy(){
+    public CategoryPage clickSortBy(){
         click(sortBy);
 
         return createProductsPage();
     }
 
-    public ProductsPageType clickSortByAZ(){
+    public CategoryPage clickSortByAZ(){
         click(sortByAZ);
 
         return createProductsPage();
     }
 
-    public ProductsPageType clickSortByZA() {
+    public CategoryPage clickSortByZA() {
         click(sortByZA);
 
         return createProductsPage();
     }
 
-    public ProductsPageType clickButtonList() {
+    public CategoryPage clickButtonList() {
         click(button_list);
 
         return createProductsPage();
     }
 
-    public ProductsPageType clickButtonGrid() {
+    public CategoryPage clickButtonGrid() {
         click(button_grid);
 
         return createProductsPage();
@@ -335,7 +289,7 @@ public abstract class ProductsPage<ProductsPageType> extends MainPage {
         click(gridProduct1Image);
     }
 
-    public ProductsPageType clickGridRow1Product1() {
+    public CategoryPage clickGridRow1Product1() {
         click(gridProduct1Image);
 
         return createProductsPage();
@@ -345,79 +299,14 @@ public abstract class ProductsPage<ProductsPageType> extends MainPage {
         click(gridProduct2Image);
     }
 
-    public ProductsPageType clickGridRow1Product2() {
+    public CategoryPage clickGridRow1Product2() {
         click(gridProduct2Image);
 
         return createProductsPage();
     }
 
-    public void clickGridProduct3() {
-        click(gridProduct3Image);
-    }
-
-    public void clickGridProduct4() {
-        click(gridProduct4Image);
-    }
-
-    public void clickGridProduct5() {
-        click(gridProduct5Image);
-    }
-
-    public void clickGridRow2Product6() {
-        click(gridProduct6Image);
-    }
-
-    public void clickGridProduct7() {
-        click(gridProduct7Image);
-    }
-
-    public void clickGridProduct8() {
-        click(gridProduct8Image);
-    }
-
-    public ProductsPageType clickAddToCart_GridProduct1() {
+    public CategoryPage clickAddToCart_GridProduct1() {
         click10(addProductToCartButton_1);
-        return createProductsPage();
-    }
-
-    public ProductsPageType clickAddToCart_GridProduct3() {
-        click10(addProductToCartButton_3);
-        return createProductsPage();
-    }
-    public ProductsPageType clickAddToCart_GridProduct4() {
-        click10(addProductToCartButton_4);
-        return createProductsPage();
-    }
-    public ProductsPageType clickAddToCart_GridProduct5() {
-        click10(addProductToCartButton_5);
-        return createProductsPage();
-    }
-    public ProductsPageType clickAddToCart_GridProduct6() {
-        click10(addProductToCartButton_6);
-        return createProductsPage();
-    }
-    public ProductsPageType clickAddToCart_GridProduct7() {
-        click10(addProductToCartButton_7);
-        return createProductsPage();
-    }
-    public ProductsPageType clickAddToCart_GridProduct9() {
-        click10(addProductToCartButton_9);
-        return createProductsPage();
-    }
-    public ProductsPageType clickAddToCart_GridProduct11() {
-        click10(addProductToCartButton_11);
-        return createProductsPage();
-    }
-    public ProductsPageType clickAddToCart_GridProduct13() {
-        click10(addProductToCartButton_13);
-        return createProductsPage();
-    }
-    public ProductsPageType clickAddToCart_GridProduct14() {
-        click10(addProductToCartButton_14);
-        return createProductsPage();
-    }
-    public ProductsPageType clickAddToCart_GridProduct16() {
-        click10(addProductToCartButton_16);
         return createProductsPage();
     }
 
@@ -440,13 +329,13 @@ public abstract class ProductsPage<ProductsPageType> extends MainPage {
         return prices;
     }
 
-    public ProductsPageType clickSortByPriceLowHigh() {
+    public CategoryPage clickSortByPriceLowHigh() {
         click(sortByPriceLowHigh);
 
         return createProductsPage();
     }
 
-    public ProductsPageType clickSortByPriceHighLow() {
+    public CategoryPage clickSortByPriceHighLow() {
         click(sortByPriceHighLow);
 
         return createProductsPage();

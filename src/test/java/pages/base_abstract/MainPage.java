@@ -260,7 +260,8 @@ public abstract class MainPage extends BasePage {
     }
 
     public AccountLoginPage BaseLogIn() {
-        clickAccountMenu().clickLoginAccountSubmenu()
+        clickAccountMenu()
+                .clickLoginAccountSubmenu()
                 .clickClearInputRegularUserLogin(LOGIN_NAME)
                 .clickClearInputRegularUserPassword(PASSWORD)
                 .clickLoginButton();

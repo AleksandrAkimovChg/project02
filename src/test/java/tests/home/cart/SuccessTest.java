@@ -36,4 +36,34 @@ public class SuccessTest extends BaseTest {
         Assert.assertEquals(actualTitle, expectedTitle);
         Assert.assertEquals(expectedTH1Header, actualTH1Header);
     }
+
+    /**
+     * 1. Захожу на сайт
+     * 2. логинюсь
+     * 3. Иду в HairCareMenu
+     * 4. Иду ConditionerSubmenu
+     * 5. Выбираю Brunette Expression Conditioner (Id-72)
+     * 6. Добавляю его в корзину
+     * 7. Нажимаю на значок корзины в TopMenu
+     * 8. На странице ShoppingCart нажимаю checkout
+     * 9. На странице checkoutInformatin нажимаю ConfirmOrder
+     * 10. Assert - проверяю надпись
+     */
+
+    @Test
+    public void testSuccessInscriptionOnTheSuccessPage() {
+
+         String actualH1Header = openBaseURL()
+                 .BaseLogIn()
+                 .mouseHoverOnHaircareMenu()
+                 .clickConditionerSubmenu()
+                 .clickOnConditionerByName("Seaweed Conditioner")
+                 .clickAddToCardBtn()
+                 .clickCartCheckoutButton1()
+                 .clickConfirmOrderButton()
+                 .waitForBlueContainerDisappeared()
+                 .getConfirmOrderH1HeaderText();
+
+         Assert.assertEquals(actualH1Header, "YOUR ORDER HAS BEEN PROCESSED!");
+    }
 }

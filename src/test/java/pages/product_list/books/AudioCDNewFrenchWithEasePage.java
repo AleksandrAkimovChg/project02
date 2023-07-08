@@ -1,9 +1,9 @@
 package pages.product_list.books;
 
 import org.openqa.selenium.WebDriver;
-import pages.product_list.ProductDescriptionPage;
+import pages.product_list.DescriptionPage;
 
-public class AudioCDNewFrenchWithEasePage extends ProductDescriptionPage<AudioCDNewFrenchWithEasePage> {
+public class AudioCDNewFrenchWithEasePage extends DescriptionPage<AudioCDNewFrenchWithEasePage> {
 
     public AudioCDNewFrenchWithEasePage(WebDriver driver) {
         super(driver);

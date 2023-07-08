@@ -1,9 +1,9 @@
 package pages.product_list.pantene;
 
 import org.openqa.selenium.WebDriver;
-import pages.product_list.ProductDescriptionPage;
+import pages.product_list.DescriptionPage;
 
-public class PanteneHighlightingExpressionsPage extends ProductDescriptionPage<PanteneHighlightingExpressionsPage> {
+public class PanteneHighlightingExpressionsPage extends DescriptionPage<PanteneHighlightingExpressionsPage> {
 
     public PanteneHighlightingExpressionsPage(WebDriver driver) {
         super(driver);

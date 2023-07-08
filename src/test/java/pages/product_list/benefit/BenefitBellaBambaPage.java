@@ -1,9 +1,9 @@
 package pages.product_list.benefit;
 
 import org.openqa.selenium.WebDriver;
-import pages.product_list.ProductDescriptionPage;
+import pages.product_list.DescriptionPage;
 
-public class BenefitBellaBambaPage extends ProductDescriptionPage<BenefitBellaBambaPage> {
+public class BenefitBellaBambaPage extends DescriptionPage<BenefitBellaBambaPage> {
 
     public BenefitBellaBambaPage(WebDriver driver) {
         super(driver);
