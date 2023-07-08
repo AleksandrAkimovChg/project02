@@ -279,6 +279,11 @@ public abstract class ProductsPage<CategoryPage> extends MainPage {
         return createProductsPage();
     }
 
+    public String getBackgroundColorBTNList() {
+
+        return getBackgroundColor(button_list);
+    }
+
     public CategoryPage clickButtonGrid() {
         click(button_grid);
 
@@ -387,52 +392,6 @@ public abstract class ProductsPage<CategoryPage> extends MainPage {
         return getText(gridProduct1_Name);
     }
 
-    public String getGridProduct2_Name() {
-        return getText(gridProduct2_Name);
-    }
-
-    public String getGridProduct3_Name() {
-        return getText(gridProduct3_Name);
-    }
-    public String getGridProduct4_Name() {
-        return getText(gridProduct4_Name);
-    }
-    public String getGridProduct5_Name() {
-        return getText(gridProduct5_Name);
-    }
-    public String getGridProduct6_Name() {
-        return getText(gridProduct6_Name);
-    }
-    public String getGridProduct7_Name() {
-        return getText(gridProduct7_Name);
-    }
-    public String getGridProduct8_Name() {
-        return getText(gridProduct8_Name);
-    }
-    public String getGridProduct9_Name() {
-        return getText(gridProduct9_Name);
-    }
-    public String getGridProduct10_Name() {
-        return getText(gridProduct10_Name);
-    }
-    public String getGridProduct11_Name() {
-        return getText(gridProduct11_Name);
-    }
-    public String getGridProduct12_Name() {
-        return getText(gridProduct12_Name);
-    }
-    public String getGridProduct13_Name() {
-        return getText(gridProduct13_Name);
-    }
-    public String getGridProduct14_Name() {
-        return getText(gridProduct14_Name);
-    }
-    public String getGridProduct15_Name() {
-        return getText(gridProduct15_Name);
-    }
-    public String getGridProduct16_Name() {
-        return getText(gridProduct16_Name);
-    }
 
     /**
      * Get price as text
