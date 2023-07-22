@@ -11,7 +11,8 @@ public class AudioCDTest extends BaseTest {
         String actualTitle = openBaseURL()
                 .mouseHoverOnBooksMenu()
                 .clickOnAudioCDSubMenu()
-                .getTitle().toUpperCase();
+                .getTitle()
+                .toUpperCase();
 
         Assert.assertEquals(actualTitle, "AUDIO CD");
     }
