@@ -79,21 +79,27 @@ public final class BaseUtils {
 //    }
 
     static public WebDriver createDriver() throws IOException {
-
-        //properties class
-        Properties prop = new Properties();
-        FileInputStream fis = new FileInputStream(System.getProperty("user.dir")
-                + "/src/test/resources/local.properties");
-        prop.load(fis);
-        //если мавен задает переменную тогда она, если нет то берет из проперти файла
-//        String browserName = System.getProperty("browser")!=null ? System.getProperty("browser") : prop.getProperty("browser");
-        //считывает прерменную из проперти файла
         String browserName;
-        if(prop.getProperty("browser") == null) {
+        if(isServerRun()) {
             browserName = "chrome";
         } else {
+
+            Properties prop = new Properties();
+            FileInputStream fis = new FileInputStream(System.getProperty("user.dir")
+                    + "/src/test/resources/local.properties");
+            prop.load(fis);
+
             browserName = prop.getProperty("browser");
         }
+
+        //properties class
+//        Properties prop = new Properties();
+//        FileInputStream fis = new FileInputStream(System.getProperty("user.dir")
+//                + "/src/test/resources/local.properties");
+//        prop.load(fis);
+//        //если мавен задает переменную тогда она, если нет то берет из проперти файла
+//        String browserName = System.getProperty("browser")!=null ? System.getProperty("browser") : prop.getProperty("browser");
+        //считывает прерменную из проперти файла
 
         if(browserName.contains("chrome")) {
             ChromeOptions options = new ChromeOptions();
