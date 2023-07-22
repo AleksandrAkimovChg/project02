@@ -82,6 +82,7 @@ public final class BaseUtils {
         String browserName;
         if(isServerRun()) {
             browserName = "chrome";
+
         } else {
 
             Properties prop = new Properties();
@@ -102,13 +103,14 @@ public final class BaseUtils {
         //считывает прерменную из проперти файла
 
         if(browserName.contains("chrome")) {
-            ChromeOptions options = new ChromeOptions();
+//            ChromeOptions options = new ChromeOptions();
             WebDriverManager.chromedriver().setup();
-            if (browserName.contains("headless")) {
-                options.addArguments("headless");
-            }
-            driver = new ChromeDriver(options);
-            driver.manage().window().setSize(new Dimension(1440, 900));  //help run full screen
+//            if (browserName.contains("headless")) {
+//                options.addArguments("headless");
+//            }
+            driver = new ChromeDriver(chromeOptions);
+//            driver = new ChromeDriver(options);
+//            driver.manage().window().setSize(new Dimension(1440, 900));  //help run full screen
         }
         else if (browserName.equalsIgnoreCase("firefox")) {
             //firefox
