@@ -26,7 +26,6 @@ public abstract class BasePage {
     }
 
     public WebDriver getDriver() {
-
         return driver;
     }
 
@@ -34,7 +33,6 @@ public abstract class BasePage {
         if (webDriverWait10 == null) {
             webDriverWait10 = new WebDriverWait(driver, Duration.ofSeconds(10));
         }
-
         return webDriverWait10;
     }
 
@@ -43,7 +41,6 @@ public abstract class BasePage {
     }
 
     protected WebElement wait10ElementToBeClickable(WebElement element) {
-
         return getWait10().until(ExpectedConditions.elementToBeClickable(element));
     }
 
@@ -77,72 +74,57 @@ public abstract class BasePage {
     }
 
     public String getText(WebElement element) {
-
         return element.getText();
     }
 
     public String getAttribute(WebElement element, String attribute) {
-
         return element.getAttribute(attribute);
     }
 
     public String getTextByIndex(int index, List<WebElement> elements) {
-
         return elements.get(index).getText();
     }
 
     public String getAttributeByIndex(int index, List<WebElement> elements, String attribute) {
-
         return elements.get(index).getAttribute(attribute);
     }
 
     public int getListSize(List<WebElement> list) {
-
         return list.size();
     }
 
     public List<String> getListText(List<WebElement> list) {
         List<String> textList = new ArrayList<>();
-
         if (getListSize(list) > 0) {
-
             for (WebElement element : list) {
                 textList.add(element.getText());
             }
         }
-
         return textList;
     }
 
     public List<String> getListTextInLowerCase(List<WebElement> list) {
         List<String> textList = new ArrayList<>();
-
         if (getListSize(list) > 0) {
-
             for (WebElement element : list) {
                 textList.add(element.getText().toLowerCase());
             }
         }
-
         return textList;
     }
 
     public List<String> getListTextInUpperCase(List<WebElement> list) {
         List<String> textList = new ArrayList<>();
-
         if (getListSize(list) > 0) {
-
             for (WebElement element : list) {
                 textList.add(element.getText().toUpperCase());
             }
         }
-
         return textList;
     }
 
     public List<WebElement> getListIfVisible(List<WebElement> list) {
         List<WebElement> visibleList = new ArrayList<>();
-
         if (list.size() > 0) {
             for (WebElement element : list) {
                 if (element.isEnabled() && element.isDisplayed()) {
@@ -150,21 +132,16 @@ public abstract class BasePage {
                 }
             }
         }
-
         if (list.size() != visibleList.size()) {
-
             return new ArrayList<>();
         }
-
         return visibleList;
     }
 
     public int[] getIntegersFromTexts(List<String> list) {
         int[] numbers;
-
         if (list.size() > 0) {
             numbers = new int[list.size()];
-
             for (int i = 0; i < numbers.length; i++) {
                 try {
                     numbers[i] = Integer.parseInt(list.get(i));
@@ -172,10 +149,8 @@ public abstract class BasePage {
                     Reporter.log("String is not parsable");
                 }
             }
-
             return numbers;
         }
-
         return new int[0];
     }
 
@@ -187,7 +162,6 @@ public abstract class BasePage {
                                     "&& arguments[0].naturalWidth > 0);", image
                     );
             if (imageDisplayed) {
-
                 return true;
             } else {
                 Reporter.log(image + "image is broken ", true);
@@ -195,7 +169,6 @@ public abstract class BasePage {
         } catch (Exception e) {
             System.out.println("Image not loading");
         }
-
         return false;
     }
 
@@ -205,22 +178,18 @@ public abstract class BasePage {
     }
 
     public String getURL() {
-
         return getDriver().getCurrentUrl();
     }
 
     public String getTitle() {
-
         return getDriver().getTitle();
     }
 
     public boolean isAlertPresent() {
         try {
             getDriver().switchTo().alert();
-
             return true;
         } catch (NoAlertPresentException e) {
-
             return false;
         }
     }
@@ -241,5 +210,9 @@ public abstract class BasePage {
 
     public void waitForBlueContainerDisappeared(WebElement element) {
         getWait10().until(ExpectedConditions.invisibilityOf(element));
+    }
+
+    public String getBackgroundColor(WebElement element) {
+        return element.getCssValue("background-color");
     }
 }

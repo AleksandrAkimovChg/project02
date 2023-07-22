@@ -10,6 +10,7 @@ import org.testng.annotations.BeforeSuite;
 import pages.home.HomePage;
 import utils.ReportUtils;
 
+import java.io.IOException;
 import java.lang.reflect.Method;
 
 public abstract class BaseTest {
@@ -25,7 +26,7 @@ public abstract class BaseTest {
     }
 
     @BeforeMethod
-    protected void beforeMethod(Method method, ITestResult result) {
+    protected void beforeMethod(Method method, ITestResult result) throws IOException {
         driver = BaseUtils.createDriver();
 
         Reporter.log(ReportUtils.END_LINE, true);
